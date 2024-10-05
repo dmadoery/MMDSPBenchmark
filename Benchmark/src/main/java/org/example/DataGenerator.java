@@ -2,23 +2,21 @@ package org.example;
 import static java.lang.System.in;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 
 public class DataGenerator {
-
-    public Object obj;
+    public static Sensor sens;
+    public static ArrayList<String[]> data = new ArrayList <>();
 
     public static String[] split(String line) {
-        String[] splited = line.split(";", 10);
-        return splited;
+        return line.split(";", 10);
     }
 
 
     public static void main(String[] args) throws  Exception {
-        String[][] data = new String[20500][5];
-        Sensor[] frontLeftTyre = new Sensor[20500];
-        try(FileReader in = new FileReader("src/main/resources/frontLeftTyre.csv");
+        try(FileReader in = new FileReader("src/main/resources/Temp_Sensor.csv");
             BufferedReader br = new BufferedReader(in)) {
             int j = 0;
             while(true) {
@@ -32,22 +30,20 @@ public class DataGenerator {
                 else{
                     String[] splited = split(line);
                     //System.out.println(splited.length);
-                    System.arraycopy(splited, 0, data[j], 0, splited.length);
-                    // System.out.println(Arrays.toString(data[j]));
-                    // System.out.println(data.length);
-                    for (String item : data[j]) {
-                        System.out.println("Row "+ j + ": " + item);
-                    }
-                    if (j > 0) {
-                        int l = data[j].length - 1;
-                        frontLeftTyre[j] = new Sensor(data[j][l-4], data[j][l-3], data[j][l-2], Double.parseDouble(data[j][l-1]), Double.parseDouble(data[j][l]));
-                    } else {
-                        frontLeftTyre[j] = new Sensor("test", "test", "test", 12.555, 24.555);
-                    }
-                    frontLeftTyre[j].print();
-
+                    data.add(splited);
+//                    for (String item : data.get(j)) {
+//                        System.out.println("Row " + j + ": " + item);
+//                    }
+                }
+                if (j == 0) {
+                    sens = new Sensor(data.get(j)[0],data.get(j)[1], data.get(j)[2], data.get(j)[3], data.get(j)[4], data.get(j)[5]);
+                } if (j != 0) {
+                    sens.sensorData.add(data.get(j));
                 }
                 j++;
+            }
+            for (int i = 0; i < sens.sensorData.size(); i++) {
+                Sensor.print(i);
             }
             br.close();
         }
