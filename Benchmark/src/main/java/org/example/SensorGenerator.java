@@ -15,6 +15,7 @@ public class SensorGenerator {
     private final String[] header;
     static ArrayList<Sensor> data = new ArrayList <>();
     static String SensorName = "Temp_Sensor";//TODO: change name of Sensor
+    static ArrayList<String[]> sensors = new ArrayList<>();
     public static int id = 0;
     private static String type;
     private static String typeOfSensor;
@@ -61,7 +62,7 @@ public class SensorGenerator {
             while(counter != 0) {
                 double data1 = RandomData.getRandom(89.99, 101.99); //change Random min and max here
                 double data2 = RandomData.getRandom(17.9, 30.5); //change Random min and max here
-                newData.sensorData.add(new String[]{type, String.valueOf(id), (new SimpleDateFormat("yyyy:MM:dd").format(new Date())), RandomData.getTime(), String.valueOf(data1), String.valueOf(data2)});
+                newData.sensorData.add(new String[]{type, String.valueOf(id), (new SimpleDateFormat("dd:MM:yyyy").format(new Date())), RandomData.getTime(), String.valueOf(data1), String.valueOf(data2)});
                 counter --;
             }
             for(int i = 0; i < newData.sensorData.size(); i++) {

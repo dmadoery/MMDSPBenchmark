@@ -16,7 +16,7 @@ public class DataGenerator {
 
 
     public static void main(String[] args) throws  Exception {
-        try(FileReader in = new FileReader("src/main/resources/Temp_Sensor.csv");
+        try(FileReader in = new FileReader("src/main/resources/g_sensor.csv");
             BufferedReader br = new BufferedReader(in)) {
             int j = 0;
             while(true) {

@@ -14,7 +14,7 @@ public class Sensor {
     private static String data2Info;
     public static ArrayList<String[]> sensorData;
 
-    public Sensor (String t, String i, String d, String ti, String dif1, String dif2){
+    public Sensor (String t, String i, String d, String ti, String dif1, String dif2) {
         header = new String[]{t, i, d, ti, dif1, dif2}; // format: [type, id, date, time, data1, data2]
         type = t;
         id = i;
