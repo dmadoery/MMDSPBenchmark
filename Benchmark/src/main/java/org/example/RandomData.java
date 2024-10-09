@@ -1,9 +1,12 @@
 package org.example;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Clock;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 
 public class RandomData {
     public static ArrayList<String[]> sensors = new ArrayList<>();
@@ -62,5 +65,18 @@ public class RandomData {
             }
             return returner1;
         }
+    }
+
+    public static List<String> listFilesForFolder(final File folder) {
+        List<String> filenames = new LinkedList<String>();
+        for (final File fileEntry : folder.listFiles()) {
+            if (fileEntry.isDirectory()) {
+                listFilesForFolder(fileEntry);
+            } else {
+                if(fileEntry.getName().contains(".csv"))
+                    filenames.add(fileEntry.getName());
+            }
+        }
+        return filenames;
     }
 }

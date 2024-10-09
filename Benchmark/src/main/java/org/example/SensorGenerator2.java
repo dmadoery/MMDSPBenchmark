@@ -5,31 +5,18 @@ import com.opencsv.CSVWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class SensorGenerator2 {
-    //static ArrayList<Sensor> data = new ArrayList <>();
     // Layout sensorList: {"Name", "typeOfSensor", "Data1", "dataRange_min1", "dataRange_max1", "Data2", "dataRange_min2", "dataRange_max2"}
     static ArrayList<String[]> sensorList = new ArrayList<>();
     public static int id = 0;
 
 
-//    public SensorGenerator2(String t, String data1, String data2) {
-//        identifier = "id";//header[1]
-//        date = "date";// header[2]
-//        time = "time"; // header[3]
-//        typeOfSensor = "typeOfSensor"; // header[0]
-//        type =  t;
-//        id += 1;
-//    }
-
     public static void main(String[] args) {
         // create Sensors
         RandomData.setSensors();
-        int[] entriesPerSensor = new int[] {20000, 400000, 10000, 500}; //TODO: Change amount of Sensors and entries here.
+        int[] entriesPerSensor = new int[] {10, 10, 10, 10}; //TODO: Change amount of Sensors and their entries here.
         int amountSensors = entriesPerSensor.length;
         sensorList = RandomData.create_Sensors(amountSensors);
 
@@ -50,7 +37,7 @@ public class SensorGenerator2 {
                         CSVWriter.DEFAULT_LINE_END);
 
                 // write header
-                writer.writeNext(header);
+                writer.writeNext(new String[]{"type", "id", "date", "time", header[2], header[5]});
 
                 //write data
                 while (entriesPerSensor[i] != 0) {

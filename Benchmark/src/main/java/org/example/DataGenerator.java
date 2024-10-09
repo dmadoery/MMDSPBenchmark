@@ -1,51 +1,46 @@
 package org.example;
-import static java.lang.System.in;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Arrays;
 
+import java.io.*;
+import java.util.*;
 
 public class DataGenerator {
-    public static Sensor sens;
-    public static ArrayList<String[]> data = new ArrayList <>();
-
-    public static String[] split(String line) {
-        return line.split(";", 10);
-    }
-
+    static final File folder = new File("src/main/resources");
+    static List<String> filenames = new LinkedList<String>();
+    static ArrayList<Sensor> sensorList = new ArrayList<>();
 
     public static void main(String[] args) throws  Exception {
-        try(FileReader in = new FileReader("src/main/resources/g_sensor.csv");
-            BufferedReader br = new BufferedReader(in)) {
-            int j = 0;
-            while(true) {
-                String line = br.readLine();
-                if(line == null) {
+        filenames = RandomData.listFilesForFolder(folder);
+        for (String file: filenames) {
+            FileReader fReader = new FileReader(folder + "/" + file);
+            BufferedReader bReader = new BufferedReader(fReader);
+            String line = bReader.readLine();
+            Sensor sensor = new Sensor(line.split(";", 10));
+            while (true) {
+                line = bReader.readLine();
+                if (line == null) {
                     break;
+                } else  {
+                    sensor.sensorData.add(line.split(";", 10));
+                    System.out.println(Arrays.toString(sensor.sensorData.getLast()));
                 }
-                if(line.isEmpty() || line.startsWith("#")) {
-                    continue;
-                }
-                else{
-                    String[] splited = split(line);
-                    //System.out.println(splited.length);
-                    data.add(splited);
-//                    for (String item : data.get(j)) {
-//                        System.out.println("Row " + j + ": " + item);
-//                    }
-                }
-                if (j == 0) {
-                    sens = new Sensor(data.get(j)[0],data.get(j)[1], data.get(j)[2], data.get(j)[3], data.get(j)[4], data.get(j)[5]);
-                } if (j != 0) {
-                    sens.sensorData.add(data.get(j));
-                }
-                j++;
             }
-            for (int i = 0; i < sens.sensorData.size(); i++) {
-                Sensor.print(i);
-            }
-            br.close();
+            sensorList.add(sensor);
+            bReader.close();
         }
+
+
+//        printing all sensors with their data
+        for (Sensor sensor : sensorList) {
+            for (int i = 0; i < sensor.sensorData.size(); i++) {
+                System.out.println(Arrays.toString(sensor.sensorData.get(i)));
+            }
+        }
+
+
+        //TESTING:
+//        for (Sensor sensor : sensorList) {
+//            System.out.println(sensor);
+//            System.out.println(Arrays.toString(sensor.sensorData.getFirst()));
+//        }
     }
 }
