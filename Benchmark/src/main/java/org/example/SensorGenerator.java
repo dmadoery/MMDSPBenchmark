@@ -7,7 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class SensorGenerator2 {
+public class SensorGenerator {
     // Layout sensorList: {"Name", "typeOfSensor", "Data1", "dataRange_min1", "dataRange_max1", "Data2", "dataRange_min2", "dataRange_max2"}
     static ArrayList<String[]> sensorList = new ArrayList<>();
     public static int id = 0;
