@@ -14,14 +14,14 @@ public class DataGenerator {
             FileReader fReader = new FileReader(folder + "/" + file);
             BufferedReader bReader = new BufferedReader(fReader);
             String line = bReader.readLine();
-            Sensor sensor = new Sensor(line.split(";", 10));
+            Sensor sensor = Sensor.parse(List.of(line.split(";", 10)));
             while (true) {
                 line = bReader.readLine();
                 if (line == null) {
                     break;
                 } else  {
-                    sensor.sensorData.add(line.split(";", 10));
-                    System.out.println(Arrays.toString(sensor.sensorData.getLast()));
+                    sensor.add(line.split(";", 10));
+                    System.out.println(Arrays.toString(sensor.dataPoints.getLast()));
                 }
             }
             sensorList.add(sensor);
@@ -31,16 +31,9 @@ public class DataGenerator {
 
 //        printing all sensors with their data
         for (Sensor sensor : sensorList) {
-            for (int i = 0; i < sensor.sensorData.size(); i++) {
-                System.out.println(Arrays.toString(sensor.sensorData.get(i)));
+            for (int i = 0; i < sensor.dataPoints.size(); i++) {
+                System.out.println(Arrays.toString(sensor.dataPoints.get(i)));
             }
         }
-
-
-        //TESTING:
-//        for (Sensor sensor : sensorList) {
-//            System.out.println(sensor);
-//            System.out.println(Arrays.toString(sensor.sensorData.getFirst()));
-//        }
     }
 }

@@ -3,68 +3,153 @@ package org.example;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Clock;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class RandomData {
-    public static ArrayList<String[]> sensors = new ArrayList<>();
+    public static List<String[]> sensors = new ArrayList<>();
+    public static String[][] dataTypes = new String[][]{{"temperature celsius", "80", "110"}, {"pressure psi", "25", "30"},
+            {"kmp/h", "0", "380"}, {"mp/h", "0", "236.121"}, {"direction", "0", "359"}, {"g", "0", "10"},
+            {"brake_pressure", "0", "10"}, {"ml/min", "500", "4000"}, {"test", "0", "10"}, {"on/off", "0", "1"}, {"drs-zone", "0", "3"},
+            {"test", "0", "10"}
+    };
+    public static Random random = new Random();
+    public static long seed = 21;
 
+
+    public static void setSeed(long s) {
+        random.setSeed(s);
+    }
     public static void setSensors(){
         RandomData.sensors.clear();
-        //RandomData.sensors.add(new String[] {"Name", "typeOfSensor", "Data1", "dataRange_min1", "dataRange_max1", "Data2", "dataRange_min2", "dataRange_max2"});
-        RandomData.sensors.add(new String[] {"front_left_tyre", "tyre", "temperature celsius", "80", "110", "pressure psi", "25", "30"});
-        RandomData.sensors.add(new String[] {"front_right_tyre", "tyre", "temperature celsius", "80", "110", "pressure psi", "25", "30"});
-        RandomData.sensors.add(new String[] {"rear_left_tyre", "tyre", "temperature celsius", "80", "110", "pressure psi", "20", "25"});
-        RandomData.sensors.add(new String[] {"rear_right_tyre", "tyre", "temperature celsius", "80", "110", "pressure psi", "20", "25"});
-        RandomData.sensors.add(new String[] {"speed_sensor", "speed", "kmp/h", "0", "380", "mp/h", "0", "236.121"});
-        RandomData.sensors.add(new String[] {"g_sensor", "g_force", "direction", "0", "359", "g", "0", "10"});
-        RandomData.sensors.add(new String[] {"fuel_pump_sensor", "fuel_pump", "temperature celsius", "-40", "85", "ml/min", "500", "4000"});
-        RandomData.sensors.add(new String[] {"drs_sensor", "DRS", "on/off", "0", "1", "drs-zone", "0", "3"});
-        RandomData.sensors.add(new String[] {"front_left_brake", "brake", "temperature celsius", "0", "1000", "brake_pressure", "0", "10"});
-        RandomData.sensors.add(new String[] {"front_right_brake", "brake", "temperature celsius", "0", "1000", "brake_pressure", "0", "10"});
-        RandomData.sensors.add(new String[] {"rear_left_brake", "brake", "temperature celsius", "0", "1000", "brake_pressure", "0", "10"});
-        RandomData.sensors.add(new String[] {"rear_right_brake", "brake", "temperature celsius", "0", "1000", "brake_pressure", "0", "10"});
+        //RandomData.sensors.add(new String[] {"typeOfSensor", "Data1", "Data2", ...});
+        RandomData.sensors.add(new String[] {"heat", "temperature celsius"}); //heat sensor
+        RandomData.sensors.add(new String[] {"heat", "temperature celsius"});//heat sensor,
+        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//front_left_tyre
+        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//front_right_tyre
+        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//rear_left_tyre
+        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//rear_right_tyre
+        RandomData.sensors.add(new String[] {"speed", "kmp/h","mp/h"});//speed_sensor
+        RandomData.sensors.add(new String[] {"g_force", "direction", "g"});//g_sensor
+        RandomData.sensors.add(new String[] {"fuel_pump", "temperature celsius", "ml/min"});//fuel_pump_sensor
+        RandomData.sensors.add(new String[] {"DRS", "on/off", "drs-zone"});//drs_sensor
+        RandomData.sensors.add(new String[] {"brake", "temperature celsius","brake_pressure"});//front_left_brake
+        RandomData.sensors.add(new String[] {"brake", "temperature celsius", "brake_pressure"});//front_right_brake
+        RandomData.sensors.add(new String[] {"brake", "temperature celsius", "brake_pressure"});//rear_left_brake
+        RandomData.sensors.add(new String[] {"brake", "temperature celsius", "brake_pressure"});//rear_right_brake
+        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
+        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
+        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
+        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
+        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
+        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
+
     }
 
     public static double getRandom(double min, double max) {
-        double rand = (Math.random()*(max-min))+min;
-        return rand;
+        return random.nextDouble() * (max - min) + min;
     }
 
     public static String getTime() {
         Clock clock = Clock.systemDefaultZone();
         long millisecond = clock.millis();
-        return (new SimpleDateFormat("hh:mm:ss:SSS")).format(new Date(millisecond));
+        return (new SimpleDateFormat("hh:mm:ss:SSSSS")).format(new Date(millisecond));
     }
 
     public static String getDate() {
         return (new SimpleDateFormat("dd:MM:yyyy").format(new Date()));
     }
 
-    public static ArrayList<String[]> create_Sensors(int j) {
-        if (j == RandomData.sensors.size()) {
-            return RandomData.sensors;
-        } else if (j < RandomData.sensors.size()) {
-            ArrayList<String[]> returner = new ArrayList<>();
-            while (j != 0) {
+    public static List<Sensor> create_Sensors(int[] amount) {
+        List<Sensor> sensorList = new ArrayList<>();
+        int id = 0;
+        int length = amount.length;
+
+        if (length == RandomData.sensors.size()) {
+            for (int i = 0; i < length; i++) {
+                String[] header = create_header(i, id);
+                Sensor s = Sensor.parse(List.of(header));
+                for (int j = 0; j < amount[i]; j++) {
+                    create_data(s, header.length + 2);
+                }
+                sensorList.add(s);
+                id ++;
+            }
+            return sensorList;
+
+        } else if (length < RandomData.sensors.size()) {
+            int k = 0;
+            while (length != 0) {
                 int i = (int) getRandom(0, (double) RandomData.sensors.size());
-                returner.add(RandomData.sensors.get(i));
+                String [] header = create_header(i, id);
+                Sensor s = Sensor.parse(List.of(header));
+                for (int j = 0; j < amount[k]; j++) {
+                    create_data(s, header.length + 2);
+                }
+                k ++;
+                id ++;
+                sensorList.add(s);
                 RandomData.sensors.remove(i);
-                j --;
+                length --;
             }
-            return returner;
+            return sensorList;
         }
+
         else {
-            ArrayList<String[]> returner1 = new ArrayList<>();
-            while (j != 0) {
+            int k = 0;
+            while (length != 0) {
                 int i = (int) getRandom(0, (double) RandomData.sensors.size());
-                returner1.add(RandomData.sensors.get(i));
-                j --;
+                String[] header = create_header(i, id);
+                Sensor s = Sensor.parse(List.of(header));
+                for (int j = 0; j < amount[k]; j++) {
+                    create_data(s, header.length + 2);
+                }
+                k ++;
+                id ++;
+                sensorList.add(s);
+                RandomData.sensors.remove(i);
+                length --;
             }
-            return returner1;
+            return sensorList;
         }
+    }
+
+    private static void create_data(Sensor sensor, int l) {
+        String[] data = new String[l];
+        data[0] = sensor.type;
+        data[1] = sensor.id;
+        data[2] = getDate();
+        data[3] = getTime();
+
+        // For sensor data generation, avoid iterating over all data types unnecessarily
+        if (sensor.data1Info != null) {
+            data[4] = generateSensorData(sensor.data1Info);
+        }
+        if (sensor.data2Info != null) {
+            data[5] = generateSensorData(sensor.data2Info);
+        }
+        if (sensor.data3Info != null) {
+            data[6] = generateSensorData(sensor.data3Info);
+        }
+        if (sensor.data4Info != null) {
+            data[7] = generateSensorData(sensor.data4Info);
+        }
+        if (sensor.data5Info != null) {
+            data[8] = generateSensorData(sensor.data5Info);
+        }
+        if (sensor.data6Info != null) {
+            data[9] = generateSensorData(sensor.data6Info);
+        }
+
+        sensor.add(data);
+    }
+
+    private static String generateSensorData(String dataType) {
+        for (String[] d : dataTypes) {
+            if (d[0].equals(dataType)) {
+                return String.valueOf(getRandom(Double.parseDouble(d[1]), Double.parseDouble(d[2])));
+            }
+        }
+        return "N/A"; // Default case if no matching data type found
     }
 
     public static List<String> listFilesForFolder(final File folder) {
@@ -78,5 +163,14 @@ public class RandomData {
             }
         }
         return filenames;
+    }
+
+    public static String[] create_header(int i, int id) {
+        String[] sens = RandomData.sensors.get(i);
+        String[] header = new String[sens.length + 1];
+        header[0] = sens[0];
+        header[1] = String.valueOf(id);
+        System.arraycopy(sens, 1, header, 2, sens.length - 1);
+        return header;
     }
 }

@@ -6,26 +6,27 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class SensorGenerator {
     // Layout sensorList: {"Name", "typeOfSensor", "Data1", "dataRange_min1", "dataRange_max1", "Data2", "dataRange_min2", "dataRange_max2"}
-    static ArrayList<String[]> sensorList = new ArrayList<>();
-    public static int id = 0;
-
+    static List<Sensor> sensorList = new ArrayList<>();
 
     public static void main(String[] args) {
         // create Sensors
         RandomData.setSensors();
-        int[] entriesPerSensor = new int[] {10, 10, 10, 10}; //TODO: Change amount of Sensors and their entries here.
-        int amountSensors = entriesPerSensor.length;
-        sensorList = RandomData.create_Sensors(amountSensors);
+        RandomData.setSeed(RandomData.seed);
+        int[] sensorArray = new int[] {10, 10, 10, 10}; //TODO: Change amount of Sensors and their entries here.
+        int amountSensors = sensorArray.length;
+        sensorList = RandomData.create_Sensors(sensorArray);
 
         // write data to csv file for each sensor
         for (int i = 0; i < amountSensors; i++) {
-            String[] header = sensorList.get(i);
+            Sensor sensor = sensorList.get(i);
 
             //SensorGenerator sensor2 = new SensorGenerator("speed", "kp/h", "wind_speed");
-            File file = new File("src/main/resources/" + header[0] + ".csv");
+            File file = new File("src/main/resources/" + sensor.id + sensor.type + ".csv");
             try {
                 // create FileWriter object with file as parameter
                 FileWriter outputfile = new FileWriter(file);
@@ -37,14 +38,32 @@ public class SensorGenerator {
                         CSVWriter.DEFAULT_LINE_END);
 
                 // write header
-                writer.writeNext(new String[]{"type", "id", "date", "time", header[2], header[5]});
+                if (sensor.data1Info != null && sensor.data2Info == null) {
+                    writer.writeNext(new String[]{"type", "id", "date", "time", sensor.data1Info});
+                }
+                else if (sensor.data3Info == null) {
+                    writer.writeNext(new String[]{"type", "id", "date", "time", sensor.data1Info, sensor.data2Info});
+                }
+                else if (sensor.data4Info == null) {
+                    writer.writeNext(new String[]{"type", "id", "date", "time", sensor.data1Info, sensor.data2Info,
+                            sensor.data3Info});
+                }
+                else if (sensor.data5Info == null) {
+                    writer.writeNext(new String[]{"type", "id", "date", "time", sensor.data1Info, sensor.data2Info,
+                            sensor.data3Info, sensor.data4Info});
+                }
+                else if (sensor.data6Info == null) {
+                    writer.writeNext(new String[]{"type", "id", "date", "time", sensor.data1Info, sensor.data2Info,
+                            sensor.data3Info, sensor.data4Info, sensor.data5Info});
+                } else {
+                    writer.writeNext(new String[]{"type", "id", "date", "time", sensor.data1Info,
+                            sensor.data2Info, sensor.data3Info, sensor.data4Info, sensor.data5Info, sensor.data6Info});
+                }
 
                 //write data
-                while (entriesPerSensor[i] != 0) {
-                    writer.writeNext(new String[]{header[1], String.valueOf(id), RandomData.getDate(), RandomData.getTime(), String.valueOf(RandomData.getRandom(Double.parseDouble(header[3]), Double.parseDouble(header[4]))), String.valueOf(RandomData.getRandom(Double.parseDouble(header[6]), Double.parseDouble(header[7])))});
-                    entriesPerSensor[i]--;
+                for (String[] dataPoint : sensor.dataPoints) {
+                    writer.writeNext(dataPoint);
                 }
-                 id ++;
                 // closing writer connection
                 writer.close();
                 outputfile.close();
