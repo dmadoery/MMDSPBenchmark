@@ -3,15 +3,12 @@ package org.example;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+    public static void main(String[] args) throws Exception {
+        boolean test  = true;
+        int[] sensorArray = new int[] {100, 1000, 10, 105, 20, 55}; //TODO: change amount of Sensors and their data entries
+        SensorGenerator.creator(sensorArray);
+        DataGenerator.dataGenerator();
+        DataSender send = new DataSender(test);
+        send.processData(test);
     }
 }

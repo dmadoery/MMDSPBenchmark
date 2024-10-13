@@ -7,17 +7,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class SensorGenerator {
     // Layout sensorList: {"Name", "typeOfSensor", "Data1", "dataRange_min1", "dataRange_max1", "Data2", "dataRange_min2", "dataRange_max2"}
-    static List<Sensor> sensorList = new ArrayList<>();
+    static List<Sensor> sensorList= new ArrayList<>();
 
-    public static void main(String[] args) {
+    public static void creator(int[] sensorArray) {
         // create Sensors
         RandomData.setSensors();
         RandomData.setSeed(RandomData.seed);
-        int[] sensorArray = new int[] {10, 10, 10, 10}; //TODO: Change amount of Sensors and their entries here.
         int amountSensors = sensorArray.length;
         sensorList = RandomData.create_Sensors(sensorArray);
 

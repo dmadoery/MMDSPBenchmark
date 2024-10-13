@@ -10,7 +10,7 @@ public class RandomData {
     public static String[][] dataTypes = new String[][]{{"temperature celsius", "80", "110"}, {"pressure psi", "25", "30"},
             {"kmp/h", "0", "380"}, {"mp/h", "0", "236.121"}, {"direction", "0", "359"}, {"g", "0", "10"},
             {"brake_pressure", "0", "10"}, {"ml/min", "500", "4000"}, {"test", "0", "10"}, {"on/off", "0", "1"}, {"drs-zone", "0", "3"},
-            {"test", "0", "10"}
+            {"test", "0", "10"} //add more types here
     };
     public static Random random = new Random();
     public static long seed = 21;
@@ -52,7 +52,7 @@ public class RandomData {
     public static String getTime() {
         Clock clock = Clock.systemDefaultZone();
         long millisecond = clock.millis();
-        return (new SimpleDateFormat("hh:mm:ss:SSSSS")).format(new Date(millisecond));
+        return (new SimpleDateFormat("HH:mm:ss.SSSS")).format(new Date(millisecond));
     }
 
     public static String getDate() {
@@ -76,10 +76,10 @@ public class RandomData {
             }
             return sensorList;
 
-        } else if (length < RandomData.sensors.size()) {
+        } else {
             int k = 0;
             while (length != 0) {
-                int i = (int) getRandom(0, (double) RandomData.sensors.size());
+                int i = (int) getRandom(0, RandomData.sensors.size());
                 String [] header = create_header(i, id);
                 Sensor s = Sensor.parse(List.of(header));
                 for (int j = 0; j < amount[k]; j++) {
@@ -88,25 +88,9 @@ public class RandomData {
                 k ++;
                 id ++;
                 sensorList.add(s);
-                RandomData.sensors.remove(i);
-                length --;
-            }
-            return sensorList;
-        }
-
-        else {
-            int k = 0;
-            while (length != 0) {
-                int i = (int) getRandom(0, (double) RandomData.sensors.size());
-                String[] header = create_header(i, id);
-                Sensor s = Sensor.parse(List.of(header));
-                for (int j = 0; j < amount[k]; j++) {
-                    create_data(s, header.length + 2);
+                if (length < RandomData.sensors.size()) {
+                    RandomData.sensors.remove(i);
                 }
-                k ++;
-                id ++;
-                sensorList.add(s);
-                RandomData.sensors.remove(i);
                 length --;
             }
             return sensorList;
@@ -154,7 +138,7 @@ public class RandomData {
 
     public static List<String> listFilesForFolder(final File folder) {
         List<String> filenames = new LinkedList<String>();
-        for (final File fileEntry : folder.listFiles()) {
+        for (final File fileEntry : Objects.requireNonNull(folder.listFiles())) {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
             } else {

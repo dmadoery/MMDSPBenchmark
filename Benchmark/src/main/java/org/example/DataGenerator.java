@@ -1,14 +1,21 @@
 package org.example;
 
+import com.opencsv.CSVWriter;
+
 import java.io.*;
 import java.util.*;
 
 public class DataGenerator {
     static final File folder = new File("src/main/resources");
+    static final String fname = "ALL_DATA";
     static List<String> filenames = new LinkedList<String>();
-    static ArrayList<Sensor> sensorList = new ArrayList<>();
+    static List<Sensor> sensorList = new ArrayList<>();
+    static List<String[]> allData = new ArrayList<>();
+    static Random random = new Random();
+    static long seed = 12;
 
-    public static void main(String[] args) throws  Exception {
+    public static void dataGenerator() throws  Exception {
+        random.setSeed(seed);
         filenames = RandomData.listFilesForFolder(folder);
         for (String file: filenames) {
             FileReader fReader = new FileReader(folder + "/" + file);
@@ -21,19 +28,37 @@ public class DataGenerator {
                     break;
                 } else  {
                     sensor.add(line.split(";", 10));
-                    System.out.println(Arrays.toString(sensor.dataPoints.getLast()));
+                    allData.add(line.split(";", 10));
+                    //System.out.println(Arrays.toString(sensor.dataPoints.getLast()));
                 }
             }
             sensorList.add(sensor);
             bReader.close();
         }
 
+        Collections.shuffle(allData, random);
 
-//        printing all sensors with their data
-        for (Sensor sensor : sensorList) {
-            for (int i = 0; i < sensor.dataPoints.size(); i++) {
-                System.out.println(Arrays.toString(sensor.dataPoints.get(i)));
+        File outputFile = new File("src/main/resources/" + fname + ".csv");
+
+        try (FileWriter outputfile = new FileWriter(outputFile);
+             CSVWriter writer = new CSVWriter(outputfile, ';',
+                     CSVWriter.NO_QUOTE_CHARACTER,
+                     CSVWriter.DEFAULT_ESCAPE_CHARACTER,
+                     CSVWriter.DEFAULT_LINE_END)) {
+
+            // Write the header (use the first sensor's header)
+            if (!sensorList.isEmpty()) {
+                writer.writeNext(new String[]{
+                        "type", "id", "date", "time", "dataInfo1", "dataInfo2", "dataInfo3", "dataInfo4", "dataInfo5", "dataInfo6"});
+            }
+
+            // Write the shuffled data rows
+            for (String[] data : allData) {
+                data[3] = RandomData.getTime(); //overwrite Data Time
+                writer.writeNext(data);
             }
         }
+
     }
+
 }

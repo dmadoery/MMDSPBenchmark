@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+/**
+ * Creates a Sensor with the right amount of data information slots.
+ */
 public class Sensor {
     String type;
     String id;
@@ -15,6 +18,13 @@ public class Sensor {
     String data6Info;
     List<String[]> dataPoints = new ArrayList<>();
 
+
+    /**
+     * Creates a Sensor with the right amount of data information slots.
+     * @param type Type of the sensor
+     * @param id ID of the sensor
+     * @param dataInfo Information of what data1 the sensor sends
+     */
     public Sensor(String type, String id, String dataInfo) {
         this.type = type;
         this.id = id;
