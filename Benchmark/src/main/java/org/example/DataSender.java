@@ -27,6 +27,11 @@ public class DataSender {
         }
     }
 
+    /**
+     * Reads the data form the csv file and sends it to Kafka.
+     * @param isTestMode boolean
+     * @throws Exception
+     */
     public void processData(boolean isTestMode) throws Exception {
         try (CSVReader reader = new CSVReader(new FileReader(inputFile))) {
             String[] header = reader.readNext(); // Read header line

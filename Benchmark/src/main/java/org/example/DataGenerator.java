@@ -12,8 +12,14 @@ public class DataGenerator {
     static List<Sensor> sensorList = new ArrayList<>();
     static List<String[]> allData = new ArrayList<>();
     static Random random = new Random();
-    static long seed = 12;
+    static long seed = 795673489;
 
+    /**
+     * Reads the data from the generated csv files and stores them in a list (allData)
+     * Shuffles the list randomly and writes the data back to a csv file called ALL_DATA.csv
+     *
+     * @throws Exception
+     */
     public static void dataGenerator() throws  Exception {
         random.setSeed(seed);
         filenames = RandomData.listFilesForFolder(folder);

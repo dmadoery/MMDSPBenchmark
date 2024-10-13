@@ -7,21 +7,28 @@ import java.util.*;
 
 public class RandomData {
     public static List<String[]> sensors = new ArrayList<>();
+
+    //Info of all possible data types, with their possible min and max values.
     public static String[][] dataTypes = new String[][]{{"temperature celsius", "80", "110"}, {"pressure psi", "25", "30"},
             {"kmp/h", "0", "380"}, {"mp/h", "0", "236.121"}, {"direction", "0", "359"}, {"g", "0", "10"},
             {"brake_pressure", "0", "10"}, {"ml/min", "500", "4000"}, {"test", "0", "10"}, {"on/off", "0", "1"}, {"drs-zone", "0", "3"},
-            {"test", "0", "10"} //add more types here
+            {"test", "0", "10"} //TODO: add more types here
     };
     public static Random random = new Random();
-    public static long seed = 21;
+    public static long seed = 795673489;
 
 
     public static void setSeed(long s) {
         random.setSeed(s);
     }
+
+    /**
+     * Creates Sensors form different lengths, all Sensors have: type, id, date, time
+     * and can have additionally up to 6 data entries.
+     */
     public static void setSensors(){
         RandomData.sensors.clear();
-        //RandomData.sensors.add(new String[] {"typeOfSensor", "Data1", "Data2", ...});
+        //RandomData.sensors.add(new String[] {"typeOfSensor", "Data1", "Data2", ..., Data6});
         RandomData.sensors.add(new String[] {"heat", "temperature celsius"}); //heat sensor
         RandomData.sensors.add(new String[] {"heat", "temperature celsius"});//heat sensor,
         RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//front_left_tyre
@@ -45,20 +52,40 @@ public class RandomData {
 
     }
 
+    /**
+     * Creates a random number(double) between the given min and max values.
+     * @param min value
+     * @param max value
+     * @return random number between min and max
+     */
     public static double getRandom(double min, double max) {
         return random.nextDouble() * (max - min) + min;
     }
 
+    /**
+     * Returns the current time in the format: HH:mm:ss.SSSS
+     * @return time
+     */
     public static String getTime() {
         Clock clock = Clock.systemDefaultZone();
         long millisecond = clock.millis();
         return (new SimpleDateFormat("HH:mm:ss.SSSS")).format(new Date(millisecond));
     }
 
+    /**
+     * Returns the current date in the format: dd:MM:yyyy
+     * @return date
+     */
     public static String getDate() {
         return (new SimpleDateFormat("dd:MM:yyyy").format(new Date()));
     }
 
+    /**
+     * The real creator of the sensors.
+     * Creates sensors accordingly to the chosen amount.
+     * @param amount of sensors
+     * @return list of sensors
+     */
     public static List<Sensor> create_Sensors(int[] amount) {
         List<Sensor> sensorList = new ArrayList<>();
         int id = 0;
@@ -127,6 +154,11 @@ public class RandomData {
         sensor.add(data);
     }
 
+    /**
+     * Creates random entries for the sensor according to the data type.
+     * @param dataType String
+     * @return random entry of the given data type
+     */
     private static String generateSensorData(String dataType) {
         for (String[] d : dataTypes) {
             if (d[0].equals(dataType)) {

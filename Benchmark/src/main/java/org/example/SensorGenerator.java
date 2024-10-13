@@ -12,6 +12,11 @@ public class SensorGenerator {
     // Layout sensorList: {"Name", "typeOfSensor", "Data1", "dataRange_min1", "dataRange_max1", "Data2", "dataRange_min2", "dataRange_max2"}
     static List<Sensor> sensorList= new ArrayList<>();
 
+    /**
+     * Creates Sensors and fills them with data accordingly to the given sensorArray.
+     * Once the sensors are created it writes their data into csv files.
+     * @param sensorArray
+     */
     public static void creator(int[] sensorArray) {
         // create Sensors
         RandomData.setSensors();
