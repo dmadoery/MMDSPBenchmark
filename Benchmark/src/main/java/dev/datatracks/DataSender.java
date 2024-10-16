@@ -1,7 +1,6 @@
-package org.example;
+package dev.datatracks;
 
 import com.opencsv.CSVReader;
-import com.opencsv.CSVWriter;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 

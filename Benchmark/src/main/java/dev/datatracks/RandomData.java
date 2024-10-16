@@ -1,5 +1,6 @@
-package org.example;
+package dev.datatracks;
 
+import dev.datatracks.simulation.Sensor;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.time.Clock;
@@ -62,6 +63,7 @@ public class RandomData {
         return random.nextDouble() * (max - min) + min;
     }
 
+
     /**
      * Returns the current time in the format: HH:mm:ss.SSSS
      * @return time
@@ -86,7 +88,7 @@ public class RandomData {
      * @param amount of sensors
      * @return list of sensors
      */
-    public static List<Sensor> create_Sensors(int[] amount) {
+    public static List<Sensor> createSensors(int[] amount) {
         List<Sensor> sensorList = new ArrayList<>();
         int id = 0;
         int length = amount.length;
@@ -125,6 +127,8 @@ public class RandomData {
     }
 
     private static void create_data(Sensor sensor, int l) {
+        sensor.dataPoints.add(sensor.sample());
+
         String[] data = new String[l];
         data[0] = sensor.type;
         data[1] = sensor.id;
@@ -154,19 +158,7 @@ public class RandomData {
         sensor.add(data);
     }
 
-    /**
-     * Creates random entries for the sensor according to the data type.
-     * @param dataType String
-     * @return random entry of the given data type
-     */
-    private static String generateSensorData(String dataType) {
-        for (String[] d : dataTypes) {
-            if (d[0].equals(dataType)) {
-                return String.valueOf(getRandom(Double.parseDouble(d[1]), Double.parseDouble(d[2])));
-            }
-        }
-        return "N/A"; // Default case if no matching data type found
-    }
+
 
     public static List<String> listFilesForFolder(final File folder) {
         List<String> filenames = new LinkedList<String>();

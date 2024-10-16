@@ -1,7 +1,8 @@
-package org.example;
+package dev.datatracks;
 
 import com.opencsv.CSVWriter;
 
+import dev.datatracks.simulation.Sensor;
 import java.io.*;
 import java.util.*;
 
