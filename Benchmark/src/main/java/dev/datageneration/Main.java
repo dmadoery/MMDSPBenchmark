@@ -1,5 +1,7 @@
 package dev.datageneration;
 
+import dev.datageneration.sending.DataSender;
+import dev.datageneration.simulation.DataGenerator;
 import dev.datageneration.simulation.SensorGenerator;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -9,7 +11,7 @@ public class Main {
         boolean test  = true;
         int[] sensorArray = new int[] {20, 20, 20}; //TODO: change amount of Sensors and their data entries
         SensorGenerator.creator(sensorArray);
-//        DataGenerator.dataGenerator();
+        DataGenerator.dataGenerator();
 //        DataSender send = new DataSender(test);
 //        send.processData(test);
     }

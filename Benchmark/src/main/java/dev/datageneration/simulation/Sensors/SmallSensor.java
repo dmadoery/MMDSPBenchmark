@@ -1,9 +1,8 @@
 package dev.datageneration.simulation.Sensors;
 
-import dev.datageneration.aggregate.DataPoint;
 import dev.datageneration.simulation.types.DataType;
+import org.json.JSONObject;
 
-import java.util.List;
 
 public class SmallSensor extends Sensor {
 
@@ -13,17 +12,12 @@ public class SmallSensor extends Sensor {
     DataType dType2;
 
 
-    public SmallSensor(String type, int id, List<String[]> dataPoints, String di1, String dI2, DataType dType1, DataType dType2) {
-        super(type, id, dataPoints);
-        this.di1 = di1;
-        this.di2 = dI2;
-        this.dType1 = dType1;
-        this.dType2 = dType2;
-    }
-
-    @Override
-    public DataPoint createDataPoint() {
-        return new DataPoint( List.of(dType1.sample(), dType2.sample()) );
+    public SmallSensor(String type, int id, String[] dataInfo) {
+        super(type, id);
+        this.di1 = dataInfo[0];
+        this.di2 = dataInfo[1];
+        this.dType1 = dataTypes.get(di1);
+        this.dType2 = dataTypes.get(di2);
     }
 
     @Override
@@ -33,6 +27,26 @@ public class SmallSensor extends Sensor {
 
     @Override
     public void generateDataPoint() {
-        dataPoints.add(new String[] {dType1.sample(), dType2.sample()});
+        String[] data = new String[] {dType1.sample(), dType2.sample()};
+
+        //create JSON object
+        String[] header = getHeader();
+        int f = getFrequencyValue();
+        if(counter == f) {
+            freq ++;
+            counter = 0;
+        }
+        JSONObject sensorDataObject = new JSONObject();
+        for (int j = 0; j < header.length; j++) {
+            sensorDataObject.put(header[j], Double.valueOf(data[j])); // Add each sensor data point to JSON object
+        }
+        // Wrap each JSON object with a number prefix
+        JSONObject freqObject = new JSONObject();
+        freqObject.put(getType(), sensorDataObject);
+        freqObject.put("freq", freq);
+        counter ++;
+
+        // Add the prefixed object to the JSON array
+        dataPoints.put(freqObject);
     }
 }

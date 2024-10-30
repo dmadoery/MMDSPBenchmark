@@ -40,3 +40,7 @@ build/
 ## CSV ###
 *.csv
 *.CSV
+
+## JSON ##
+*.json
+*.JSON

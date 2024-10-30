@@ -3,9 +3,11 @@ package dev.datageneration.simulation.Sensors;
 import dev.datageneration.aggregate.DataPoint;
 import dev.datageneration.simulation.types.*;
 import lombok.Getter;
+import org.json.JSONArray;
 
 import java.util.*;
 
+@Getter
 public abstract class Sensor {
 
     //Info of all possible data types, with their possible configurations.
@@ -20,61 +22,47 @@ public abstract class Sensor {
         put("ml/min", new IntType(500, 4000));
         put("on/off", new IntType(0, 1));
         put("drs-zone", new IntType(0, 3));
+        put("test", new LongType(0, 10));
+
         //TODO: Add more data types
     }};
 
     public static Map<String, Integer> frequency = new HashMap<>(){{
-        put( "tyre", 10); //frequency --> 10 entries per second
-        put( "heat", 10);
-        put( "speed", 10);
-        put( "g_force", 10);
-        put( "fuel_pump", 10);
-        put( "DRS", 10);
-        put( "brake", 10);
+        put( "tyre", 5); //frequency --> 10 entries per second
+        put( "heat", 1);
+        put( "speed", 2);
+        put( "g_force", 3);
+        put( "fuel_pump", 1);
+        put( "DRS", 1);
+        put( "brake", 4);
         put( "long", 10);
     }};
 
-    @Getter
     final String type;
-    @Getter
     final int id;
-    @Getter
-    final List<String[]> dataPoints;
-    @Getter
+    final JSONArray dataPoints = new JSONArray();
     final int frequencyValue;
+    public int counter = 0;
+    public int freq = 1;
 
-    public Sensor(String type, int id, List<String[]> dataPoints) {
+    public Sensor(String type, int id) {
         this.id = id;
         this.type = type;
-        this.dataPoints = dataPoints;
         this.frequencyValue = frequency.get(type);
     }
 
     /**
-     * Creates a single datapoint of this specific sensor using the provided random generator.
-     *
-     */
-    public abstract DataPoint createDataPoint();
-
-//    public static Sensor parse(List<String> strings) {
-//        String type = strings.get(0);
-//        String id = strings.get(1);
-//        List<String> arguments = strings.subList(2, strings.size());
-//        //TODO: Solve Problem here
-//        //return new S(type, id, arguments) {
-//        //};
-//        return null;
-//    }
-
+     * Gets the information of the different data entries.
+     **/
     public abstract String[] getHeader();
 
-
+    // Creates Json object.
     public abstract void generateDataPoint();
 
-    public void printDataPoints() {
-        for (String[] dp : dataPoints) {
-            System.out.println(Arrays.toString(dp));
-        }
-    }
+//    public void printDataPoints() {
+//        for (String[] dp : dataPoints) {
+//            System.out.println(Arrays.toString(dp));
+//        }
+//    }
 
 }

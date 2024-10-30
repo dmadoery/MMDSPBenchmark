@@ -9,7 +9,7 @@ import java.util.*;
 
 public class DataSender {
     private static final String name = "ALL_DATA";
-    private static final File inputFile = new File("src/main/resources/" + name + ".csv");
+    private static final File inputFile = new File("src/main/resources/" + name + ".json");
     private static final String TOPIC = "F1Sensors";
     private static final String KAFKA_BROKER = "localhost:9092"; // Replace with your Kafka broker address
     private KafkaProducer<String, String> producer;
@@ -29,9 +29,10 @@ public class DataSender {
     /**
      * Reads the data form the csv file and sends it to Kafka.
      * @param isTestMode boolean
-     * @throws Exception
      */
     public void processData(boolean isTestMode) throws Exception {
+        //TODO: change this to use Json!
+        //TODO: shall send all entries with same freq number simultaneously.
         try (CSVReader reader = new CSVReader(new FileReader(inputFile))) {
             String[] header = reader.readNext(); // Read header line
             String[] line;
