@@ -80,19 +80,6 @@ public class RandomData {
         if (length == RandomData.sensors.size()) {
             for (int i = 0; i < length; i++) {
                 Sensor s = sensorBuilder(i, amount, id);
-//                String[] data = RandomData.sensors.get(i);
-//                String type = data[0];
-//                String[] dataInfos = new String[data.length - 1];
-//                if (RandomData.sensors.get(i).length - 1 >= 0)
-//                    System.arraycopy(data, 1, dataInfos, 0, data.length - 1);
-////                System.out.println(dataInfos.length);
-//                Sensor s = chooseSensor(dataInfos.length, type, id, dataInfos);
-//                for (int j = 0; j < amount[i]; j++) {
-//                    if (s != null) {
-//                        s.generateDataPoint();
-////                        System.out.println(count++);
-//                    }
-//                }
                 sensorList.add(s);
                 id ++;
             }

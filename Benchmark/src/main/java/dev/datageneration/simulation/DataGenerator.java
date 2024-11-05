@@ -53,7 +53,7 @@ public class DataGenerator {
         // Sort the list based on the "freq" key in ascending order
         allData.sort(Comparator.comparingInt(obj -> obj.getInt("freq")));  // Sort by freq in ascending order
 
-        // Check if we have data to write
+        // Check if we have data
         if (allData.isEmpty()) {
             System.out.println("No data to write.");
             return;  // Exit if no data to write
