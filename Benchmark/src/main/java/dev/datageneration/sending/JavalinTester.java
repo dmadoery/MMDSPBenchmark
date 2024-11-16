@@ -6,12 +6,13 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.Objects;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class JavalinTester {
     static Javalin server = null;
     @Getter
-    private static final LinkedBlockingQueue<JSONObject> messages = new LinkedBlockingQueue<>();
+    private static final ConcurrentLinkedQueue<JSONObject> messages = new ConcurrentLinkedQueue<>();
 
     public static void starting() {
         if (server == null) {
@@ -35,11 +36,12 @@ public class JavalinTester {
     }
 
     public static JSONObject receiving() {
-        return new JSONObject(Objects.requireNonNull(messages.poll()));
+        JSONObject message = messages.poll();
+        if (Objects.isNull(message)) {
+            JSONObject error = new JSONObject();
+            error.put("null", true);
+            return error;
+        }
+        return message;
     }
-
-//    public static void main(String[] args) {
-//        Javalin app = Javalin.create().start(7777);
-//        app.get("/", ctx -> ctx.result("Hello, Javalin!"));
-//    }
 }

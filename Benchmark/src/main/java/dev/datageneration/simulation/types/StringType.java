@@ -4,11 +4,13 @@ import dev.datageneration.simulation.RandomData;
 
 import java.util.List;
 
-public record LongType(int min, int max) implements DataType{
+public record StringType() implements DataType {
 
     @Override
     public String sample() {
-        return String.valueOf(RandomData.getRandom(min, max));
+        String[] dir = new String[] {"left", "right", "straight"};
+        int num = (int)(RandomData.getRandom(0,2));
+        return dir[num];
     }
 
     @Override

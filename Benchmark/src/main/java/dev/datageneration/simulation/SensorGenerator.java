@@ -25,7 +25,7 @@ public class SensorGenerator {
         int amountSensors = sensorArray.length;
         sensorList = RandomData.create_Sensors(sensorArray);
 
-        // write data to csv file for each sensor
+        // write data to json file for each sensor
         for (int i = 0; i < amountSensors; i++) {
             Sensor sensor = sensorList.get(i);
             File jsonFile = new File("src/main/resources/" + sensor.getId() + "_" + sensor.getType() + ".json");

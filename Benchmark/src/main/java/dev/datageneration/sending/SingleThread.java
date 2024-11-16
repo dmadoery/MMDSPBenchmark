@@ -21,19 +21,20 @@ public class SingleThread implements Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        while (!ThreadedSender.stop) {
             try {
-                JSONObject message = queue.take();
-                if (message.getInt("freq") == ThreadedSender.getFrequency()) {
-                    JavalinTester.sending(message);
-                    System.out.println("Message sent to topic " + topic + ": " + message.toString());
-                } else {
-                    queue.put(message);
+//                if(ThreadedSender.stop) {
+//                    Thread.currentThread().interrupt();
+//                    return;
+//                }
+                JSONObject message = queue.peek();
+                if(message == null) {
+                    continue;
                 }
-                //TODO: stopping the threads not working!! why?
-                if(ThreadedSender.stop) {
-                    Thread.currentThread().interrupt();
-                    break;
+                if (message.getInt("tick") == ThreadedSender.getTimeStep()) {
+                    queue.take();
+                    JavalinTester.sending(message);
+                    //System.out.println("Message sent to topic " + topic + ": " + message.toString());
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
@@ -42,4 +43,13 @@ public class SingleThread implements Runnable {
             }
         }
     }
+
+    public boolean alive() {
+        return Thread.currentThread().isAlive();
+    }
+
+    public int length() {
+        return queue.size();
+    }
+
 }

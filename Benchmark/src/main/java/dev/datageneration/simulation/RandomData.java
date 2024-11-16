@@ -1,13 +1,8 @@
 package dev.datageneration.simulation;
 
-import dev.datageneration.simulation.Sensors.MediumSensor;
-import dev.datageneration.simulation.Sensors.MiniSensor;
-import dev.datageneration.simulation.Sensors.Sensor;
-import dev.datageneration.simulation.Sensors.SmallSensor;
+import dev.datageneration.simulation.Sensors.*;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.time.Clock;
 import java.util.*;
 
 public class RandomData {
@@ -29,31 +24,25 @@ public class RandomData {
     public static void setSensors(){
         RandomData.sensors.clear();
         //RandomData.sensors.add(new String[] {"typeOfSensor", "Data1", "Data2", ..., Data6});
-        RandomData.sensors.add(new String[] {"heat", "temperature celsius"}); //heat sensor
-        RandomData.sensors.add(new String[] {"heat", "temperature celsius"});//heat sensor,
-        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//front_left_tyre
-        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//front_right_tyre
-        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//rear_left_tyre
-        RandomData.sensors.add(new String[] {"tyre", "temperature celsius", "pressure psi"});//rear_right_tyre
-        RandomData.sensors.add(new String[] {"speed", "kmp/h","mp/h"});//speed_sensor
-        RandomData.sensors.add(new String[] {"g_force", "direction", "g"});//g_sensor
-        RandomData.sensors.add(new String[] {"fuel_pump", "temperature celsius", "ml/min"});//fuel_pump_sensor
+        RandomData.sensors.add(new String[] {"heat", "temperature c"}); //heat sensor
+        RandomData.sensors.add(new String[] {"heat", "temperature c"});//heat sensor,
+        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//front_left_tyre
+        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//front_right_tyre
+        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//rear_left_tyre
+        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//rear_right_tyre
+        RandomData.sensors.add(new String[] {"speed", "kmp/h","mp/h", "acceleration", "wind speed"});//speed_sensor
+        RandomData.sensors.add(new String[] {"g_force", "g-lateral", "g-longitudinal"});//g_sensor
+        RandomData.sensors.add(new String[] {"fuel_pump", "temperature fuelP", "ml/min"});//fuel_pump_sensor
         RandomData.sensors.add(new String[] {"DRS", "on/off", "drs-zone"});//drs_sensor
-        RandomData.sensors.add(new String[] {"brake", "temperature celsius","brake_pressure"});//front_left_brake
-        RandomData.sensors.add(new String[] {"brake", "temperature celsius", "brake_pressure"});//front_right_brake
-        RandomData.sensors.add(new String[] {"brake", "temperature celsius", "brake_pressure"});//rear_left_brake
-        RandomData.sensors.add(new String[] {"brake", "temperature celsius", "brake_pressure"});//rear_right_brake
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "direction"});
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "direction"});
-
-
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
-        RandomData.sensors.add(new String[] {"long", "temperature celsius", "brake_pressure", "test", "test"});
-
+        RandomData.sensors.add(new String[] {"brake", "temperature brake","brake_pressure", "wear"});//front_left_brake
+        RandomData.sensors.add(new String[] {"brake", "temperature brake", "brake_pressure", "wear"});//front_right_brake
+        RandomData.sensors.add(new String[] {"brake", "temperature brake", "brake_pressure", "wear"});//rear_left_brake
+        RandomData.sensors.add(new String[] {"brake", "temperature brake", "brake_pressure", "wear"});//rear_right_brake
+        RandomData.sensors.add(new String[] {"accelerometer", "throttlepedall"});
+        RandomData.sensors.add(new String[] {"engine", "temperature engine", "rpm", "fuelFlow", "oil_pressure", "fuel_pressure", "exhaust"});
+        RandomData.sensors.add(new String[] {"blackbox", "array_of_data"});
+        RandomData.sensors.add(new String[] {"steering", "direction", "turning_degree"});
+        RandomData.sensors.add(new String[] {"blackbox", "array_of_data"});
     }
 
     /**
@@ -76,42 +65,32 @@ public class RandomData {
         List<Sensor> sensorList = new ArrayList<>();
         int id = 0;
         int length = amount.length;
-        int count = 0;
-        if (length == RandomData.sensors.size()) {
-            for (int i = 0; i < length; i++) {
-                Sensor s = sensorBuilder(i, amount, id);
-                sensorList.add(s);
-                id ++;
-            }
-            return sensorList;
-
-        } else {
-            int k = 0;
-            while (length != 0) {
-                int i = (int) getRandom(0, RandomData.sensors.size());
-                String[] data = RandomData.sensors.get(i);
-                String type = data[0];
-                String[] dataInfos = new String[data.length - 1];
-                if (RandomData.sensors.get(i).length - 1 >= 0)
-                    System.arraycopy(data, 1, dataInfos, 0, data.length - 1);
-//                System.out.println(dataInfos.length);
-                Sensor s = chooseSensor(dataInfos.length, type, id, dataInfos);
-                for (int j = 0; j < amount[k]; j++) {
-                    if (s != null) {
-                        s.generateDataPoint();
-//                        System.out.println(count++);
-                    }
+        int k = 0;
+        while (length != 0) {
+            int i = (int) getRandom(0, RandomData.sensors.size());
+            String[] data = RandomData.sensors.get(i);
+            String type = data[0];
+            String[] dataInfos = new String[data.length - 1];
+            if (RandomData.sensors.get(i).length - 1 >= 0)
+                System.arraycopy(data, 1, dataInfos, 0, data.length - 1);
+            System.out.println(dataInfos.length);
+            System.out.println(Arrays.toString(dataInfos));
+            Sensor s = chooseSensor(dataInfos.length, type, id, dataInfos);
+            for (int j = 0; j < amount[k]; j++) {
+                if (s != null) {
+                    s.generateDataPoint();
                 }
-                k ++;
-                id ++;
-                sensorList.add(s);
-                if (length < RandomData.sensors.size()) {
-                    RandomData.sensors.remove(i);
-                }
-                length --;
             }
-            return sensorList;
+            k ++;
+            id ++;
+            sensorList.add(s);
+            if (length < RandomData.sensors.size()) {
+                RandomData.sensors.remove(i);
+            }
+            length --;
         }
+        return sensorList;
+
     }
 
     public static List<String> listFilesForFolder(final File folder) {
@@ -120,15 +99,19 @@ public class RandomData {
             if (fileEntry.isDirectory()) {
                 listFilesForFolder(fileEntry);
             } else {
-                if(fileEntry.getName().contains(".json")) //TODO: change here if .csv is used
+                if(fileEntry.getName().contains(".json"))
                     filenames.add(fileEntry.getName());
             }
         }
         return filenames;
     }
 
-    public static Sensor chooseSensor(int length, String type, int id, String[] dataInfos) { //TODO: add more Sensor sizes
+    public static Sensor chooseSensor(int length, String type, int id, String[] dataInfos) {
         Sensor s = null;
+        if(type.equals("blackbox")) {
+            s = new BlackboxSensor(type, id, dataInfos);
+            return s;
+        }
         switch (length) {
             case 0:
                 return null;
@@ -141,36 +124,15 @@ public class RandomData {
             case 3:
                 s = new MediumSensor(type, id, dataInfos);
                 break;
-            //TODO: extend
-//            case 4:
-//                s = new NormalSensor(type, id, dataInfos);
-//                break;
-//            case 5:
-//                s = new LongSensor(type, id, dataInfos);
-//                break;
-//            case 6:
-//                s = new BigSensor(type, id, dataInfos);
-//                break;
-//            case 7:
-//                s = new UltraSensor(type, id, dataInfos);
-//                break;
-        }
-        return s;
-    }
-
-    public static Sensor sensorBuilder(int i, int[] amount, int id) {
-        String[] data = RandomData.sensors.get(i);
-        String type = data[0];
-        String[] dataInfos = new String[data.length - 1];
-        if (RandomData.sensors.get(i).length - 1 >= 0)
-            System.arraycopy(data, 1, dataInfos, 0, data.length - 1);
-//                System.out.println(dataInfos.length);
-        Sensor s = chooseSensor(dataInfos.length, type, id, dataInfos);
-        for (int j = 0; j < amount[i]; j++) {
-            if (s != null) {
-                s.generateDataPoint();
-//                        System.out.println(count++);
-            }
+            case 4:
+                s = new NormalSensor(type, id, dataInfos);
+                break;
+            case 5:
+                s = new LongSensor(type, id, dataInfos);
+                break;
+            case 6:
+                s = new BigSensor(type, id, dataInfos);
+                break;
         }
         return s;
     }

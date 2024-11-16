@@ -36,19 +36,21 @@ public class MediumSensor extends Sensor {
         //create JSON object
         String[] header = getHeader();
 
-        int f = getFrequencyValue();
+        int f = getTickValue();
         if(counter == f) {
-            freq ++;
+            tick ++;
             counter = 0;
         }
         JSONObject sensorDataObject = new JSONObject();
         for (int j = 0; j < header.length; j++) {
             sensorDataObject.put(header[j], Double.valueOf(data[j])); // Add each sensor data point to JSON object
         }
+        sensorDataObject.put("id", id);
+        sensorDataObject.put("type", getType());
         // Wrap each JSON object with a number prefix
         JSONObject freqObject = new JSONObject();
-        freqObject.put(getType(), sensorDataObject);
-        freqObject.put("freq", freq);
+        freqObject.put("data", sensorDataObject);
+        freqObject.put("tick", tick);
         counter ++;
 
         // Add the prefixed object to the JSON array

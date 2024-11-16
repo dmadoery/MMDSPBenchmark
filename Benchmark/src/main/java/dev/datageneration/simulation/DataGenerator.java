@@ -1,5 +1,6 @@
 package dev.datageneration.simulation;
 
+import dev.datageneration.jsonHandler.JsonFileHandler;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -20,55 +21,25 @@ public class DataGenerator {
     public static void dataGenerator() throws Exception {
         filenames = RandomData.listFilesForFolder(folder);
 
-        // Debug: Print filenames to ensure correct files are read
-        System.out.println("Filenames: " + filenames);
-
         for (String file : filenames) {
             if (file.endsWith(".json")) {
-                FileReader fReader = new FileReader(new File(folder, file));
-                BufferedReader bReader = new BufferedReader(fReader);
-
-                // Read the entire content of the JSON file
-                StringBuilder jsonContent = new StringBuilder();
-                String line;
-                while ((line = bReader.readLine()) != null) {
-                    jsonContent.append(line);
-                }
-                bReader.close();
-
-                // Parse the JSON content
-                JSONArray jsonArray = new JSONArray(jsonContent.toString());
-
-                // Process each entry in the JSON array
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject = jsonArray.getJSONObject(i);
-                    allData.add(jsonObject);  // Store each JSONObject in the allData list
-                }
+                JsonFileHandler.readJsonFile(file, allData);
             }
         }
 
         // Debug: Print size of allData list
         System.out.println("Total JSON objects collected: " + allData.size());
 
-        // Sort the list based on the "freq" key in ascending order
-        allData.sort(Comparator.comparingInt(obj -> obj.getInt("freq")));  // Sort by freq in ascending order
+        // Sort the list based on the "tick" key in ascending order
+        allData.sort(Comparator.comparingInt(obj -> obj.getInt("tick")));  // Sort by tick in ascending order
 
         // Check if we have data
         if (allData.isEmpty()) {
             System.out.println("No data to write.");
-            return;  // Exit if no data to write
+            return;
         }
 
-        // Write the sorted data back to a JSON file "ALL"
-        File outputFile = new File("src/main/resources/" + fName + ".json");
-
-        try (FileWriter outputfile = new FileWriter(outputFile)) {
-            JSONArray outputArray = new JSONArray(allData);  // Convert the list of JSONObjects back to JSONArray
-            outputfile.write(outputArray.toString(4));  // Indented output for readability
-            System.out.println("Data successfully written to: " + outputFile.getAbsolutePath());
-        } catch (IOException e) {
-            System.err.println("Error writing the output file: " + e.getMessage());
-            throw e;
-        }
+        // Write the sorted data back to a JSON file, fName = "ALL_DATA"
+        JsonFileHandler.writeJsonFile(fName, allData);
     }
 }
