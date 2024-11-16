@@ -29,6 +29,7 @@ public class DataReceiver {
     static int earlySent;
     static int amountWarnings;
     static long startTime;
+    static boolean allReceived = false;
 
     /*
      * TODO: create data aggregator (do something with the data) how and with kafka?
@@ -84,8 +85,11 @@ public class DataReceiver {
 
         if (dataReceived.size() > dataSent.size()) {
             doubleEntries = dataReceived.size() - dataSent.size();
+            allReceived = true;
         } else if (dataReceived.size() < dataSent.size()) {
             missingEntries = dataSent.size() - dataReceived.size();
+        } else {
+            allReceived = true;
         }
 
         // End time
@@ -100,7 +104,7 @@ public class DataReceiver {
                 "\nDouble Entries in data: " + doubleEntries +
                 "\nEarly Sent in data: " + earlySent +
                 "\nAmount Warnings in data: " + amountWarnings +
-                "\nThroughput of data: " + throughput +
+                "\nThroughput of data: " + throughput + " | All data received: " + allReceived +
                 "\nAmount of Sensors used: " + amountSensors);
     }
 

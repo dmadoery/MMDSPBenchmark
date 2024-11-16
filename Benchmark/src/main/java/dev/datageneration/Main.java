@@ -1,6 +1,7 @@
 package dev.datageneration;
 
 import dev.datageneration.aggregate.AggregatedData;
+import dev.datageneration.aggregate.ErrorCreator;
 import dev.datageneration.aggregate.WindowedData;
 import dev.datageneration.jsonHandler.JsonFileHandler;
 import dev.datageneration.receiver.DataReceiver;
@@ -9,7 +10,7 @@ import dev.datageneration.sending.JavalinTester;
 import dev.datageneration.simulation.DataGenerator;
 import dev.datageneration.simulation.SensorGenerator;
 import dev.datageneration.sending.ThreadedSender;
-import org.eclipse.jetty.io.MappedByteBufferPool;
+//import org.eclipse.jetty.io.MappedByteBufferPool;
 
 import java.util.concurrent.TimeUnit;
 
@@ -23,6 +24,7 @@ public class Main {
         boolean windowed = true;
         int[] sensorArray = new int[] {100, 150, 400}; //TODO: change amount of Sensors and their data entries
         SensorGenerator.creator(sensorArray);
+        ErrorCreator.dataWithErrors();
         DataGenerator.dataGenerator();
         AggregatedData.aggregatedData();
         WindowedData.createWindowedData();

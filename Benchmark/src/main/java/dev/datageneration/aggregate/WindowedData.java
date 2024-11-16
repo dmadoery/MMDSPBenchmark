@@ -38,12 +38,17 @@ public class WindowedData {
         while (!data.isEmpty()) {
             JSONObject dataEntry = data.getFirst();
             JSONObject d = dataEntry.getJSONObject("data");
-            getErrors(d.getString("type"), dataEntry);
+            getWarnings(d.getString("type"), dataEntry);
         }
     }
 
-    private static void getErrors(String type, JSONObject jsonObject) {
+    private static void getWarnings(String type, JSONObject jsonObject) {
         String warning;
+        if(jsonObject.getJSONObject("data").has("Error")) {
+            windowedData.add(jsonObject);
+            data.remove(jsonObject);
+            return;
+        }
         switch (type) {
             case "tyre":
                 if(jsonObject.getJSONObject("data").getInt("temperature tyre") > 100) {
@@ -114,5 +119,4 @@ public class WindowedData {
         error.put("tick", jsonObject.getInt("tick"));
         windowedData.add(error);
     }
-
 }

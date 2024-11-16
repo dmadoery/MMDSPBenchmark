@@ -28,7 +28,7 @@ public class AggregatedData {
         filenames = listFilesForFolder(folder);
 
         for (String file : filenames) {
-            if (file.endsWith(".json") && !(file.equals("ALL_DATA.json"))) {
+            if (file.endsWith(".json") && !(file.equals("ALL_DATA.json")) && !(file.equals("windowedData.json"))) {
                 readJsonFile(file, allData);
             }
         }
@@ -180,7 +180,7 @@ public class AggregatedData {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
-                if (d.getInt("id") == id) {
+                if (d.getInt("id") == id && !d.has("Error")) {
                     p += d.getDouble("throttlepedall");
                     counter++;
                     index++;
@@ -200,7 +200,7 @@ public class AggregatedData {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
-                if (d.getInt("id") == id) {
+                if (d.getInt("id") == id && !d.has("Error")) {
                     p += d.getDouble("ml/min");
                     counter++;
                     index++;
@@ -220,7 +220,7 @@ public class AggregatedData {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
-                if (d.getInt("id") == id) {
+                if (d.getInt("id") == id && !d.has("Error")) {
                     p += d.getDouble("rpm");
                     counter++;
                     index ++;
@@ -240,7 +240,7 @@ public class AggregatedData {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
-                if(d.getInt("id") == id) {
+                if(d.getInt("id") == id && !d.has("Error")) {
                     if(d.get("type").equals("tyre")) {
                         p += d.getDouble("pressure psi");
                     } else if(d.get("type").equals("engine")) {
@@ -264,7 +264,7 @@ public class AggregatedData {
             while (index < allData.size()) {
                 JSONObject d = allData.get(index);
                 JSONObject obj = (JSONObject) d.get("data");
-                if (obj.getInt("id") == id) {
+                if (obj.getInt("id") == id && !obj.has("Error")) {
                     if (obj.getString("type").equals("tyre")) {
                         p += obj.getInt("temperature tyre");
                     } else if(obj.getString("type").equals("engine")) {
