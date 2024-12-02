@@ -1,6 +1,5 @@
 package dev.datageneration.jsonHandler;
 
-import dev.datageneration.simulation.RandomData;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -8,9 +7,10 @@ import java.io.*;
 import java.util.List;
 
 public class JsonFileHandler {
-    static final File folder = new File("src/main/resources");
+    static final File folderAggregated = new File("src/main/resources/");
+    static final File folderSensors = new File("src/main/resources/sensors");
     
-    public static void readJsonFile(String fileName, List<JSONObject> allData) throws IOException {
+    public static void readJsonFile(File folder, String fileName, List<JSONObject> allData) throws IOException {
             FileReader fReader = new FileReader(new File(folder, fileName));
             BufferedReader bReader = new BufferedReader(fReader);
 
@@ -32,9 +32,9 @@ public class JsonFileHandler {
             }
     }
 
-    public static void writeJsonFile(String fName, List<JSONObject> allData) throws IOException {
+    public static void writeJsonFile(File folder, String fName, List<JSONObject> allData) throws IOException {
         // Write the sorted data back to a JSON file "ALL_DATA"
-        File outputFile = new File("src/main/resources/" + fName + ".json");
+        File outputFile = new File(folder + "/" + fName + ".json");
 
         try (FileWriter outputfile = new FileWriter(outputFile)) {
             JSONArray outputArray = new JSONArray(allData);  // Convert the list of JSONObjects back to JSONArray
@@ -47,16 +47,29 @@ public class JsonFileHandler {
     }
 
     public static void deleteAllJsonFiles() {
-        File[] files = folder.listFiles();
+        File[] files = folderAggregated.listFiles() ;
+        File[] files1 = folderSensors.listFiles();
 
         if (files != null) {
             for (File file : files) {
                 if (file.isFile() && file.getName().endsWith(".json")) {
                     boolean isDeleted = file.delete();
                     if (isDeleted) {
-//                        System.out.println("Deleted: " + file.getName());
+                        System.out.println("Deleted: " + file.getName());
                     } else {
-//                        System.out.println("Failed to delete: " + file.getName());
+                        System.out.println("Failed to delete: " + file.getName());
+                    }
+                }
+            }
+        }
+        if (files1 != null) {
+            for (File file : files1) {
+                if (file.isFile() && file.getName().endsWith(".json")) {
+                    boolean isDeleted = file.delete();
+                    if (isDeleted) {
+                        System.out.println("Deleted: " + file.getName());
+                    } else {
+                        System.out.println("Failed to delete: " + file.getName());
                     }
                 }
             }

@@ -15,25 +15,28 @@ import static dev.datageneration.jsonHandler.JsonFileHandler.readJsonFile;
 import static dev.datageneration.jsonHandler.JsonFileHandler.writeJsonFile;
 import static dev.datageneration.simulation.RandomData.listFilesForFolder;
 
+
+/**
+ * This class ensures that the data which is sent from the sensors are more real.
+ * This is done by making some entries "null" entries and deleting some completely.
+ */
 public class ErrorCreator {
-    static final File folder = new File("src/main/resources");
-    static final String fName = "dataWithErrors";
+    static final File folderData = new File("src/main/resources/sensors");
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> data = new ArrayList<>();  // Store JSONObjects instead of String arrays
     static List<JSONObject> dataWithErrors = new ArrayList<>();  // Store JSONObjects instead of String arrays
 
     public static void dataWithErrors() throws IOException {
-        filenames = listFilesForFolder(folder);
+        filenames = listFilesForFolder(folderData);
 
         for (String file : filenames) {
-            if (file.endsWith(".json") && !(file.equals("ALL_DATA.json")) && !(file.equals("aggregatedData.json"))
-                    && !(file.equals("windowedData.json"))) {
+            if (file.endsWith(".json")) {
 
-                readJsonFile(file, data);
+                readJsonFile(folderData, file, data);
                 createErrors();
                 deleteEntries();
                 dataWithErrors.sort(Comparator.comparingInt(jsonObject -> jsonObject.getInt("tick")));
-                writeJsonFile( file.split("\\.")[0], dataWithErrors);
+                writeJsonFile(folderData, file.split("\\.")[0], dataWithErrors);
             }
         }
     }
@@ -42,7 +45,6 @@ public class ErrorCreator {
         int amountDeletions = (int) RandomData.getRandom(0, (double)dataWithErrors.size() /10);
         for (int i = 0; i < amountDeletions; i++) {
             int rand = (int)RandomData.getRandom(0, dataWithErrors.size() - 1);
-            JSONObject d = dataWithErrors.get(rand);
             dataWithErrors.remove(rand);
         }
     }

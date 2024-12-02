@@ -11,7 +11,7 @@ public class DataSender {
     private static final String name = "ALL_DATA";
     private static final File inputFile = new File("src/main/resources/" + name + ".json");
     private static final String TOPIC = "F1Sensors";
-    private static final String KAFKA_BROKER = "localhost:9092"; // Replace with your Kafka broker address
+    private static final String KAFKA_BROKER = "localhost:9092";
     private KafkaProducer<String, String> producer;
 
     public DataSender(boolean isTestMode) {

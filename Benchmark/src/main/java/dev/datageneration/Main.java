@@ -14,24 +14,18 @@ import dev.datageneration.sending.ThreadedSender;
 
 import java.util.concurrent.TimeUnit;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws Exception {
         JsonFileHandler.deleteAllJsonFiles();
-        boolean test  = true;
+        //boolean test  = true;
         boolean aggregated = false;
-        boolean windowed = true;
-        int[] sensorArray = new int[] {100, 150, 400}; //TODO: change amount of Sensors and their data entries
+        boolean windowed = false;
+        int[] sensorArray = new int[] {200, 100, 50, 60}; //TODO: change amount of Sensors and their data entries
         SensorGenerator.creator(sensorArray);
-        ErrorCreator.dataWithErrors();
+        ErrorCreator.dataWithErrors(); //create some data loss and null entries.
         DataGenerator.dataGenerator();
-        AggregatedData.aggregatedData();
-        WindowedData.createWindowedData();
-
-//        TimeUnit.SECONDS.sleep(10);
-//        DataSender send = new DataSender(test);
-//        send.processData(test);
+        AggregatedData.aggregatedData(); //get average over a time interval
+        WindowedData.createWindowedData(); //creates warnings if some data is not in a wished range
 
         Thread sendThread = new Thread(() -> {
             try {
@@ -43,12 +37,13 @@ public class Main {
 
         Thread receiveThread = new Thread(() -> {
             try {
-                DataReceiver.receive(aggregated, windowed); //TODO: change booleans for different modes
+                DataReceiver.receive(aggregated, windowed);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         receiveThread.start();
+        TimeUnit.SECONDS.sleep(2);
         sendThread.start();
 
 

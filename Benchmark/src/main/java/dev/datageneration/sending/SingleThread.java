@@ -1,5 +1,7 @@
 package dev.datageneration.sending;
 
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.json.JSONObject;
 
 import java.util.concurrent.BlockingQueue;
@@ -11,33 +13,31 @@ public class SingleThread implements Runnable {
     //Blockingqueue
     BlockingQueue<JSONObject> queue;
     //Kafka
-    //TODO: implement
+    KafkaProducer<String, String> producer;
 
-    public SingleThread(BlockingQueue<JSONObject> messageQueue, String topic /*, Kafka kafka*/) {
+    public SingleThread(BlockingQueue<JSONObject> messageQueue, String topic , KafkaProducer<String, String> producer) {
     this.queue = messageQueue;
     this.topic = topic;
-    //this.kafka = kafka;
+    this.producer = producer;
     }
 
     @Override
     public void run() {
         while (!ThreadedSender.stop) {
             try {
-//                if(ThreadedSender.stop) {
-//                    Thread.currentThread().interrupt();
-//                    return;
-//                }
                 JSONObject message = queue.peek();
                 if(message == null) {
                     continue;
                 }
                 if (message.getInt("tick") == ThreadedSender.getTimeStep()) {
                     queue.take();
-                    JavalinTester.sending(message);
-                    //System.out.println("Message sent to topic " + topic + ": " + message.toString());
+//                    JavalinTester.sending(message);
+                    ProducerRecord<String, String> record = new ProducerRecord<>(topic, message.toString());
+                    producer.send(record);
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
+                System.out.println(Thread.currentThread().getName());
                 System.out.println("Thread interrupted");
                 break;
             }

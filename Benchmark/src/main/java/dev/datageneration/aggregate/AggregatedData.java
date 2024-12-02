@@ -1,6 +1,5 @@
 package dev.datageneration.aggregate;
 
-import dev.datageneration.jsonHandler.JsonFileHandler;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -10,11 +9,13 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static dev.datageneration.jsonHandler.JsonFileHandler.readJsonFile;
+import static dev.datageneration.jsonHandler.JsonFileHandler.writeJsonFile;
 import static dev.datageneration.simulation.RandomData.listFilesForFolder;
 
 public class AggregatedData {
 
-    static final File folder = new File("src/main/resources");
+    static final File folderData = new File("src/main/resources/sensors");
+    static final File folderStore = new File("src/main/resources");
     static final String fName = "aggregatedData";
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> allData = new ArrayList<>();  // Store JSONObjects instead of String arrays
@@ -25,11 +26,11 @@ public class AggregatedData {
      * Reads the data from the generated JSON files and stores them in a list (allData).
      */
     public static void aggregatedData() throws Exception {
-        filenames = listFilesForFolder(folder);
+        filenames = listFilesForFolder(folderData);
 
         for (String file : filenames) {
-            if (file.endsWith(".json") && !(file.equals("ALL_DATA.json")) && !(file.equals("windowedData.json"))) {
-                readJsonFile(file, allData);
+            if (file.endsWith(".json")) {
+                readJsonFile(folderData, file, allData);
             }
         }
 
@@ -73,7 +74,7 @@ public class AggregatedData {
         aggregatedData.sort(Comparator.comparingInt(obj -> obj.getInt("tick")));  // Sort by tick in ascending order
 
         // Write the sorted data back to a JSON file "aggregatedData.json"
-        JsonFileHandler.writeJsonFile(fName, aggregatedData);
+        writeJsonFile(folderStore, fName, aggregatedData);
     }
 
     private static void createAverageAc(JSONObject data, int id) {

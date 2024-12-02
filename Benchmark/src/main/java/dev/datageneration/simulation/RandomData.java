@@ -42,7 +42,6 @@ public class RandomData {
         RandomData.sensors.add(new String[] {"engine", "temperature engine", "rpm", "fuelFlow", "oil_pressure", "fuel_pressure", "exhaust"});
         RandomData.sensors.add(new String[] {"blackbox", "array_of_data"});
         RandomData.sensors.add(new String[] {"steering", "direction", "turning_degree"});
-        RandomData.sensors.add(new String[] {"blackbox", "array_of_data"});
     }
 
     /**

@@ -1,15 +1,17 @@
 package dev.datageneration.simulation;
 
 import dev.datageneration.jsonHandler.JsonFileHandler;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.*;
 import java.util.*;
 
+import static dev.datageneration.jsonHandler.JsonFileHandler.writeJsonFile;
+
 
 public class DataGenerator {
-    static final File folder = new File("src/main/resources");
+    static final File folderData = new File("src/main/resources/sensors");
+    static final File folderStore = new File("src/main/resources");
     static final String fName = "ALL_DATA";
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> allData = new ArrayList<>();  // Store JSONObjects instead of String arrays
@@ -19,11 +21,11 @@ public class DataGenerator {
      * Always sorts the list by "prefix" and writes the sorted data back to a JSON file called ALL_DATA.json.
      */
     public static void dataGenerator() throws Exception {
-        filenames = RandomData.listFilesForFolder(folder);
+        filenames = RandomData.listFilesForFolder(folderData);
 
         for (String file : filenames) {
             if (file.endsWith(".json")) {
-                JsonFileHandler.readJsonFile(file, allData);
+                JsonFileHandler.readJsonFile(folderData, file, allData);
             }
         }
 
@@ -40,6 +42,6 @@ public class DataGenerator {
         }
 
         // Write the sorted data back to a JSON file, fName = "ALL_DATA"
-        JsonFileHandler.writeJsonFile(fName, allData);
+        writeJsonFile(folderStore, fName, allData);
     }
 }

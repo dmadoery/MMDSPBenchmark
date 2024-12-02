@@ -1,6 +1,8 @@
 package dev.datageneration.sending;
 
 import lombok.Getter;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -20,6 +22,9 @@ public class ThreadedSender {
     //TODO: Implement Kafka connection
     //Kafka Topic
     static String topic = "F1";
+    static KafkaProducer<String, String> producer;
+    private static final String KAFKA_BROKER = "localhost:9092";
+    
 
     @Getter
     static int timeStep = 1;
@@ -28,7 +33,6 @@ public class ThreadedSender {
     static int maxFrequency;
 
     public static void sendThreaded(int amountSensors, boolean sendAggregated, boolean sendWindowed) throws IOException, InterruptedException {
-        JavalinTester.starting();
         if (sendAggregated) {
             jsonArray = readJsonFile(pathAg);
         } else if (sendWindowed) {
@@ -38,24 +42,28 @@ public class ThreadedSender {
         }
         frequencyData = mapFrequency(jsonArray);
         addAllFrequencies();
-//        addNextFrequency();
+
+        Properties props = new Properties();
+        props.put("bootstrap.servers", KAFKA_BROKER);
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        producer = new KafkaProducer<>(props);
 
         JSONObject startMessage = new JSONObject();
         startMessage.put("start", amountSensors);
-        JavalinTester.sending(startMessage);
+        ProducerRecord<String, String> recordStart = new ProducerRecord<>(topic, startMessage.toString());
+        producer.send(recordStart);
         int threadAmount = 4;
         ExecutorService executor = Executors.newFixedThreadPool(threadAmount);
         SingleThread thread = null;
         for (int i = 0; i < threadAmount; i++) {
-            thread = new SingleThread(messageQueue, topic /*, kafka*/); //TODO: implement kafka
+            thread = new SingleThread(messageQueue, topic , producer); //TODO: implement kafka
             threads.add(thread);
             executor.submit(thread);
         }
         while (true) {
             JSONObject message = messageQueue.peek();
-            //System.out.println("Tick is: " + timeStep);
-            if (timeStep ==  maxFrequency+1) {
-//                System.out.println("Stopping While loop");
+            if (timeStep ==  maxFrequency + 1) {
                 break;
             }
             if (message == null) {
@@ -63,21 +71,18 @@ public class ThreadedSender {
                 continue;
             } else if (message.getInt("tick") > timeStep) {
                 int freqNew = message.getInt("tick");
-                frequencyAdder(freqNew);
-//                TimeUnit.MILLISECONDS.sleep(5); //TODO: if i remove this entries get lost...
-//                addNextFrequency();
-//                System.out.println("Added timeStep: " + timeStep);
+                while(freqNew != timeStep) {
+                    TimeUnit.MILLISECONDS.sleep(1);
+                    timeStep++;
+                }
             }
 
         }
-//        Thread.sleep(5000);
-//        System.out.println(thread.queue.size());
-//        System.out.println("End of while loop");
         JSONObject endMessage = new JSONObject();
         endMessage.put("end", true);
-        JavalinTester.sending(endMessage);
-//        System.out.println("Message Queue is empty");
-
+        ProducerRecord<String, String> recordEnd = new ProducerRecord<>(topic, endMessage.toString());
+        producer.send(recordEnd);
+//        JavalinTester.sending(endMessage);
         stop = true;
         executor.shutdown();
         try {
@@ -88,7 +93,7 @@ public class ThreadedSender {
             executor.shutdownNow(); // Force shutdown if interrupted
             Thread.currentThread().interrupt();
         }
-        JavalinTester.stop();
+//        JavalinTester.stop();
     }
 
     public static JSONArray readJsonFile(String path) throws IOException {
@@ -99,7 +104,6 @@ public class ThreadedSender {
         String line;
         while ((line = bReader.readLine()) != null) {
             jsonContent.append(line);
-//            System.out.println(line);
         }
         bReader.close();
         return new JSONArray(jsonContent.toString());
@@ -129,7 +133,6 @@ public class ThreadedSender {
         for (JSONArray first : frequencyData) {
             for (int j = 0; j < first.length(); j++) {
                 messageQueue.add(first.getJSONObject(j));
-//                System.out.println("Added Entrie: " + first.getJSONObject(j).toString());
             }
         }
     }
@@ -137,12 +140,9 @@ public class ThreadedSender {
     public static void addNextFrequency() {
         if(timeStep <= maxFrequency) {
             JSONArray first = frequencyData.get(timeStep - 1);
-//            System.out.println(first.getJSONObject(0).getInt("tick"));
-//            System.out.println("Tick: " + (timeStep));
             for (int j = 0; j < first.length(); j++) {
                 messageQueue.add(first.getJSONObject(j));
             }
-//            frequencyData.removeFirst();
         }
     }
 

@@ -15,23 +15,24 @@ import static dev.datageneration.simulation.RandomData.listFilesForFolder;
 
 public class WindowedData {
 
-    static final File folder = new File("src/main/resources");
+    static final File folderData = new File("src/main/resources/sensors");
+    static final File folderStore = new File("src/main/resources");
     static final String fName = "windowedData";
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> data = new ArrayList<>();  // Store JSONObjects instead of String arrays
     static List<JSONObject> windowedData = new ArrayList<>();  // Store JSONObjects instead of String arrays
 
     public static void createWindowedData() throws IOException {
-        filenames = listFilesForFolder(folder);
+        filenames = listFilesForFolder(folderData);
 
         for (String file : filenames) {
-            if (file.endsWith(".json") && !(file.equals("ALL_DATA.json")) && !(file.equals("aggregatedData.json"))) {
-                readJsonFile(file, data);
+            if (file.endsWith(".json")) {
+                readJsonFile(folderData, file, data);
                 getWindowedData();
             }
         }
         windowedData.sort(Comparator.comparingInt(jsonObject -> jsonObject.getInt("tick")));
-        writeJsonFile(fName, windowedData);
+        writeJsonFile(folderStore, fName, windowedData);
     }
 
     private static void getWindowedData() {
