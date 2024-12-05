@@ -5,6 +5,7 @@ import org.json.JSONObject;
 
 import java.io.*;
 import java.util.List;
+import java.util.Objects;
 
 public class JsonFileHandler {
     static final File folderAggregated = new File("src/main/resources/");
@@ -33,13 +34,31 @@ public class JsonFileHandler {
     }
 
     public static void writeJsonFile(File folder, String fName, List<JSONObject> allData) throws IOException {
-        // Write the sorted data back to a JSON file "ALL_DATA"
         File outputFile = new File(folder + "/" + fName + ".json");
 
         try (FileWriter outputfile = new FileWriter(outputFile)) {
             JSONArray outputArray = new JSONArray(allData);  // Convert the list of JSONObjects back to JSONArray
             outputfile.write(outputArray.toString(4));  // Indented output for readability
             System.out.println("Data successfully written to: " + outputFile.getAbsolutePath());
+        } catch (IOException e) {
+            System.err.println("Error writing the output file: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public static void writeFile(File folder, String fName, String data) throws IOException {
+        boolean append = false;
+        for (final File fileEntry : Objects.requireNonNull(folder.listFiles())) {
+            if (fileEntry.getName().equals(fName + ".txt")) {
+                append = true;
+                break;
+            }
+        }
+        File outputFile = new File(folder + "/" + fName + ".txt");
+
+        try (FileWriter outputfile = new FileWriter(outputFile, append)) {
+            outputfile.write(data);  // Indented output for readability
+            System.out.println("File successfully written to: " + outputFile.getAbsolutePath());
         } catch (IOException e) {
             System.err.println("Error writing the output file: " + e.getMessage());
             throw e;

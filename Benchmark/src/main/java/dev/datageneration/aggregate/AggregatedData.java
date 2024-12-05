@@ -18,8 +18,8 @@ public class AggregatedData {
     static final File folderStore = new File("src/main/resources");
     static final String fName = "aggregatedData";
     static List<String> filenames = new LinkedList<>();
-    static List<JSONObject> allData = new ArrayList<>();  // Store JSONObjects instead of String arrays
-    static List<JSONObject> aggregatedData = new ArrayList<>();  // Store JSONObjects instead of String arrays
+    static List<JSONObject> allData = new ArrayList<>();
+    static List<JSONObject> aggregatedData = new ArrayList<>();
     static int interval = 5;
 
     /**
@@ -34,10 +34,6 @@ public class AggregatedData {
             }
         }
 
-        /*
-         * TODO: - some more aggregations
-         *       - do aggregations over a defined time slot (5 ticks for example)
-        */
         while(!allData.isEmpty()) {
             JSONObject data = allData.getFirst();
             JSONObject d = data.getJSONObject("data");
@@ -63,8 +59,12 @@ public class AggregatedData {
                     createAverageAc(data, id);
                     break;
 
+                case "speed":
+                    createAverageSpeed(data, id);
+                    break;
+
                 default:
-                    aggregatedData.add(data);
+//                    aggregatedData.add(data);
                     allData.remove(data);
                     break;
             }
@@ -75,6 +75,26 @@ public class AggregatedData {
 
         // Write the sorted data back to a JSON file "aggregatedData.json"
         writeJsonFile(folderStore, fName, aggregatedData);
+    }
+
+    private static void createAverageSpeed(JSONObject data, int id) {
+        int startTime = 1;
+        int endTime = 0;
+        while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
+            endTime += interval;
+            double s1 = getAverageKph(id);
+            double s2 = getAverageWindSpeed(id);
+
+            rmv(id, interval);
+
+            JSONObject sensorDataObject = new JSONObject();
+            sensorDataObject.put("averageSpeed kph", s1);
+            sensorDataObject.put("averageSpeed mph", (s1 / 1.609344));
+            sensorDataObject.put("averageWindSpeed", s2);
+            JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
+            aggregatedData.add(fObject);
+            startTime += interval;
+        }
     }
 
     private static void createAverageAc(JSONObject data, int id) {
@@ -90,6 +110,7 @@ public class AggregatedData {
             sensorDataObject.put("averageFlowRate", a1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
+            startTime += interval;
         }
         rmvAll(id);
     }
@@ -109,6 +130,7 @@ public class AggregatedData {
             sensorDataObject.put("averageFlowRate", f1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
+            startTime += interval;
         }
         rmvAll(id);
     }
@@ -131,6 +153,7 @@ public class AggregatedData {
             sensorDataObject.put("averageRpm", r1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
+            startTime += interval;
         }
         rmvAll(id);
     }
@@ -150,6 +173,7 @@ public class AggregatedData {
             sensorDataObject.put("averageTemp", t1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
+            startTime += interval;
         }
         rmvAll(id);
     }
@@ -168,10 +192,52 @@ public class AggregatedData {
             sensorDataObject.put("averagePressure", p1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
-            startTime += endTime;
+            startTime += interval;
         }
         rmvAll(id);
     }
+
+    private static double getAverageWindSpeed(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= interval; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if (d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("wind speed");
+                    counter++;
+                    index++;
+                    break;
+                }
+                index++;
+            }
+        }
+        return p / counter;
+    }
+
+    private static double getAverageKph(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= interval; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if (d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("kmp/h");
+                    counter++;
+                    index++;
+                    break;
+                }
+                index++;
+            }
+        }
+        return p / counter;
+
+    }
+
 
     private static double getAverageThrottle(int id) {
         double p = 0.0;

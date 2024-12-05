@@ -12,10 +12,6 @@ import org.json.JSONObject;
 import java.io.*;
 import java.time.Duration;
 import java.util.*;
-import java.util.concurrent.TimeUnit;
-
-import static dev.datageneration.jsonHandler.JsonParser.parseToJsonNodeList;
-import static dev.datageneration.jsonHandler.JsonParser.parseToJsonNodeSet;
 
 public class DataReceiver {
     static int throughput = 0;
@@ -23,12 +19,12 @@ public class DataReceiver {
     static List<JSONObject> dataReceived = new LinkedList<>();
     static long startTime;
     static long lastReceivedTime;
-    static String topic = "F1";
+    static String topic = "f1";
     static String KafkaBroker = "localhost:9092";
     static Properties props = new Properties();
     static String groupID = "15";
 
-    public static void receive(boolean readAggregatedData, boolean readWindowedData) throws IOException, InterruptedException {
+    public static void receive(boolean aggregated, int threadAmount) throws IOException, InterruptedException {
         props.put("bootstrap.servers", KafkaBroker);
         props.put("group.id", groupID);
         props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
@@ -54,20 +50,19 @@ public class DataReceiver {
                     if (json.has("start")) {
                         startTime = System.currentTimeMillis();
                         amountSensors = json.getInt("start");
-                        throughput--;
+                        continue;
                     }
                     dataReceived.add(json);
-                    System.out.printf("Received message: " + record.toString() + "\n");
+//                    System.out.printf("Received message: " + record.toString() + "\n");
                     throughput++;
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            // Close the consumer gracefully
+            // Close the consumer
             consumer.close();
         }
-        Analyser.analyser(readAggregatedData, readWindowedData, dataReceived, startTime, lastReceivedTime, amountSensors, throughput);
+        Analyser.analyser(aggregated, dataReceived, startTime, lastReceivedTime, amountSensors, throughput, threadAmount);
     }
-
 }

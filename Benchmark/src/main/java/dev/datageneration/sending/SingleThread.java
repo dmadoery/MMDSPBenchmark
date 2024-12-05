@@ -34,6 +34,7 @@ public class SingleThread implements Runnable {
 //                    JavalinTester.sending(message);
                     ProducerRecord<String, String> record = new ProducerRecord<>(topic, message.toString());
                     producer.send(record);
+//                    System.out.println("Sent: " + record.toString());
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

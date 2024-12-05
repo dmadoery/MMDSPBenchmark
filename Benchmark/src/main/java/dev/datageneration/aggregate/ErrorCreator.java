@@ -51,7 +51,7 @@ public class ErrorCreator {
 
     private static void createErrors() {
         dataWithErrors.clear();
-        int max = Math.max(data.size() - data.size()/4 , 0);
+        int max = Math.max(data.size()/6 , 0);
         int amountErrors = (int)RandomData.getRandom(1, max);
         while (amountErrors > 0) {
             int rand = (int)RandomData.getRandom(0, data.size() - 1);

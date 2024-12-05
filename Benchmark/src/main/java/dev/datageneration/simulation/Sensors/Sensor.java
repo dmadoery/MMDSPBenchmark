@@ -45,17 +45,17 @@ public abstract class Sensor {
     }};
 
     public static Map<String, Integer> ticks = new HashMap<>(){{
-        put( "tyre", 5); //tick --> 10 entries per second
-        put( "heat", 4);
-        put( "speed", 6);
-        put( "g_force", 3);
-        put( "fuel_pump", 4);
-        put( "DRS", 2);
-        put( "brake", 4);
-        put( "steering", 10);
-        put( "accelerometer", 8);
+        put( "tyre", 1);                //tick --> 10 entries per timeunit
+        put( "heat", 1);
+        put( "speed", 1);
+        put( "g_force", 1);
+        put( "fuel_pump", 1);
+        put( "DRS", 1);
+        put( "brake", 1);
+        put( "steering", 1);
+        put( "accelerometer", 1);
         put( "engine", 1);
-        put( "blackbox", -5); // every 5th tick an entry
+        put( "blackbox", -5);           // every 5th tick an entry
     }};
 
     final String type;

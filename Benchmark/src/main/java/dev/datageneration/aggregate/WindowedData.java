@@ -55,8 +55,6 @@ public class WindowedData {
                 if(jsonObject.getJSONObject("data").getInt("temperature tyre") > 100) {
                     warning = "position:" + jsonObject.getJSONObject("data").getInt("position") + " is to hot.";
                     createErrorObject(jsonObject, type, warning);
-                } else {
-                    windowedData.add(jsonObject);
                 }
                 data.remove(jsonObject);
                 break;
@@ -65,13 +63,11 @@ public class WindowedData {
                 if(jsonObject.getJSONObject("data").getInt("temperature c") > 45) {
                     warning = " to hot temperature.";
                     createErrorObject(jsonObject, type, warning);
-                } else {
-                    windowedData.add(jsonObject);
                 }
                 data.remove(jsonObject);
                 break;
 
-            case "motor":
+            case "engine":
                 if(jsonObject.getJSONObject("data").getDouble("oil_pressure") > 6) {
                     warning = " oil pressure to high.";
                     createErrorObject(jsonObject, type, warning);
@@ -80,9 +76,6 @@ public class WindowedData {
                     warning = " is overheating.";
                     createErrorObject(jsonObject, type, warning);
                 }
-                else {
-                    windowedData.add(jsonObject);
-                }
                 data.remove(jsonObject);
                 break;
 
@@ -90,8 +83,6 @@ public class WindowedData {
                 if(jsonObject.getJSONObject("data").getInt("ml/min") < 800) {
                     warning = " fuel flow is to low.";
                     createErrorObject(jsonObject, type, warning);
-                } else {
-                    windowedData.add(jsonObject);
                 }
                 data.remove(jsonObject);
                 break;
@@ -101,6 +92,19 @@ public class WindowedData {
                     warning = " is overheating.";
                     createErrorObject(jsonObject, type, warning);
                 } else {
+                    windowedData.add(jsonObject);
+                }
+                data.remove(jsonObject);
+                break;
+
+            case "g_force":
+                if(jsonObject.getJSONObject("data").getInt("g-lateral") > 5.8) {
+                    warning = " g-force lateral is high.";
+                    createErrorObject(jsonObject, type, warning);
+                } else if (jsonObject.getJSONObject("data").getInt("g-longitudinal") > 4.8) {
+                    warning = " g-force longitudinal is high.";
+                    createErrorObject(jsonObject, type, warning);
+                }else {
                     windowedData.add(jsonObject);
                 }
                 data.remove(jsonObject);

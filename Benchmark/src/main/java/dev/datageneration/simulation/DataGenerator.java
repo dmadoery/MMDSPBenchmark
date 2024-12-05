@@ -29,11 +29,11 @@ public class DataGenerator {
             }
         }
 
-        // Debug: Print size of allData list
-        System.out.println("Total JSON objects collected: " + allData.size());
-
         // Sort the list based on the "tick" key in ascending order
         allData.sort(Comparator.comparingInt(obj -> obj.getInt("tick")));  // Sort by tick in ascending order
+
+        // Debug: Print size of allData list
+//        System.out.println("Total JSON objects collected: " + allData.size());
 
         // Check if we have data
         if (allData.isEmpty()) {

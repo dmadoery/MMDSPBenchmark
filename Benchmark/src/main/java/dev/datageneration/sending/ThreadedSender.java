@@ -12,16 +12,15 @@ import java.util.concurrent.*;
 
 public class ThreadedSender {
     static JSONArray jsonArray;
-    static final String path = "src/main/resources/ALL_DATA.json";
-    static final String pathAg = "src/main/resources/aggregatedData.json";
-    static final String pathWi = "src/main/resources/windowedData.json";
-    static BlockingQueue<JSONObject> messageQueue = new ArrayBlockingQueue<>(20000);
+    static final String pathNormal = "src/main/resources/ALL_DATA.json";
+    static final String pathAggregated = "src/main/resources/finalData.json";
+    static BlockingQueue<JSONObject> messageQueue = new ArrayBlockingQueue<>(200000000);
     static List<JSONArray> frequencyData;
     public static List<SingleThread> threads = new ArrayList<>();
 
     //TODO: Implement Kafka connection
     //Kafka Topic
-    static String topic = "F1";
+    static String topic = "f1";
     static KafkaProducer<String, String> producer;
     private static final String KAFKA_BROKER = "localhost:9092";
     
@@ -32,13 +31,11 @@ public class ThreadedSender {
     static boolean stop = false;
     static int maxFrequency;
 
-    public static void sendThreaded(int amountSensors, boolean sendAggregated, boolean sendWindowed) throws IOException, InterruptedException {
-        if (sendAggregated) {
-            jsonArray = readJsonFile(pathAg);
-        } else if (sendWindowed) {
-            jsonArray = readJsonFile(pathWi);
+    public static void sendThreaded(int amountSensors, boolean aggregated, int threadAmount) throws IOException, InterruptedException {
+        if (aggregated) {
+            jsonArray = readJsonFile(pathAggregated);
         } else {
-            jsonArray = readJsonFile(path);
+            jsonArray = readJsonFile(pathNormal);
         }
         frequencyData = mapFrequency(jsonArray);
         addAllFrequencies();
@@ -53,7 +50,6 @@ public class ThreadedSender {
         startMessage.put("start", amountSensors);
         ProducerRecord<String, String> recordStart = new ProducerRecord<>(topic, startMessage.toString());
         producer.send(recordStart);
-        int threadAmount = 4;
         ExecutorService executor = Executors.newFixedThreadPool(threadAmount);
         SingleThread thread = null;
         for (int i = 0; i < threadAmount; i++) {
