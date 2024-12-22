@@ -24,17 +24,22 @@ public class SingleThread implements Runnable {
     @Override
     public void run() {
         while (!ThreadedSender.stop) {
-            try {
-                JSONObject message = queue.peek();
-                if(message == null) {
-                    continue;
-                }
-                if (message.getInt("tick") == ThreadedSender.getTimeStep()) {
-                    queue.take();
-//                    JavalinTester.sending(message);
-                    ProducerRecord<String, String> record = new ProducerRecord<>(topic, message.toString());
-                    producer.send(record);
-//                    System.out.println("Sent: " + record.toString());
+            try { //TODO: solve problem, if multiple threads sometimes duplicate entries from here!!!!
+                synchronized (queue) {
+                    JSONObject message = queue.peek();
+                    if (message == null) {
+                        continue;
+                    }
+                    if (message.getInt("tick") == ThreadedSender.getTimeStep()) {
+                        if (queue.peek().equals(message)) {
+                            queue.take();
+                        } else {
+                            continue;
+                        }
+                        ProducerRecord<String, String> record = new ProducerRecord<>(topic, message.toString());
+                        producer.send(record);
+//                        System.out.println("Sent: " + record.toString());
+                    }
                 }
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();

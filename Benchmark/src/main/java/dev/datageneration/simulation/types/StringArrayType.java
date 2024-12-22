@@ -9,7 +9,7 @@ import java.util.Random;
 public record StringArrayType() implements DataType {
 
     @Override
-    public String sample() {
+    public String sample(String name) {
 
         String[] data = new String[] {"left", "right", "break", "accelerate", "straight"};
         int rand = (int)RandomData.getRandom(0,4);
@@ -22,7 +22,7 @@ public record StringArrayType() implements DataType {
         Random random = new Random();
         int entries = random.nextInt((50 - 5) + 1) + 5;
         for (int i = 0; i < entries; i++) {
-            data.add(sample());
+            data.add(sample(""));
         }
         return data;
     }

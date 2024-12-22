@@ -1,6 +1,7 @@
 package dev.datageneration.simulation;
 
 import dev.datageneration.jsonHandler.JsonFileHandler;
+import lombok.Setter;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -10,8 +11,10 @@ import static dev.datageneration.jsonHandler.JsonFileHandler.writeJsonFile;
 
 
 public class DataGenerator {
-    static final File folderData = new File("src/main/resources/sensors");
-    static final File folderStore = new File("src/main/resources");
+    @Setter
+    static  File folderData;
+    @Setter
+    static  File folderStore;
     static final String fName = "ALL_DATA";
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> allData = new ArrayList<>();  // Store JSONObjects instead of String arrays

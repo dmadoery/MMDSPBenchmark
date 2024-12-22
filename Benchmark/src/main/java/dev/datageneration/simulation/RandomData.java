@@ -1,6 +1,9 @@
 package dev.datageneration.simulation;
 
 import dev.datageneration.simulation.Sensors.*;
+import dev.datageneration.simulation.types.IntType;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 import java.util.*;
@@ -11,6 +14,8 @@ public class RandomData {
 
     public static Random random = new Random();
     public static long seed = 795673489;
+    @Setter
+    public static double peek;
 
 
     public static void setSeed(long s) {
@@ -26,11 +31,11 @@ public class RandomData {
         //RandomData.sensors.add(new String[] {"typeOfSensor", "Data1", "Data2", ..., Data6});
         RandomData.sensors.add(new String[] {"heat", "temperature c"}); //heat sensor
         RandomData.sensors.add(new String[] {"heat", "temperature c"});//heat sensor,
-        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//front_left_tyre
-        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//front_right_tyre
-        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//rear_left_tyre
-        RandomData.sensors.add(new String[] {"tyre", "temperature tyre", "pressure psi", "wear", "liability", "position"});//rear_right_tyre
-        RandomData.sensors.add(new String[] {"speed", "kmp/h","mp/h", "acceleration", "wind speed"});//speed_sensor
+        RandomData.sensors.add(new String[] {"tire", "temperature tire", "pressure psi", "wear", "liability", "position"});//front_left_tyre
+        RandomData.sensors.add(new String[] {"tire", "temperature tire", "pressure psi", "wear", "liability", "position"});//front_right_tyre
+        RandomData.sensors.add(new String[] {"tire", "temperature tire", "pressure psi", "wear", "liability", "position"});//rear_left_tyre
+        RandomData.sensors.add(new String[] {"tire", "temperature tire", "pressure psi", "wear", "liability", "position"});//rear_right_tyre
+        RandomData.sensors.add(new String[] {"speed", "kph","mph", "acceleration", "wind speed"});//speed_sensor
         RandomData.sensors.add(new String[] {"g_force", "g-lateral", "g-longitudinal"});//g_sensor
         RandomData.sensors.add(new String[] {"fuel_pump", "temperature fuelP", "ml/min"});//fuel_pump_sensor
         RandomData.sensors.add(new String[] {"DRS", "on/off", "drs-zone"});//drs_sensor
@@ -54,6 +59,46 @@ public class RandomData {
         return random.nextDouble() * (max - min) + min;
     }
 
+    public static Map<String, double[]> probabilities = new HashMap<>(){{
+        put("temperature tire", new double[]{0.999, 0.001}); //TODO: adjust the probabilities
+        put("temperature c", new double[]{0.999, 0.001});
+        put("pressure psi", new double[]{0.999, 0.001});
+        put("liability", new double[]{0.999, 0.001});
+        put("kmp/h", new double[]{0.999, 0.001});
+        put("mp/h", new double[]{0.999, 0.001});
+        put("acceleration", new double[]{0.999, 0.001});
+        put("wind speed", new double[]{0.999, 0.001});
+        put("g-lateral", new double[]{0.999, 0.001});
+        put("g-longitudinal", new double[]{0.999, 0.001});
+        put("temperature fuelP", new double[]{0.999, 0.001});
+        put("ml/min", new double[]{0.999, 0.001});
+        put("temperature brake", new double[]{0.999, 0.001});
+        put("brake_pressure", new double[]{0.999, 0.001});
+        put("wear", new double[]{0.999, 0.001});
+        put("temperature engine", new double[]{0.999, 0.001});
+        put("rpm", new double[]{0.999, 0.001});
+        put("fuelFlow", new double[]{0.999, 0.001});
+        put("oil_pressure", new double[]{0.999, 0.001});
+        put("fuel_pressure", new double[]{0.999, 0.001});
+        put("exhaust", new double[]{0.999, 0.001});
+    }};
+
+    public static double getRandomWithProbability(double min, double max, String name) {
+        double range = max - min;
+        if(probabilities.containsKey(name)) {
+            double[] prob = probabilities.get(name);
+            double boundary = range * prob[0];
+            double[] highProb = new double[]{min, boundary};
+            double[] lowProb = new double[]{boundary, max};
+            if(random.nextDouble() <= prob[0]) {
+                return random.nextDouble() * (highProb[1] - highProb[0]) + highProb[0];
+            } else {
+                return peek * (random.nextDouble() * (lowProb[1] - lowProb[0]) + lowProb[0]);
+            }
+        } else {
+            return getRandom(min, max);
+        }
+    }
     /**
      * The real creator of the sensors.
      * Creates sensors accordingly to the chosen amount.

@@ -1,5 +1,6 @@
 package dev.datageneration.aggregate;
 
+import lombok.Setter;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -12,20 +13,28 @@ import static dev.datageneration.jsonHandler.JsonFileHandler.readJsonFile;
 import static dev.datageneration.jsonHandler.JsonFileHandler.writeJsonFile;
 import static dev.datageneration.simulation.RandomData.listFilesForFolder;
 
-public class AggregatedData {
-
-    static final File folderData = new File("src/main/resources/sensors");
-    static final File folderStore = new File("src/main/resources");
-    static final String fName = "aggregatedData";
+public class AveragedData {
+    @Setter
+    static File folderData;
+    @Setter
+    static File folderStore;
+    static final String fName = "averagedData";
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> allData = new ArrayList<>();
     static List<JSONObject> aggregatedData = new ArrayList<>();
-    static int interval = 5;
+    static long durationTimeStep;
+    static int windowSize;
+    static int advanceBy;
 
     /**
      * Reads the data from the generated JSON files and stores them in a list (allData).
      */
-    public static void aggregatedData() throws Exception {
+    public static void aggregatedData(long durTime) throws Exception {
+        durationTimeStep = durTime;
+        advanceBy = 10; // good number
+        windowSize = advanceBy * 3;
+
+
         filenames = listFilesForFolder(folderData);
 
         for (String file : filenames) {
@@ -39,8 +48,8 @@ public class AggregatedData {
             JSONObject d = data.getJSONObject("data");
             int id = d.getInt("id");
             switch (d.getString("type")) {
-                case "tyre":
-                    createAverageTyre(data, id);
+                case "tire":
+                    createAverageTire(data, id);
                     break;
 
                 case "heat":
@@ -49,6 +58,10 @@ public class AggregatedData {
 
                 case "engine":
                     createAverageEngine(data, id);
+                    break;
+
+                case "brake":
+                    createAverageBrake(data, id);
                     break;
 
                 case "fuel_pump":
@@ -64,7 +77,6 @@ public class AggregatedData {
                     break;
 
                 default:
-//                    aggregatedData.add(data);
                     allData.remove(data);
                     break;
             }
@@ -77,15 +89,36 @@ public class AggregatedData {
         writeJsonFile(folderStore, fName, aggregatedData);
     }
 
+    private static void createAverageBrake(JSONObject data, int id) {
+        int startTime = 1;
+        int endTime;
+        while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
+            endTime = startTime + windowSize - 1;
+            double p1 = getAveragePressure(id);
+            double t1 = getAverageTemp(id);
+            double w1 = getAverageWear(id);
+
+            rmv(id, advanceBy);
+
+            JSONObject sensorDataObject = new JSONObject();
+            sensorDataObject.put("averageTemp", t1);
+            sensorDataObject.put("averagePressure", p1);
+            sensorDataObject.put("averageWear", w1);
+            JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
+            aggregatedData.add(fObject);
+            startTime += advanceBy;
+        }
+    }
+
     private static void createAverageSpeed(JSONObject data, int id) {
         int startTime = 1;
-        int endTime = 0;
+        int endTime;
         while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
-            endTime += interval;
+            endTime = startTime + windowSize - 1;
             double s1 = getAverageKph(id);
             double s2 = getAverageWindSpeed(id);
 
-            rmv(id, interval);
+            rmv(id, advanceBy);
 
             JSONObject sensorDataObject = new JSONObject();
             sensorDataObject.put("averageSpeed kph", s1);
@@ -93,44 +126,45 @@ public class AggregatedData {
             sensorDataObject.put("averageWindSpeed", s2);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
-            startTime += interval;
+            startTime += advanceBy;
         }
     }
 
+
     private static void createAverageAc(JSONObject data, int id) {
         int startTime = 1;
-        int endTime = 0;
+        int endTime;
         while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
-            endTime += interval;
+            endTime = startTime + windowSize - 1;
             double a1 = getAverageThrottle(id);
 
-            rmv(id, interval);
+            rmv(id, advanceBy);
 
             JSONObject sensorDataObject = new JSONObject();
             sensorDataObject.put("averageFlowRate", a1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
-            startTime += interval;
+            startTime += advanceBy;
         }
         rmvAll(id);
     }
 
     private static void createAverageFuelPump(JSONObject data, int id) {
         int startTime = 1;
-        int endTime = 0;
+        int endTime;
         while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
-            endTime += interval;
+            endTime = startTime + windowSize - 1;
             double t1 = getAverageTemp(id);
             double f1 = getAverageFlowRate(id);
 
-            rmv(id, interval);
+            rmv(id, advanceBy);
 
             JSONObject sensorDataObject = new JSONObject();
             sensorDataObject.put("averageTemp", t1);
             sensorDataObject.put("averageFlowRate", f1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
-            startTime += interval;
+            startTime += advanceBy;
         }
         rmvAll(id);
     }
@@ -138,70 +172,162 @@ public class AggregatedData {
 
     private static void createAverageEngine(JSONObject data, int id) {
         int startTime = 1;
-        int endTime = 0;
+        int endTime;
         while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
-            endTime += interval;
-            double p1 = getAveragePressure(id);
+            endTime = startTime + windowSize - 1;
+            double p1 = getAverageOilPressure(id);
+            double p2 = getAverageFuelPressure(id);
             double t1 = getAverageTemp(id);
             double r1 = getAverageRpm(id);
+            double f1 = getAverageFuelFlow(id);
+            double e1 = getAverageExhaust(id);
 
-            rmv(id, interval);
+            rmv(id, advanceBy);
 
             JSONObject sensorDataObject = new JSONObject();
             sensorDataObject.put("averageTemp", t1);
-            sensorDataObject.put("averagePressure", p1);
+            sensorDataObject.put("averageOilPressure", p1);
+            sensorDataObject.put("averageFuelPressure", p2);
             sensorDataObject.put("averageRpm", r1);
+            sensorDataObject.put("averageFuelFlow", f1);
+            sensorDataObject.put("averageExhaust", e1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
-            startTime += interval;
+            startTime += advanceBy;
         }
         rmvAll(id);
     }
-
 
 
     private static void createAverageHeat(JSONObject data, int id) {
         int startTime = 1;
-        int endTime = 0;
+        int endTime;
         while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
-            endTime += interval;
+            endTime = startTime + windowSize - 1;
             double t1 = getAverageTemp(id);
 
-            rmv(id, interval);
+            rmv(id, advanceBy);
 
             JSONObject sensorDataObject = new JSONObject();
             sensorDataObject.put("averageTemp", t1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
-            startTime += interval;
+            startTime += advanceBy;
         }
         rmvAll(id);
     }
-    public static void createAverageTyre(JSONObject data, int id) {
+    public static void createAverageTire(JSONObject data, int id) {
         int startTime = 1;
-        int endTime = 0;
+        int endTime;
         while(allData.stream().anyMatch(obj -> obj.getJSONObject("data").getInt("id") == id)) {
-            endTime += interval;
+            endTime = startTime + windowSize - 1;
             double p1 = getAveragePressure(id);
             double t1 = getAverageTemp(id);
+            double w1 = getAverageWear(id);
+            double l1 = getAverageLiability(id);
 
-            rmv(id, interval);
+            rmv(id, advanceBy);
 
             JSONObject sensorDataObject = new JSONObject();
             sensorDataObject.put("averageTemp", t1);
             sensorDataObject.put("averagePressure", p1);
+            sensorDataObject.put("averageWear", w1);
+            sensorDataObject.put("averageLiability", l1);
+            sensorDataObject.put("position", data.getJSONObject("data").getInt("position"));
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
-            startTime += interval;
+            startTime += advanceBy;
         }
         rmvAll(id);
+    }
+
+    private static double getAverageExhaust(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= windowSize; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if(d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("exhaust");
+                    counter ++;
+                    index ++;
+                    break;
+                }
+                index ++;
+            }
+        }
+
+        return p / counter;
+    }
+
+    private static double getAverageFuelFlow(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= windowSize; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if(d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("fuelFlow");
+                    counter ++;
+                    index ++;
+                    break;
+                }
+                index ++;
+            }
+        }
+
+        return p / counter;
+    }
+
+    private static double getAverageLiability(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= windowSize; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if (d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("liability");
+                    counter++;
+                    index++;
+                    break;
+                }
+                index++;
+            }
+        }
+        return p / counter;
+    }
+
+    private static double getAverageWear(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= windowSize; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if (d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("wear");
+                    counter++;
+                    index++;
+                    break;
+                }
+                index++;
+            }
+        }
+        return p / counter;
     }
 
     private static double getAverageWindSpeed(int id) {
         double p = 0.0;
         int counter = 0;
         int index = 0;
-        for (int i = 0; i <= interval; i++) {
+        for (int i = 0; i <= windowSize; i++) {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
@@ -221,12 +347,12 @@ public class AggregatedData {
         double p = 0.0;
         int counter = 0;
         int index = 0;
-        for (int i = 0; i <= interval; i++) {
+        for (int i = 0; i <= windowSize; i++) {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
                 if (d.getInt("id") == id && !d.has("Error")) {
-                    p += d.getDouble("kmp/h");
+                    p += d.getDouble("kph");
                     counter++;
                     index++;
                     break;
@@ -243,7 +369,7 @@ public class AggregatedData {
         double p = 0.0;
         int counter = 0;
         int index = 0;
-        for (int i = 0; i <= interval; i++) {
+        for (int i = 0; i <= windowSize; i++) {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
@@ -263,7 +389,7 @@ public class AggregatedData {
         double p = 0.0;
         int counter = 0;
         int index = 0;
-        for (int i = 0; i <= interval; i++) {
+        for (int i = 0; i <= windowSize; i++) {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
@@ -283,7 +409,7 @@ public class AggregatedData {
         double p = 0.0;
         int counter = 0;
         int index = 0;
-        for (int i = 0; i <= interval; i++) {
+        for (int i = 0; i <= windowSize; i++) {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
@@ -303,15 +429,15 @@ public class AggregatedData {
         double p = 0.0;
         int counter = 0;
         int index = 0;
-        for (int i = 0; i <= interval; i++) {
+        for (int i = 0; i <= windowSize; i++) {
             while (index < allData.size()) {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
                 if(d.getInt("id") == id && !d.has("Error")) {
-                    if(d.get("type").equals("tyre")) {
+                    if(d.getString("type").equals("tire")) {
                         p += d.getDouble("pressure psi");
-                    } else if(d.get("type").equals("engine")) {
-                        p += d.getDouble("oil_pressure");
+                    } else if (d.getString("type").equals("brake")) {
+                        p += d.getDouble("brake_pressure");
                     }
                     counter ++;
                     index ++;
@@ -323,23 +449,70 @@ public class AggregatedData {
 
         return p / counter;
     }
+
+    public static Double getAverageOilPressure(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= windowSize; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if(d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("oil_pressure");
+                    counter ++;
+                    index ++;
+                    break;
+                }
+                index ++;
+            }
+        }
+
+        return p / counter;
+    }
+
+    public static Double getAverageFuelPressure(int id) {
+        double p = 0.0;
+        int counter = 0;
+        int index = 0;
+        for (int i = 0; i <= windowSize; i++) {
+            while (index < allData.size()) {
+                JSONObject obj = allData.get(index);
+                JSONObject d = (JSONObject) obj.get("data");
+                if(d.getInt("id") == id && !d.has("Error")) {
+                    p += d.getDouble("fuel_pressure");
+                    counter ++;
+                    index ++;
+                    break;
+                }
+                index ++;
+            }
+        }
+
+        return p / counter;
+    }
+
     public static Double getAverageTemp(int id) {
         double p = 0.0;
         int counter = 0;
         int index = 0;
-        for (int i = 0; i <= interval; i++) {
+        for (int i = 0; i <= windowSize; i++) {
             while (index < allData.size()) {
                 JSONObject d = allData.get(index);
                 JSONObject obj = (JSONObject) d.get("data");
                 if (obj.getInt("id") == id && !obj.has("Error")) {
-                    if (obj.getString("type").equals("tyre")) {
-                        p += obj.getInt("temperature tyre");
+                    if (obj.getString("type").equals("tire")) {
+                        p += obj.getInt("temperature tire");
                     } else if(obj.getString("type").equals("engine")) {
                         p += obj.getInt("temperature engine");
                     } else if(obj.getString("type").equals("brake")) {
                         p += obj.getInt("temperature brake");
                     } else if (obj.getString("type").equals("fuel_pump")) {
                         p += obj.getInt("temperature fuelP");
+                    } else if (obj.getString("type").equals("brake")) {
+                        p += obj.getInt("temperature brake");
+                    } else if (obj.getString("type").equals("heat")) {
+                        p += obj.getInt("temperature c");
                     }
                     counter++;
                     index ++;

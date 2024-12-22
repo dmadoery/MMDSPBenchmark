@@ -1,5 +1,6 @@
 package dev.datageneration.aggregate;
 
+import lombok.Setter;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -12,12 +13,13 @@ import static dev.datageneration.jsonHandler.JsonFileHandler.readJsonFile;
 import static dev.datageneration.jsonHandler.JsonFileHandler.writeJsonFile;
 
 public class FinalData {
-    static final File folderStore = new File("src/main/resources");
+    @Setter
+    static File folderStore;
     static final String fName = "finalData";
     static List<JSONObject> finalData = new ArrayList<>();
 
     public static void createFinalData() throws IOException {
-        readJsonFile(folderStore, "aggregatedData.json", finalData);
+        readJsonFile(folderStore, "averagedData.json", finalData);
         readJsonFile(folderStore, "windowedData.json", finalData);
 
         finalData.sort(Comparator.comparingInt(jsonObject -> jsonObject.getInt("tick")));

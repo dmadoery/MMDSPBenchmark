@@ -1,5 +1,6 @@
 package dev.datageneration.jsonHandler;
 
+import lombok.Setter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -8,8 +9,10 @@ import java.util.List;
 import java.util.Objects;
 
 public class JsonFileHandler {
-    static final File folderAggregated = new File("src/main/resources/");
-    static final File folderSensors = new File("src/main/resources/sensors");
+    @Setter
+    static  File folderAggregated;
+    @Setter
+    static  File folderSensors;
     
     public static void readJsonFile(File folder, String fileName, List<JSONObject> allData) throws IOException {
             FileReader fReader = new FileReader(new File(folder, fileName));

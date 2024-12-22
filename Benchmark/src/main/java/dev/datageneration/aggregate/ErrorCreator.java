@@ -1,6 +1,7 @@
 package dev.datageneration.aggregate;
 
 import dev.datageneration.simulation.RandomData;
+import lombok.Setter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -21,7 +22,8 @@ import static dev.datageneration.simulation.RandomData.listFilesForFolder;
  * This is done by making some entries "null" entries and deleting some completely.
  */
 public class ErrorCreator {
-    static final File folderData = new File("src/main/resources/sensors");
+    @Setter
+    static File folderData;
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> data = new ArrayList<>();  // Store JSONObjects instead of String arrays
     static List<JSONObject> dataWithErrors = new ArrayList<>();  // Store JSONObjects instead of String arrays
@@ -42,7 +44,7 @@ public class ErrorCreator {
     }
 
     private static void deleteEntries() {
-        int amountDeletions = (int) RandomData.getRandom(0, (double)dataWithErrors.size() /10);
+        int amountDeletions = (int) RandomData.getRandom(0, (double)dataWithErrors.size() /100);
         for (int i = 0; i < amountDeletions; i++) {
             int rand = (int)RandomData.getRandom(0, dataWithErrors.size() - 1);
             dataWithErrors.remove(rand);

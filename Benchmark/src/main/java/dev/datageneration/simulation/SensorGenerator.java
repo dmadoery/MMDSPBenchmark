@@ -1,6 +1,7 @@
 package dev.datageneration.simulation;
 
 import dev.datageneration.simulation.Sensors.Sensor;
+import lombok.Setter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -12,6 +13,8 @@ import java.util.List;
 
 public class SensorGenerator {
     static List<Sensor> sensorList = new ArrayList<>();
+    @Setter
+    static File folder;
 
     /**
      * Creates Sensors and fills them with data accordingly to the given sensorArray.
@@ -28,7 +31,7 @@ public class SensorGenerator {
         // write data to json file for each sensor
         for (int i = 0; i < amountSensors; i++) {
             Sensor sensor = sensorList.get(i);
-            File jsonFile = new File("src/main/resources/sensors/" + sensor.getId() + "_" + sensor.getType() + ".json");
+            File jsonFile = new File((folder.toString() + "/" + sensor.getId() + "_" + sensor.getType() + ".json"));
             try {
                 // create FileWriter object with file as parameter
                 FileWriter jsonOutputFile = new FileWriter(jsonFile);

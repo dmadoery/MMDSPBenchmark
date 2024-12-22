@@ -31,7 +31,7 @@ public class MediumSensor extends Sensor {
 
     @Override
     public void generateDataPoint() { //TODO: change to add json here.
-        String[] data =new String[] {dType1.sample(), dType2.sample(), dType3.sample()};
+        String[] data =new String[] {dType1.sample(di1), dType2.sample(di2), dType3.sample(di3)};
 
         //create JSON object
         String[] header = getHeader();

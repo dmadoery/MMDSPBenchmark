@@ -21,7 +21,7 @@ public class MiniSensor extends Sensor {
 
     @Override
     public void generateDataPoint() {
-        String data = dType1.sample();
+        String data = dType1.sample(di1);
 
         //create JSON object
         String header = di1;

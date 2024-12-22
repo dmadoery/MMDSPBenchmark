@@ -1,5 +1,6 @@
 package dev.datageneration.aggregate;
 
+import lombok.Setter;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -15,8 +16,10 @@ import static dev.datageneration.simulation.RandomData.listFilesForFolder;
 
 public class WindowedData {
 
-    static final File folderData = new File("src/main/resources/sensors");
-    static final File folderStore = new File("src/main/resources");
+    @Setter
+    static  File folderData;
+    @Setter
+    static  File folderStore;
     static final String fName = "windowedData";
     static List<String> filenames = new LinkedList<>();
     static List<JSONObject> data = new ArrayList<>();  // Store JSONObjects instead of String arrays
@@ -51,16 +54,24 @@ public class WindowedData {
             return;
         }
         switch (type) {
-            case "tyre":
-                if(jsonObject.getJSONObject("data").getInt("temperature tyre") > 100) {
+            case "tire":
+                if(jsonObject.getJSONObject("data").getInt("temperature tire") > 110) {
                     warning = "position:" + jsonObject.getJSONObject("data").getInt("position") + " is to hot.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if (jsonObject.getJSONObject("data").getInt("wear") > 90) {
+                    warning = "position:" + jsonObject.getJSONObject("data").getInt("position") + " is worn down.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if (jsonObject.getJSONObject("data").getDouble("pressure psi") > 30) {
+                    warning = "position:" + jsonObject.getJSONObject("data").getInt("position") + " to high pressure.";
                     createErrorObject(jsonObject, type, warning);
                 }
                 data.remove(jsonObject);
                 break;
 
             case "heat":
-                if(jsonObject.getJSONObject("data").getInt("temperature c") > 45) {
+                if(jsonObject.getJSONObject("data").getInt("temperature c") > 50) {
                     warning = " to hot temperature.";
                     createErrorObject(jsonObject, type, warning);
                 }
@@ -68,50 +79,89 @@ public class WindowedData {
                 break;
 
             case "engine":
-                if(jsonObject.getJSONObject("data").getDouble("oil_pressure") > 6) {
+                if(jsonObject.getJSONObject("data").getDouble("oil_pressure") > 7) {
                     warning = " oil pressure to high.";
                     createErrorObject(jsonObject, type, warning);
                 }
-                if(jsonObject.getJSONObject("data").getDouble("temperature engine") > 550) {
+                if(jsonObject.getJSONObject("data").getInt("temperature engine") > 600) {
                     warning = " is overheating.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if (jsonObject.getJSONObject("data").getDouble("fuel_pressure") > 5) {
+                    warning = " fuel pressure to high.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if (jsonObject.getJSONObject("data").getLong("rpm") > 18000) {
+                    warning = " rpm to high.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if(jsonObject.getJSONObject("data").getDouble("exhaust") > 1.2) {
+                    warning = " exhaust fumes not good.";
                     createErrorObject(jsonObject, type, warning);
                 }
                 data.remove(jsonObject);
                 break;
 
             case "fuel_pump":
-                if(jsonObject.getJSONObject("data").getInt("ml/min") < 800) {
+                if(jsonObject.getJSONObject("data").getLong("ml/min") > 4000) {
                     warning = " fuel flow is to low.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if (jsonObject.getJSONObject("data").getInt("temperature fuelP") > 60) {
+                    warning = " fuel-pump temperature is to high.";
                     createErrorObject(jsonObject, type, warning);
                 }
                 data.remove(jsonObject);
                 break;
 
             case "brake":
-                if(jsonObject.getJSONObject("data").getInt("temperature brake") > 900) {
+                if(jsonObject.getJSONObject("data").getInt("temperature brake") > 1000) {
                     warning = " is overheating.";
                     createErrorObject(jsonObject, type, warning);
-                } else {
-                    windowedData.add(jsonObject);
+                }
+                if(jsonObject.getJSONObject("data").getInt("wear") > 90) {
+                    warning = " is worn down.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if(jsonObject.getJSONObject("data").getInt("brake_pressure") > 10) {
+                    warning = " brake pressure to high.";
+                    createErrorObject(jsonObject, type, warning);
                 }
                 data.remove(jsonObject);
                 break;
 
             case "g_force":
-                if(jsonObject.getJSONObject("data").getInt("g-lateral") > 5.8) {
+                if(jsonObject.getJSONObject("data").getDouble("g-lateral") > 6) {
                     warning = " g-force lateral is high.";
                     createErrorObject(jsonObject, type, warning);
-                } else if (jsonObject.getJSONObject("data").getInt("g-longitudinal") > 4.8) {
+                }
+                if (jsonObject.getJSONObject("data").getDouble("g-longitudinal") > 5) {
                     warning = " g-force longitudinal is high.";
                     createErrorObject(jsonObject, type, warning);
-                }else {
-                    windowedData.add(jsonObject);
+                }
+                data.remove(jsonObject);
+                break;
+            case "accelerometer":
+                if(jsonObject.getJSONObject("data").getInt("throttlepedall") > 100) {
+                    warning = " throttlepedall is high.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                data.remove(jsonObject);
+                break;
+
+            case "speed":
+                if(jsonObject.getJSONObject("data").getDouble("kph") > 360) {
+                    warning = " kph is high.";
+                    createErrorObject(jsonObject, type, warning);
+                }
+                if (jsonObject.getJSONObject("data").getDouble("wind speed") > 200) {
+                    warning = " wind speed is to high.";
+                    createErrorObject(jsonObject, type, warning);
                 }
                 data.remove(jsonObject);
                 break;
 
             default:
-                windowedData.add(jsonObject);
                 data.remove(jsonObject);
                 break;
         }

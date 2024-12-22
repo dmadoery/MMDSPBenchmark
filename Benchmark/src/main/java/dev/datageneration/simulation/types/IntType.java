@@ -7,8 +7,8 @@ import java.util.List;
 public record IntType(int min, int max) implements DataType {
 
     @Override
-    public String sample() {
-        return String.valueOf((int)(Math.round(RandomData.getRandom(min, max))));
+    public String sample(String name) {
+        return String.valueOf((int)(Math.round(RandomData.getRandomWithProbability(min, max, name))));
     }
 
     @Override
