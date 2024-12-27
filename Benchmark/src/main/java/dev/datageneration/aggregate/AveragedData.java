@@ -31,8 +31,8 @@ public class AveragedData {
      */
     public static void aggregatedData(long durTime) throws Exception {
         durationTimeStep = durTime;
-        advanceBy = 10; // good number
-        windowSize = advanceBy * 3;
+        advanceBy = 45; // good number
+        windowSize = (int) (advanceBy * 4);
 
 
         filenames = listFilesForFolder(folderData);
@@ -64,7 +64,7 @@ public class AveragedData {
                     createAverageBrake(data, id);
                     break;
 
-                case "fuel_pump":
+                case "fuelPump":
                     createAverageFuelPump(data, id);
                     break;
 
@@ -141,7 +141,7 @@ public class AveragedData {
             rmv(id, advanceBy);
 
             JSONObject sensorDataObject = new JSONObject();
-            sensorDataObject.put("averageFlowRate", a1);
+            sensorDataObject.put("averageThrottlepedall", a1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
             startTime += advanceBy;
@@ -188,7 +188,7 @@ public class AveragedData {
             sensorDataObject.put("averageTemp", t1);
             sensorDataObject.put("averageOilPressure", p1);
             sensorDataObject.put("averageFuelPressure", p2);
-            sensorDataObject.put("averageRpm", r1);
+            sensorDataObject.put("averageRPM", r1);
             sensorDataObject.put("averageFuelFlow", f1);
             sensorDataObject.put("averageExhaust", e1);
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
@@ -233,7 +233,9 @@ public class AveragedData {
             sensorDataObject.put("averagePressure", p1);
             sensorDataObject.put("averageWear", w1);
             sensorDataObject.put("averageLiability", l1);
-            sensorDataObject.put("position", data.getJSONObject("data").getInt("position"));
+            if(!data.getJSONObject("data").has("Error")) {
+                sensorDataObject.put("position", data.getJSONObject("data").getInt("position"));
+            }
             JSONObject fObject = jsonWrapper(data, sensorDataObject, id, startTime, endTime);
             aggregatedData.add(fObject);
             startTime += advanceBy;
@@ -271,7 +273,7 @@ public class AveragedData {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
                 if(d.getInt("id") == id && !d.has("Error")) {
-                    p += d.getDouble("fuelFlow");
+                    p += d.getInt("fuelFlow");
                     counter ++;
                     index ++;
                     break;
@@ -414,7 +416,7 @@ public class AveragedData {
                 JSONObject obj = allData.get(index);
                 JSONObject d = (JSONObject) obj.get("data");
                 if (d.getInt("id") == id && !d.has("Error")) {
-                    p += d.getDouble("rpm");
+                    p += d.getLong("rpm");
                     counter++;
                     index ++;
                     break;

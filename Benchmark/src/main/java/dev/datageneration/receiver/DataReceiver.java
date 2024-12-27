@@ -13,8 +13,6 @@ import java.util.*;
 
 public class DataReceiver {
     static int throughput = 0;
-    @Setter
-    static int amountSensors;
     static List<JSONObject> dataReceived = new LinkedList<>();
     static long startTime;
     static long lastReceivedTime;
@@ -70,6 +68,6 @@ public class DataReceiver {
             // Close the consumer
             consumer.close();
         }
-        Analyser.analyser(aggregated, dataReceived, startTime, lastReceivedTime, amountSensors, throughput, amountSensors);
+        Analyser.analyser(aggregated, dataReceived, startTime, lastReceivedTime, throughput);
     }
 }

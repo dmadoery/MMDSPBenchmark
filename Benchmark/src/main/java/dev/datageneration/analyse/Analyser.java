@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static dev.datageneration.analyse.Comparer.*;
 import static dev.datageneration.jsonHandler.JsonFileHandler.writeFile;
 import static dev.datageneration.jsonHandler.JsonFileHandler.writeJsonFile;
-import static dev.datageneration.analyse.Comparer.comparing;
 
 public class Analyser {
     static List<JSONObject> dataSent = new LinkedList<>();
@@ -22,10 +22,14 @@ public class Analyser {
     static final String file2 = "averagedData.json";//"finalData.json";
     static int amountErrors = 0;
     static int amountWarnings;
-
+    static int amountPeeks;
+    @Setter
+    static int threadAmount;
+    @Setter
+    static int amountSensors;
 
     public static void analyser(boolean aggregated, List<JSONObject> dataReceived, long startTime,
-                                long lastReceivedTime, int amountSensors, int throughput, int threadAmount) throws IOException {
+                                long lastReceivedTime, int throughput) throws IOException {
         if (aggregated) { //aggregated Data
             JsonFileHandler.readJsonFile(folder, file2, averagedData);
             System.out.println("Aggregated data received");
@@ -47,7 +51,33 @@ public class Analyser {
         //send data to the comparer to validate the peeks
         String message = comparing(onlyMaxWindows, dataReceived, aggregated);
 
-        analyse(dataReceived);
+        List<String> peekStore = Comparer.getPeeksStore();
+        StringBuilder peekAnalyse = new StringBuilder();
+        for (String s : peekStore) {
+            String[] info = s.split(":");
+            for (int j = 0; j < info.length; j++) {
+                peekAnalyse.append(info[j]).append(" ");
+                if(j == 2 && info[0].equals("received")) {
+                    amountPeeks += Integer.parseInt(info[j]);
+                }
+            }
+            peekAnalyse.append("\n");
+        }
+        System.out.println(peekAnalyse.toString());
+
+        //Get Completeness of the peeks in the windows
+        int amountWrongPeeks = getFalseWindow();
+        int amountRightPeeks = getRightWindow();
+        double percentageCorrectWindows = 100 / (double) amountPeeks * amountRightPeeks;
+
+        analyseErrorAndWarnings(dataReceived);
+
+        //Get completeness of the errors and warnings
+        int errorMissing = getErrors().size();
+        int warningMissing = getWarnings().size();
+        double percentageCorrectErrors =  100 - (100 / (double) amountErrors * errorMissing);
+        double percentageCorrectWarnings = 100 - (100 / (double) amountWarnings * warningMissing);
+
 
         // End time
         long elapsedTime = lastReceivedTime - startTime;
@@ -77,6 +107,11 @@ public class Analyser {
                 "\nData latency: " + String.format("%.8f", (timeInSeconds / throughput)) + " seconds for one datapoint" +
                 "\nData throughput: " + String.format("%.3f", (throughput / elapsedTimeInSeconds)) + " per second" +
                 "\nThread efficiency: " + String.format("%.3f", (double) amountSensors / threadAmount) +
+                "\n.................................................." +
+                "\nData quality metrics:" +
+                "\nPeek completeness: " + percentageCorrectWindows +
+                "\nWarning completeness: " + percentageCorrectWarnings +
+                "\nError completeness: " + percentageCorrectErrors +
                 "\n_________________________________________________________________________________________________";
         System.out.println(output);
 
@@ -84,7 +119,7 @@ public class Analyser {
 
     }
 
-    private static void analyse(List<JSONObject> receivedData) {
+    private static void analyseErrorAndWarnings(List<JSONObject> receivedData) {
         for (JSONObject json : receivedData) {
             if (json.has("WarningMessage")) {
                 amountWarnings++;
@@ -105,7 +140,7 @@ public class Analyser {
         int start;
         JSONObject json;
         for(int i = 0; i < dataReceived.size(); i++) {
-            System.out.println(dataReceived.get(i).getJSONObject("data").getInt("id") + " " + dataReceived.get(i).getInt("startTime") + " " + dataReceived.get(i).getInt("endTime"));
+//            System.out.println(dataReceived.get(i).getJSONObject("data").getInt("id") + " " + dataReceived.get(i).getInt("startTime") + " " + dataReceived.get(i).getInt("endTime"));
             if(i == dataReceived.size() - 1) {
                 onlyMaxWindows.add(dataReceived.get(i));
                 break;

@@ -1,24 +1,20 @@
 package dev.datageneration.kafka.AverageClass;
 
-public class AverageTire {
+public class AverageFuelPump {
     public double temp;
-    public double pressure;
+    public double flowRate;
     public int count;
     public int tickStart;
     public int tickEnd;
     public int id;
-    public int position;
-    public int wear;
 
-    public AverageTire(double temp, double pressure, int count, int tickStart, int tickEnd, int id, int position, int wear) {
+    public AverageFuelPump(double temp, double flowRate, int count, int tickStart, int tickEnd, int id) {
         this.temp = temp;
-        this.pressure = pressure;
+        this.flowRate = flowRate;
         this.count = count;
         this.tickStart = tickStart;
         this.tickEnd = tickEnd;
         this.id = id;
-        this.position = position;
-        this.wear = wear;
     }
 
     public double getTemp() {
@@ -26,7 +22,7 @@ public class AverageTire {
     }
 
     public double getPressure() {
-        return pressure;
+        return flowRate;
     }
 
     public int getID() {
@@ -41,22 +37,17 @@ public class AverageTire {
         return tickEnd;
     }
 
-    public int getPosition() {
-        return position;
-    }
-
     public int getCount() {
         return count;
     }
 
     public double[] getAverage() {
-        double[] average = new double[3];
+        double[] average = new double[2];
         if(count != 0) {
             average[0] = temp/count;
-            average[1] = pressure/count;
-            average[2] = (double)wear/count;
+            average[1] = flowRate/count;
         } else {
-            return new double[]{temp, pressure, wear};
+            return new double[]{temp, flowRate};
         }
 //        System.out.println(average[0] + " " + average[1] + " " + average[2]);
         return average;

@@ -36,8 +36,8 @@ public class RandomData {
         RandomData.sensors.add(new String[] {"tire", "temperature tire", "pressure psi", "wear", "liability", "position"});//rear_left_tyre
         RandomData.sensors.add(new String[] {"tire", "temperature tire", "pressure psi", "wear", "liability", "position"});//rear_right_tyre
         RandomData.sensors.add(new String[] {"speed", "kph","mph", "acceleration", "wind speed"});//speed_sensor
-        RandomData.sensors.add(new String[] {"g_force", "g-lateral", "g-longitudinal"});//g_sensor
-        RandomData.sensors.add(new String[] {"fuel_pump", "temperature fuelP", "ml/min"});//fuel_pump_sensor
+        RandomData.sensors.add(new String[] {"gForce", "g-lateral", "g-longitudinal"});//g_sensor
+        RandomData.sensors.add(new String[] {"fuelPump", "temperature fuelP", "ml/min"});//fuel_pump_sensor
         RandomData.sensors.add(new String[] {"DRS", "on/off", "drs-zone"});//drs_sensor
         RandomData.sensors.add(new String[] {"brake", "temperature brake","brake_pressure", "wear"});//front_left_brake
         RandomData.sensors.add(new String[] {"brake", "temperature brake", "brake_pressure", "wear"});//front_right_brake
@@ -81,6 +81,7 @@ public class RandomData {
         put("oil_pressure", new double[]{0.999, 0.001});
         put("fuel_pressure", new double[]{0.999, 0.001});
         put("exhaust", new double[]{0.999, 0.001});
+        put("throttlepedall", new double[]{0.999, 0.001});
     }};
 
     public static double getRandomWithProbability(double min, double max, String name) {

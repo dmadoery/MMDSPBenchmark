@@ -1,9 +1,8 @@
 package dev.datageneration.kafka.KafkaTools;
 
-
-import dev.datageneration.kafka.AverageClass.AverageEngine;
-import dev.datageneration.kafka.JsonClass.JsonEngine;
-import dev.datageneration.kafka.Serde.AverageEngineSerde;
+import dev.datageneration.kafka.AverageClass.AverageSpeed;
+import dev.datageneration.kafka.JsonClass.JsonSpeed;
+import dev.datageneration.kafka.Serde.AverageSpeedSerde;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
@@ -18,7 +17,7 @@ import org.json.JSONObject;
 import java.time.Duration;
 import java.util.Properties;
 
-public class Engine {
+public class Speed {
 
     static Properties props = new Properties();
     static Properties producerProps = new Properties();
@@ -31,13 +30,13 @@ public class Engine {
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
-        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG,0);
+        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
         props.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE); // Ensure exactly-once semantics
-//        props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 8);
+//        props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 4);
     }
 
     public static void main(String[] args) {
-        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "engine-app");
+        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "speed-app");
         getProps(props);
 
         // Configure producer
@@ -54,7 +53,7 @@ public class Engine {
 
         try {
             StreamsBuilder builder = new StreamsBuilder();
-            String inputTopic = "engine";
+            String inputTopic = "speed";
             String outputTopic = "f3";
             KStream<String, String> sensorStream = builder.stream(inputTopic);
 
@@ -62,22 +61,18 @@ public class Engine {
 //                System.out.println("Key: " + key + " Value: " + value);
 //            });
 
-            KTable<Windowed<String>, AverageEngine> aggregatedStream = sensorStream
+            KTable<Windowed<String>, AverageSpeed> aggregatedStream = sensorStream
                     .groupBy((key, value) -> {
 //                        System.out.println("Key :" + key + " Value :" + value);
                         return key;
                     })
                     .windowedBy(TimeWindows.of(Duration.ofMillis(windowSize)).grace(Duration.ofMillis(0)).advanceBy(Duration.ofMillis(advanceBy)))
-                    .aggregate(() -> new AverageEngine(0, 0, 0, 0, 0, 0, 0, 0, 0, -1), (key, value, agg) -> {
-                        JsonEngine entry = new JsonEngine(value);
+                    .aggregate(() -> new AverageSpeed(0, 0, 0, 0, 0, -1), (key, value, agg) -> {
+                        JsonSpeed entry = new JsonSpeed(value);
                         if(!entry.error) {
                             agg.count += 1;
-                            agg.temp += entry.temp;
-                            agg.rpm += entry.rpm;
-                            agg.fuelFlow += entry.fuelFlow;
-                            agg.oilPressure += entry.oilPressure;
-                            agg.fuelPressure += entry.fuelPressure;
-                            agg.exhaust += entry.exhaust;
+                            agg.speed += entry.speed;
+                            agg.wind += entry.wind;
                             if(agg.tickEnd < entry.tick) {
                                 agg.tickEnd = entry.tick;
                             }
@@ -87,7 +82,7 @@ public class Engine {
                             }
                         }
                         return agg;
-                    }, Materialized.with(Serdes.String(), new AverageEngineSerde()))
+                    }, Materialized.with(Serdes.String(), new AverageSpeedSerde()))
                     ;//.suppress(Suppressed.untilWindowCloses(Suppressed.BufferConfig.unbounded()));
 
             aggregatedStream
@@ -102,14 +97,11 @@ public class Engine {
 
 //                        String message = "AverageTire Temp: " + average[0] + " AverageTire Pressure: " + average[1] + " Count: " + value.getCount();
                         JSONObject data = new JSONObject();
-                        data.put("averageTemp", average[0]);
-                        data.put("averageRPM", average[1]);
-                        data.put("averageFuelFlow", average[2]);
-                        data.put("averageOilPressure", average[3]);
-                        data.put("averageFuelPressure", average[4]);
-                        data.put("averageExhaust", average[5]);
+                        data.put("averageSpeed kph", average[0]);
+                        data.put("averageSpeed mph", (average[0] / 1.609344));
+                        data.put("averageWindSpeed", average[1]);
                         data.put("id", value.getID());
-                        data.put("type", "engine");
+                        data.put("type", "speed");
 
                         JSONObject json = new JSONObject();
                         json.put("startTime", value.getTickStart());
@@ -137,12 +129,12 @@ public class Engine {
 
             // Graceful shutdown
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-                try{
-                    producer.flush();
-                    streams.close();
-                } finally {
-                    System.out.println("Shutting down");
-                }
+            try{
+                producer.flush();
+                streams.close();
+            } finally {
+                System.out.println("Shutting down");
+            }
             }));
         } catch (Exception e) {
             e.printStackTrace();

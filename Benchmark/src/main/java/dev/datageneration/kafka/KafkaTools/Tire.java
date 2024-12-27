@@ -31,7 +31,7 @@ public class Tire {
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
-        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 40 * 1024 * 1024); //TODO: give more chache if more sensors over same topic/ does this makes it slow?
+        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
         props.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE); // Ensure exactly-once semantics
 //        props.put(StreamsConfig.NUM_STREAM_THREADS_CONFIG, 4);
     }

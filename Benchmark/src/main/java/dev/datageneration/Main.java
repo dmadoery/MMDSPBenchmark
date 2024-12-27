@@ -24,7 +24,9 @@ public class Main {
     //change path to where settings.txt if stored
     static final String path = "src/main/resources";
     static final File file = new File(path + "/settings.txt");
+    static final String tire = "src/main/java/dev/datageneration/kafka/KafkaTools/Tire.java";
     static boolean aggregated;
+    static boolean createData;
     public static void main(String[] args) throws Exception {
 
         //Get Data from Settings file
@@ -32,14 +34,14 @@ public class Main {
         String st;
         int counter = 0;
         int amount = 0;
-        String[] input = new String[7];
+        String[] input = new String[8];
         while ((st = br.readLine()) != null){
-            if(counter >= 3 && counter <= 7) {
+            if(counter >= 3 && counter <= 8) {
                 input[amount] = st.split(":")[1];
                 System.out.println(input[amount]);
                 amount++;
             }
-            if(counter == 9 || counter == 10) {
+            if(counter == 10 || counter == 11) {
                 input[amount] = st.split(":")[1];
                 System.out.println(input[amount]);
                 amount++;
@@ -48,21 +50,27 @@ public class Main {
         }
         //Set the loaded data
         if(input[0].equals("true")){
+            createData = true;
+        } else {
+            createData = false;
+        }
+        if(input[1].equals("true")){
             aggregated = true;
         } else {
             aggregated = false;
         }
-        int threadAmount = Integer.parseInt(input[1]);
-        int[] sensorArray = new int[Integer.parseInt(input[2])];
-        Arrays.fill(sensorArray, Integer.parseInt(input[3]));
-        long durationTimeStep = Integer.parseInt(input[4]); //milliseconds
-        final File folderStorage = new File(input[5]);
-        final File folderSensorData = new File(input[6]);
+        int threadAmount = Integer.parseInt(input[2]);
+        int[] sensorArray = new int[Integer.parseInt(input[3])];
+        Arrays.fill(sensorArray, Integer.parseInt(input[4]));
+        long durationTimeStep = Integer.parseInt(input[5]); //milliseconds
+        final File folderStorage = new File(input[6]);
+        final File folderSensorData = new File(input[7]);
         System.out.println("Factor: " + (int)(100/durationTimeStep * 5));
 
         //Set data for all files
         RandomData.setPeek((int)(100/durationTimeStep * 5));
-        DataReceiver.setAmountSensors(sensorArray.length);
+        Analyser.setAmountSensors(sensorArray.length);
+        Analyser.setThreadAmount(threadAmount);
         Analyser.setFolder(folderStorage);
         AveragedData.setFolderData(folderSensorData);
         AveragedData.setFolderStore(folderStorage);
@@ -78,17 +86,21 @@ public class Main {
         JsonFileHandler.setFolderAggregated(folderStorage);
         JsonFileHandler.setFolderSensors(folderSensorData);
 
-        //Delete all files in folder
-        JsonFileHandler.deleteAllJsonFiles();
+
 
         //Start Creation of Data
-        SensorGenerator.creator(sensorArray);
-        ErrorCreator.dataWithErrors(); //create some data loss and null entries.
-        DataGenerator.dataGenerator();
-        WindowedData.createWindowedData(); //creates warnings if some data is not in a wished range
-        AveragedData.aggregatedData(durationTimeStep); //get average over a time interval
-        FinalData.createFinalData();
+        if(createData){
+            //Delete all files in folder
+            JsonFileHandler.deleteAllJsonFiles();
 
+            //create files
+            SensorGenerator.creator(sensorArray);
+            ErrorCreator.dataWithErrors(); //create some data loss and null entries.
+            DataGenerator.dataGenerator();
+            WindowedData.createWindowedData(); //creates warnings if some data is not in a wished range
+            AveragedData.aggregatedData(durationTimeStep); //get average over a time interval
+            FinalData.createFinalData();
+        }
 
         //Start Sending to Stream processing System and start receiver
         Thread sendThread = new Thread(() -> {

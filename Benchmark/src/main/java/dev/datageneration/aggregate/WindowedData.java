@@ -99,10 +99,14 @@ public class WindowedData {
                     warning = " exhaust fumes not good.";
                     createErrorObject(jsonObject, type, warning);
                 }
+                if(jsonObject.getJSONObject("data").getInt("fuelFlow") > 120) {
+                    warning = " fuelFlow to high.";
+                    createErrorObject(jsonObject, type, warning);
+                }
                 data.remove(jsonObject);
                 break;
 
-            case "fuel_pump":
+            case "fuelPump":
                 if(jsonObject.getJSONObject("data").getLong("ml/min") > 4000) {
                     warning = " fuel flow is to low.";
                     createErrorObject(jsonObject, type, warning);
@@ -130,7 +134,7 @@ public class WindowedData {
                 data.remove(jsonObject);
                 break;
 
-            case "g_force":
+            case "gForce":
                 if(jsonObject.getJSONObject("data").getDouble("g-lateral") > 6) {
                     warning = " g-force lateral is high.";
                     createErrorObject(jsonObject, type, warning);

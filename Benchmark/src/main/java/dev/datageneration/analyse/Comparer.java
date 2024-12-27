@@ -1,24 +1,35 @@
 package dev.datageneration.analyse;
 
 import dev.datageneration.jsonHandler.JsonFileHandler;
+import lombok.Getter;
 import lombok.Setter;
 import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Comparer {
     static List<JSONObject> dataSent = new LinkedList<>();
     static List<JSONObject> averagedData = new LinkedList<>();
-    static List<JSONObject> windowedData = new LinkedList<>();
+    public static List<JSONObject> windowedData = new LinkedList<>();
     @Setter
     static File folder;
     static final String file1 = "ALL_DATA.json";
     static final String file2 = "averagedData.json";//"finalData.json";
     static final String file3 = "windowedData.json";
+    @Getter
+    static List<String> peeksStore = new LinkedList<>();
+    @Getter
+    static int rightWindow = 0;
+    @Getter
+    static int falseWindow = 0;
+    @Getter
+    static List<JSONObject> errors = new LinkedList<>();
+    @Getter
+    static List<JSONObject> warnings = new LinkedList<>();
+
 
     public static String comparing(List<JSONObject> aggregatedDataReceived, List<JSONObject> dataReceived, boolean aggregated) throws IOException {
         if(aggregated) {
@@ -48,17 +59,17 @@ public class Comparer {
             message += "\nNot all Data received, missing " + dataSent.size() + " data." +
                         "\n                      Completeness: " + percentage + "%";
         } else {
-            message += "\nAll " + dataReceived.size() + " data received. Completeness: " + percentage;
+            message += "\nReceived data " + dataReceived.size() + ". Completeness: " + percentage;
         }
         return message;
     }
 
     private static String compareAveraged(List<JSONObject> windowList, boolean received) throws IOException {
-        //TODO: Comment out the not implemented averages in kafka!
         int[] peeks = new int[7];
-        List<List<JSONObject>> peekWindows = new ArrayList<>();
+        List<List<JSONObject>> peekWindows = new LinkedList<>();
         for (int i = 0; i < 7; i++) {
-            peekWindows.add(new ArrayList<>());
+            peekWindows.add(new LinkedList<>());
+            peeksStore.add("");
         }
         for(JSONObject data : windowList) {
             String type = data.getJSONObject("data").getString("type");
@@ -71,13 +82,14 @@ public class Comparer {
                     if (data.getJSONObject("data").getDouble("averagePressure") > 30) {
                         peeks[0]++;
                     }
-                    //not in Kafka
-//                    if (data.getJSONObject("data").getInt("wear") > 90) {
+                    if (data.getJSONObject("data").getInt("averageWear") > 90) {
+                        peeks[0]++;
+                    }
+//                    if (data.getJSONObject("data").getInt("averageLiability") > 90) {
 //                        peeks[0]++;
 //                    }
                     break;
 
-                //not in Kafka yet
                 case "heat":
                     peekWindows.get(1).add(data);
                     if (data.getJSONObject("data").getDouble("averageTemp") > 50) {
@@ -102,14 +114,12 @@ public class Comparer {
                     if (data.getJSONObject("data").getDouble("averageFuelFlow") > 120) {
                         peeks[2]++;
                     }
-                    //not in Kafka
-//                    if (data.getJSONObject("data").getDouble("averageExhaust") > 1.2) {
-//                        peeks[2]++;
-//                    }
+                    if (data.getJSONObject("data").getDouble("averageExhaust") > 1.2) {
+                        peeks[2]++;
+                    }
                     break;
 
-                // not in Kafka
-                case "break":
+                case "brake":
                     peekWindows.get(3).add(data);
                     if (data.getJSONObject("data").getDouble("averageTemp") > 1000) {
                         peeks[3]++;
@@ -122,41 +132,40 @@ public class Comparer {
                     }
                     break;
 
-                //not in Kafka
                 case "fuelPump":
                     peekWindows.get(4).add(data);
-                    if (data.getJSONObject("data").getDouble("averageTemp") > 1000) {
+                    if (data.getJSONObject("data").getDouble("averageTemp") > 60) {
                         peeks[4]++;
                     }
-                    if (data.getJSONObject("data").getDouble("ml/min") > 4000) {
+                    if (data.getJSONObject("data").getDouble("averageFlowRate") > 4000) {
                         peeks[4]++;
                     }
                     break;
 
-                //not in Kafka
                 case "accelerometer":
                     peekWindows.get(5).add(data);
-                    if (data.getJSONObject("data").getDouble("throttlepedall") > 100) {
+                    if (data.getJSONObject("data").getDouble("averageThrottlepedall") > 100) {
                         peeks[5]++;
                     }
                     break;
 
-                //not in Kafka
                 case "speed":
                     peekWindows.get(6).add(data);
-                    if (data.getJSONObject("data").getDouble("wind speed") > 200) {
+                    if (data.getJSONObject("data").getDouble("averageWindSpeed") > 200) {
                         peeks[6]++;
                     }
-                    if (data.getJSONObject("data").getDouble("kph") > 360) {
+                    if (data.getJSONObject("data").getDouble("averageSpeed kph") > 360) {
                         peeks[6]++;
                     }
                     break;
             }
         }
+        int j = 0;
         StringBuilder message = new StringBuilder();
         String receivedSended = "sent";
         if(received) {
             receivedSended = "received";
+            j = 7;
         }
         for(int i = 0; i < peekWindows.size(); i++) {
             if (!peekWindows.get(i).isEmpty()) {
@@ -166,6 +175,7 @@ public class Comparer {
                         .append(peeks[i]).append(".\n");
                 double percent = ((double) 100 / peekWindows.get(i).size()) * peeks[i];
                 message.append("Percentage of ").append(type).append(": ").append(percent).append(" %\n\n");
+                peeksStore.add(i + j, receivedSended + ":" + type + ":" + peeks[i] + ":" + percent);
             }
         }
 
@@ -179,16 +189,15 @@ public class Comparer {
     }
 
     private static String compareWarnings(List<JSONObject> dataReceived) {
-
-        windowedData.removeIf(received ->
+        List<JSONObject> missing = new LinkedList<>(windowedData);
+        missing.removeIf(received ->
                 dataReceived.stream().anyMatch(existing -> areJsonObjectsEqual(received, existing))
         );
-        if(windowedData.isEmpty()) {
+        if(missing.isEmpty()) {
             return "\nAll errors and Warnings received correctly.\n";
         } else {
-            List<JSONObject> errors = new LinkedList<>();
-            List<JSONObject> warnings = new LinkedList<>();
-            for (JSONObject entry: windowedData) {
+
+            for (JSONObject entry: missing) {
                 if(entry.has("WarningMessage")) {
                     warnings.add(entry);
                 } else {
@@ -205,8 +214,6 @@ public class Comparer {
     }
 
     private static String checkPeeks(List<List<JSONObject>> peekWindows) {
-        int rightWindow = 0;
-        int falseWindow = 0;
         for(List<JSONObject> list: peekWindows)  {
             for(JSONObject peek : list) {
                 int start = peek.getInt("startTime");
@@ -230,15 +237,26 @@ public class Comparer {
                                 falseWindow++;
                             }
                         }
-                          //not in Kafka
-//                      if (data.getInt("wear") > 90) {
-//
-//                      }
+
+                        if (data.getInt("averageWear") > 90) {
+                            if (peekChecker(id, start, end)) {
+                                rightWindow++;
+                            } else {
+                                falseWindow++;
+                            }
+                        }
+                        //not in Kafka
+//                        if (data.getInt("averageLiability") > 90) {
+    //                        if (peekChecker(id, start, end)) {
+    //                            rightWindow++;
+    //                        } else {
+    //                            falseWindow++;
+    //                        }
+//                        }
+
                         break;
 
-                    //not in Kafka yet
                     case "heat":
-                        peekWindows.get(1).add(data);
                         if (data.getDouble("averageTemp") > 50) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
@@ -249,7 +267,6 @@ public class Comparer {
                         break;
 
                     case "engine":
-                        peekWindows.get(2).add(data);
                         if (data.getDouble("averageTemp") > 600) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
@@ -285,19 +302,16 @@ public class Comparer {
                                 falseWindow++;
                             }
                         }
-                          //not in Kafka
-//                        if (data.getJSONObject("data").getDouble("averageExhaust") > 1.2) {
-//                            if (peekChecker(id, start, end)) {
-//                                rightWindow++;
-//                            } else {
-//                                falseWindow++;
-//                            }
-//                        }
+                        if (data.getDouble("averageExhaust") > 1.2) {
+                            if (peekChecker(id, start, end)) {
+                                rightWindow++;
+                            } else {
+                                falseWindow++;
+                            }
+                        }
                         break;
 
-                    // not in Kafka
-                    case "break":
-                        peekWindows.get(3).add(data);
+                    case "brake":
                         if (data.getDouble("averageTemp") > 1000) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
@@ -321,17 +335,15 @@ public class Comparer {
                         }
                         break;
 
-                    //not in Kafka
                     case "fuelPump":
-                        peekWindows.get(4).add(data);
-                        if (data.getDouble("averageTemp") > 1000) {
+                        if (data.getDouble("averageTemp") > 60) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
                             } else {
                                 falseWindow++;
                             }
                         }
-                        if (data.getDouble("ml/min") > 4000) {
+                        if (data.getDouble("averageFlowRate") > 4000) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
                             } else {
@@ -340,10 +352,8 @@ public class Comparer {
                         }
                         break;
 
-                    //not in Kafka
                     case "accelerometer":
-                        peekWindows.get(5).add(data);
-                        if (data.getDouble("throttlepedall") > 100) {
+                        if (data.getDouble("averageThrottlepedall") > 100) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
                             } else {
@@ -352,17 +362,15 @@ public class Comparer {
                         }
                         break;
 
-                    //not in Kafka
                     case "speed":
-                        peekWindows.get(6).add(data);
-                        if (data.getDouble("wind speed") > 200) {
+                        if (data.getDouble("averageWindSpeed") > 200) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
                             } else {
                                 falseWindow++;
                             }
                         }
-                        if (data.getDouble("kph") > 360) {
+                        if (data.getDouble("averageSpeed kph") > 360) {
                             if (peekChecker(id, start, end)) {
                                 rightWindow++;
                             } else {
@@ -373,23 +381,25 @@ public class Comparer {
                 }
             }
         }
-        if(falseWindow == 0) {
-            return "All " + rightWindow +" peeks correct";
-        } else {
-            return "Amount wrong peeks wrong: " + falseWindow;
-        }
+
+        String correct = "Amount right peeks: " + rightWindow + ".\n";
+        String wrong = "Amount false peeks: " + falseWindow + ".";
+        return correct + wrong;
     }
 
     private static boolean peekChecker(int id, int start, int end) {
+        boolean found = false;
         for (JSONObject data : windowedData) {
+            int iD = data.getJSONObject("data").getInt("id");
+            int tick = data.getInt("tick");
             if(data.has("WarningMessage")) {
-                if (data.getJSONObject("data").getInt("id") == id
-                        && data.getInt("tick") >= start && data.getInt("tick") <= end) {
-                    return true;
+                if (iD == id && start <= tick  && tick <= end ) {
+                    found = true;
+                    break;
                 }
             }
         }
-        return false;
+        return found;
     }
 
     private static boolean areJsonObjectsEqual(JSONObject obj1, JSONObject obj2) {

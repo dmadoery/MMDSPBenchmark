@@ -48,8 +48,8 @@ public abstract class Sensor {
         put( "tire", 1);                //tick --> 10 entries per timeunit
         put( "heat", 1);
         put( "speed", 1);
-        put( "g_force", 1);
-        put( "fuel_pump", 1);
+        put( "gForce", 1);
+        put( "fuelPump", 1);
         put( "DRS", 1);
         put( "brake", 1);
         put( "steering", 1);

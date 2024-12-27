@@ -1,14 +1,15 @@
 Settings of the Workload
 ------------------------------------------------
 Benchmark:
+Create Data:true
 Aggregated Data:true
-Amount of Threads:6
+Amount of Threads:1
 Amount of Sensors:10
-Entries per Sensor:600
+Entries per Sensor:10000
 Duration time step (milliseconds):5
 ------------------------------------------------
-Path aggregated data:src/main/resources
-Path sensor data:src/main/resources/sensors
+Path aggregated data:src/main/resources/workload10
+Path sensor data:src/main/resources/workload10/sensors
 ------------------------------------------------
 Stream Processing System:
 Window size (milliseconds):1000

@@ -30,7 +30,7 @@ public class Warnings {
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");
-        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 40 * 1024 * 1024);
+        props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, 0);
         props.put(StreamsConfig.PROCESSING_GUARANTEE_CONFIG, StreamsConfig.EXACTLY_ONCE); // Ensure exactly-once semantics
     }
 
@@ -140,9 +140,14 @@ public class Warnings {
                                 warningJson = createErrorObject(json, type, warning);
                                 send = true;
                             }
+                            if(data.getInt("fuelFlow") > 120) {
+                                warning = " fuelFlow to high.";
+                                warningJson = createErrorObject(json, type, warning);
+                                send = true;
+                            }
                             break;
 
-                        case "fuel_pump":
+                        case "fuelPump":
                             if(data.getLong("ml/min") > 4000) {
                                 warning = " fuel flow is to low.";
                                 warningJson = createErrorObject(json, type, warning);
@@ -173,7 +178,7 @@ public class Warnings {
                             }
                             break;
 
-                        case "g_force":
+                        case "gForce":
                             if(data.getDouble("g-lateral") > 6) {
                                 warning = " g-force lateral is high.";
                                 warningJson = createErrorObject(json, type, warning);
