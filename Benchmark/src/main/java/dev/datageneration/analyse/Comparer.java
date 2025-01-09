@@ -171,7 +171,7 @@ public class Comparer {
             if (!peekWindows.get(i).isEmpty()) {
                 String type = peekWindows.get(i).getFirst().getJSONObject("data").getString("type");
                 message.append("Amount of windows ").append(receivedSended).append(" from: ").append(type).append(" ").append(peekWindows.get(i).size()).append(".\n");
-                message.append("Amount of peeks ").append(receivedSended).append(" from: ").append(type).append(" ")
+                message.append("Amount of peaks ").append(receivedSended).append(" from: ").append(type).append(" ")
                         .append(peeks[i]).append(".\n");
                 double percent = ((double) 100 / peekWindows.get(i).size()) * peeks[i];
                 message.append("Percentage of ").append(type).append(": ").append(percent).append(" %\n\n");
@@ -382,8 +382,8 @@ public class Comparer {
             }
         }
 
-        String correct = "Amount right peeks: " + rightWindow + ".\n";
-        String wrong = "Amount false peeks: " + falseWindow + ".";
+        String correct = "Amount right peaks: " + rightWindow + ".\n";
+        String wrong = "Amount false peaks: " + falseWindow + ".";
         return correct + wrong;
     }
 

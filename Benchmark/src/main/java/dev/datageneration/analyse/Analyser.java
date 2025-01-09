@@ -18,6 +18,7 @@ public class Analyser {
     static List<JSONObject> averagedData = new LinkedList<>();
     @Setter
     static File folder;
+    static File folderResults = new File( "src/main/resources");
     static final String file1 = "ALL_DATA.json";
     static final String file2 = "averagedData.json";//"finalData.json";
     static int amountErrors = 0;
@@ -27,57 +28,62 @@ public class Analyser {
     static int threadAmount;
     @Setter
     static int amountSensors;
+    static String message;
+    static double percentageCorrectErrors;
+    static double percentageCorrectWarnings;
+    static double percentageCorrectWindows;
 
     public static void analyser(boolean aggregated, List<JSONObject> dataReceived, long startTime,
                                 long lastReceivedTime, int throughput) throws IOException {
         if (aggregated) { //aggregated Data
             JsonFileHandler.readJsonFile(folder, file2, averagedData);
             System.out.println("Aggregated data received");
+
+
+            List<JSONObject> onlyWindows = getOnlyWindows(dataReceived);
+
+            dataReceived.removeAll(onlyWindows);
+
+            List<JSONObject> onlyMaxWindows = getOnlyMaxWindows(onlyWindows);
+
+            writeJsonFile(folder, "maxWindowsFromSystem", onlyMaxWindows);
+            writeJsonFile(folder, "windowsFomSystem", onlyWindows);
+            writeJsonFile(folder, "error_warnings_system", dataReceived);
+
+            //send data to the comparer to validate the peeks
+            String message = comparing(onlyMaxWindows, dataReceived, aggregated);
+
+            List<String> peekStore = Comparer.getPeeksStore();
+            StringBuilder peekAnalyse = new StringBuilder();
+            for (String s : peekStore) {
+                String[] info = s.split(":");
+                for (int j = 0; j < info.length; j++) {
+                    peekAnalyse.append(info[j]).append(" ");
+                    if(j == 2 && info[0].equals("received")) {
+                        amountPeeks += Integer.parseInt(info[j]);
+                    }
+                }
+                peekAnalyse.append("\n");
+            }
+            System.out.println(peekAnalyse.toString());
+
+            //Get Completeness of the peeks in the windows
+            int amountWrongPeeks = getFalseWindow();
+            int amountRightPeeks = getRightWindow();
+            percentageCorrectWindows = 100 / (double) amountPeeks * amountRightPeeks;
+
+            analyseErrorAndWarnings(dataReceived);
+
+            //Get completeness of the errors and warnings
+            int errorMissing = getErrors().size();
+            int warningMissing = getWarnings().size();
+            percentageCorrectErrors =  100 - (100 / (double) amountErrors * errorMissing);
+            percentageCorrectWarnings = 100 - (100 / (double) amountWarnings * warningMissing);
+
         } else {
             JsonFileHandler.readJsonFile(folder, file1, dataSent);
             System.out.println("Normal data received");
         }
-
-        List<JSONObject> onlyWindows = getOnlyWindows(dataReceived);
-
-        dataReceived.removeAll(onlyWindows);
-
-        List<JSONObject> onlyMaxWindows = getOnlyMaxWindows(onlyWindows);
-
-        writeJsonFile(folder, "maxWindowsFromSystem", onlyMaxWindows);
-        writeJsonFile(folder, "windowsFomSystem", onlyWindows);
-        writeJsonFile(folder, "error_warnings_system", dataReceived);
-
-        //send data to the comparer to validate the peeks
-        String message = comparing(onlyMaxWindows, dataReceived, aggregated);
-
-        List<String> peekStore = Comparer.getPeeksStore();
-        StringBuilder peekAnalyse = new StringBuilder();
-        for (String s : peekStore) {
-            String[] info = s.split(":");
-            for (int j = 0; j < info.length; j++) {
-                peekAnalyse.append(info[j]).append(" ");
-                if(j == 2 && info[0].equals("received")) {
-                    amountPeeks += Integer.parseInt(info[j]);
-                }
-            }
-            peekAnalyse.append("\n");
-        }
-        System.out.println(peekAnalyse.toString());
-
-        //Get Completeness of the peeks in the windows
-        int amountWrongPeeks = getFalseWindow();
-        int amountRightPeeks = getRightWindow();
-        double percentageCorrectWindows = 100 / (double) amountPeeks * amountRightPeeks;
-
-        analyseErrorAndWarnings(dataReceived);
-
-        //Get completeness of the errors and warnings
-        int errorMissing = getErrors().size();
-        int warningMissing = getWarnings().size();
-        double percentageCorrectErrors =  100 - (100 / (double) amountErrors * errorMissing);
-        double percentageCorrectWarnings = 100 - (100 / (double) amountWarnings * warningMissing);
-
 
         // End time
         long elapsedTime = lastReceivedTime - startTime;
@@ -109,13 +115,13 @@ public class Analyser {
                 "\nThread efficiency: " + String.format("%.3f", (double) amountSensors / threadAmount) +
                 "\n.................................................." +
                 "\nData quality metrics:" +
-                "\nPeek completeness: " + percentageCorrectWindows +
+                "\nPeak completeness: " + percentageCorrectWindows +
                 "\nWarning completeness: " + percentageCorrectWarnings +
                 "\nError completeness: " + percentageCorrectErrors +
                 "\n_________________________________________________________________________________________________";
         System.out.println(output);
 
-        writeFile(folder, "analysis", output);
+        writeFile(folderResults, "analysis", output);
 
     }
 

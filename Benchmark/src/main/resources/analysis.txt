@@ -1,0 +1,5225 @@
+Workload1+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 12:08:19
+Data received in 5.41600 seconds
+Amount Warnings in data: 4
+Amount Errors in data: 21
+Amount of data received: 4025
+Amount of Sensors used: 1
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 23.
+Amount of peaks sent from: tire 12.
+Percentage of tire: 52.17391304347826 %
+
+
+Amount of windows received from: tire 23.
+Amount of peaks received from: tire 11.
+Percentage of tire: 47.826086956521735 %
+
+Amount right peaks: 11.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00134559 seconds for one datapoint
+Data throughput: 743.168 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:09:32
+Data received in 5.40900 seconds
+Amount Warnings in data: 4
+Amount Errors in data: 21
+Amount of data received: 4025
+Amount of Sensors used: 1
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 23.
+Amount of peaks sent from: tire 12.
+Percentage of tire: 52.17391304347826 %
+
+
+Amount of windows received from: tire 23.
+Amount of peaks received from: tire 12.
+Percentage of tire: 52.17391304347826 %
+
+Amount right peaks: 12.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00134385 seconds for one datapoint
+Data throughput: 744.130 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:09:56
+Data received in 5.40000 seconds
+Amount Warnings in data: 4
+Amount Errors in data: 21
+Amount of data received: 4025
+Amount of Sensors used: 1
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 23.
+Amount of peaks sent from: tire 12.
+Percentage of tire: 52.17391304347826 %
+
+
+Amount of windows received from: tire 22.
+Amount of peaks received from: tire 11.
+Percentage of tire: 50.00000000000001 %
+
+Amount right peaks: 11.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00134161 seconds for one datapoint
+Data throughput: 745.370 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload2++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 12:10:57
+Data received in 5.53900 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 44.
+Amount of peaks received from: tire 13.
+Percentage of tire: 29.545454545454547 %
+
+Amount right peaks: 13.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00067582 seconds for one datapoint
+Data throughput: 1479.689 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:11:25
+Data received in 5.57400 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 14.
+Percentage of tire: 30.43478260869565 %
+
+Amount right peaks: 14.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00068009 seconds for one datapoint
+Data throughput: 1470.398 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:11:48
+Data received in 5.56300 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+Amount right peaks: 13.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00067875 seconds for one datapoint
+Data throughput: 1473.306 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:12:19
+Data received in 5.58000 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+Amount right peaks: 13.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00068082 seconds for one datapoint
+Data throughput: 1468.817 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:12:59
+Data received in 5.56400 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+Amount right peaks: 13.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00067887 seconds for one datapoint
+Data throughput: 1473.041 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:13:27
+Data received in 5.56900 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 14.
+Percentage of tire: 30.43478260869565 %
+
+Amount right peaks: 14.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00067948 seconds for one datapoint
+Data throughput: 1471.718 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:13:56
+Data received in 5.57800 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 14.
+Percentage of tire: 30.43478260869565 %
+
+Amount right peaks: 14.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00068058 seconds for one datapoint
+Data throughput: 1469.344 per second
+Thread efficiency: 0.500
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:14:22
+Data received in 5.57400 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+Amount right peaks: 13.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00068009 seconds for one datapoint
+Data throughput: 1470.398 per second
+Thread efficiency: 0.500
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 12:14:58
+Data received in 5.56700 seconds
+Amount Warnings in data: 7
+Amount Errors in data: 201
+Amount of data received: 8196
+Amount of Sensors used: 2
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 13.
+Percentage of tire: 28.26086956521739 %
+
+Amount right peaks: 13.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00067923 seconds for one datapoint
+Data throughput: 1472.247 per second
+Thread efficiency: 0.500
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload3++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 13:07:25
+Data received in 541.07700 seconds
+Amount Warnings in data: 536
+Amount Errors in data: 15294
+Amount of data received: 813286
+Amount of Sensors used: 2
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 2212.
+Amount of peaks sent from: tire 514.
+Percentage of tire: 23.236889692585894 %
+
+Amount of windows sent from: brake 2219.
+Amount of peaks sent from: brake 699.
+Percentage of brake: 31.500675980171252 %
+
+
+Amount of windows received from: tire 2165.
+Amount of peaks received from: tire 554.
+Percentage of tire: 25.58891454965358 %
+
+Amount of windows received from: brake 2165.
+Amount of peaks received from: brake 665.
+Percentage of brake: 30.71593533487298 %
+
+Amount right peaks: 1219.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00066530 seconds for one datapoint
+Data throughput: 1503.087 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 13:33:20
+Data received in 539.17100 seconds
+Amount Warnings in data: 536
+Amount Errors in data: 15294
+Amount of data received: 813286
+Amount of Sensors used: 2
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 2212.
+Amount of peaks sent from: tire 514.
+Percentage of tire: 23.236889692585894 %
+
+Amount of windows sent from: brake 2219.
+Amount of peaks sent from: brake 699.
+Percentage of brake: 31.500675980171252 %
+
+
+Amount of windows received from: tire 2158.
+Amount of peaks received from: tire 546.
+Percentage of tire: 25.301204819277107 %
+
+Amount of windows received from: brake 2157.
+Amount of peaks received from: brake 656.
+Percentage of brake: 30.41261010662958 %
+
+Amount right peaks: 1202.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00066295 seconds for one datapoint
+Data throughput: 1508.401 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 13:59:07
+Data received in 538.97000 seconds
+Amount Warnings in data: 536
+Amount Errors in data: 15294
+Amount of data received: 813286
+Amount of Sensors used: 2
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 2212.
+Amount of peaks sent from: tire 514.
+Percentage of tire: 23.236889692585894 %
+
+Amount of windows sent from: brake 2219.
+Amount of peaks sent from: brake 699.
+Percentage of brake: 31.500675980171252 %
+
+
+Amount of windows received from: tire 2156.
+Amount of peaks received from: tire 547.
+Percentage of tire: 25.371057513914653 %
+
+Amount of windows received from: brake 2156.
+Amount of peaks received from: brake 642.
+Percentage of brake: 29.777365491651203 %
+
+Amount right peaks: 1189.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00066271 seconds for one datapoint
+Data throughput: 1508.963 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 14:43:09
+Data received in 1518.67400 seconds
+Amount Warnings in data: 536
+Amount Errors in data: 15294
+Amount of data received: 813286
+Amount of Sensors used: 2
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 2212.
+Amount of peaks sent from: tire 514.
+Percentage of tire: 23.236889692585894 %
+
+Amount of windows sent from: brake 2219.
+Amount of peaks sent from: brake 699.
+Percentage of brake: 31.500675980171252 %
+
+
+Amount of windows received from: tire 6075.
+Amount of peaks received from: tire 951.
+Percentage of tire: 15.654320987654323 %
+
+Amount of windows received from: brake 6075.
+Amount of peaks received from: brake 1010.
+Percentage of brake: 16.625514403292183 %
+
+Amount right peaks: 1961.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00186733 seconds for one datapoint
+Data throughput: 535.524 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:28:44
+Data received in 1235.06900 seconds
+Amount Warnings in data: 536
+Amount Errors in data: 15294
+Amount of data received: 813286
+Amount of Sensors used: 2
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 2212.
+Amount of peaks sent from: tire 514.
+Percentage of tire: 23.236889692585894 %
+
+Amount of windows sent from: brake 2219.
+Amount of peaks sent from: brake 699.
+Percentage of brake: 31.500675980171252 %
+
+
+Amount of windows received from: tire 4940.
+Amount of peaks received from: tire 817.
+Percentage of tire: 16.53846153846154 %
+
+Amount of windows received from: brake 4940.
+Amount of peaks received from: brake 883.
+Percentage of brake: 17.874493927125506 %
+
+Amount right peaks: 1700.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00151862 seconds for one datapoint
+Data throughput: 658.494 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload4++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 15:39:00
+Data received in 10.26300 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount right peaks: 22.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082706 seconds for one datapoint
+Data throughput: 1209.101 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:40:03
+Data received in 10.25000 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount right peaks: 22.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082601 seconds for one datapoint
+Data throughput: 1210.634 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:40:31
+Data received in 10.25800 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount right peaks: 22.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082666 seconds for one datapoint
+Data throughput: 1209.690 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:41:18
+Data received in 10.22700 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 48.
+Amount of peaks received from: tire 18.
+Percentage of tire: 37.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount right peaks: 22.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082416 seconds for one datapoint
+Data throughput: 1213.357 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:42:06
+Data received in 10.24400 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount right peaks: 22.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082553 seconds for one datapoint
+Data throughput: 1211.343 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:42:53
+Data received in 10.26600 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount right peaks: 22.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082730 seconds for one datapoint
+Data throughput: 1208.747 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:43:29
+Data received in 10.21900 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 48.
+Amount of peaks received from: tire 19.
+Percentage of tire: 39.583333333333336 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount right peaks: 23.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082352 seconds for one datapoint
+Data throughput: 1214.307 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:43:54
+Data received in 10.24900 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 48.
+Amount of peaks received from: tire 18.
+Percentage of tire: 37.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount right peaks: 22.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082593 seconds for one datapoint
+Data throughput: 1210.752 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:44:25
+Data received in 10.22500 seconds
+Amount Warnings in data: 10
+Amount Errors in data: 419
+Amount of data received: 12409
+Amount of Sensors used: 4
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+
+Amount of windows received from: tire 48.
+Amount of peaks received from: tire 19.
+Percentage of tire: 39.583333333333336 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount right peaks: 23.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00082400 seconds for one datapoint
+Data throughput: 1213.594 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload5++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 15:46:40
+Data received in 58.64800 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 470.
+Amount of peaks received from: tire 117.
+Percentage of tire: 24.893617021276597 %
+
+Amount of windows received from: brake 235.
+Amount of peaks received from: brake 86.
+Percentage of brake: 36.59574468085106 %
+
+Amount right peaks: 203.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048309 seconds for one datapoint
+Data throughput: 2070.028 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:48:57
+Data received in 58.61000 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 470.
+Amount of peaks received from: tire 117.
+Percentage of tire: 24.893617021276597 %
+
+Amount of windows received from: brake 235.
+Amount of peaks received from: brake 89.
+Percentage of brake: 37.87234042553192 %
+
+Amount right peaks: 206.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048277 seconds for one datapoint
+Data throughput: 2071.370 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 15:53:29
+Data received in 58.76000 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 472.
+Amount of peaks received from: tire 116.
+Percentage of tire: 24.576271186440678 %
+
+Amount of windows received from: brake 236.
+Amount of peaks received from: brake 88.
+Percentage of brake: 37.28813559322034 %
+
+Amount right peaks: 204.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048401 seconds for one datapoint
+Data throughput: 2066.082 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 17:50:05
+Data received in 58.94300 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 472.
+Amount of peaks received from: tire 118.
+Percentage of tire: 25.0 %
+
+Amount of windows received from: brake 236.
+Amount of peaks received from: brake 88.
+Percentage of brake: 37.28813559322034 %
+
+Amount right peaks: 206.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048552 seconds for one datapoint
+Data throughput: 2059.668 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 17:51:52
+Data received in 58.82000 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 472.
+Amount of peaks received from: tire 117.
+Percentage of tire: 24.78813559322034 %
+
+Amount of windows received from: brake 236.
+Amount of peaks received from: brake 88.
+Percentage of brake: 37.28813559322034 %
+
+Amount right peaks: 205.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048450 seconds for one datapoint
+Data throughput: 2063.975 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 17:55:53
+Data received in 58.76700 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 472.
+Amount of peaks received from: tire 116.
+Percentage of tire: 24.576271186440678 %
+
+Amount of windows received from: brake 236.
+Amount of peaks received from: brake 89.
+Percentage of brake: 37.71186440677966 %
+
+Amount right peaks: 205.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048407 seconds for one datapoint
+Data throughput: 2065.836 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 17:57:54
+Data received in 58.60200 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 470.
+Amount of peaks received from: tire 117.
+Percentage of tire: 24.893617021276597 %
+
+Amount of windows received from: brake 235.
+Amount of peaks received from: brake 86.
+Percentage of brake: 36.59574468085106 %
+
+Amount right peaks: 203.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048271 seconds for one datapoint
+Data throughput: 2071.653 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 17:59:34
+Data received in 58.80700 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 472.
+Amount of peaks received from: tire 118.
+Percentage of tire: 25.0 %
+
+Amount of windows received from: brake 236.
+Amount of peaks received from: brake 88.
+Percentage of brake: 37.28813559322034 %
+
+Amount right peaks: 206.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048439 seconds for one datapoint
+Data throughput: 2064.431 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:01:50
+Data received in 58.74500 seconds
+Amount Warnings in data: 96
+Amount Errors in data: 1471
+Amount of data received: 121403
+Amount of Sensors used: 4
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 112.
+Percentage of tire: 25.225225225225227 %
+
+Amount of windows sent from: brake 223.
+Amount of peaks sent from: brake 76.
+Percentage of brake: 34.08071748878924 %
+
+
+Amount of windows received from: tire 470.
+Amount of peaks received from: tire 116.
+Percentage of tire: 24.680851063829788 %
+
+Amount of windows received from: brake 235.
+Amount of peaks received from: brake 86.
+Percentage of brake: 36.59574468085106 %
+
+Amount right peaks: 202.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048388 seconds for one datapoint
+Data throughput: 2066.610 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload6+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 18:03:26
+Data received in 9.69900 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 17.
+Percentage of tire: 34.0 %
+
+Amount of windows received from: brake 50.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount of windows received from: speed 25.
+Amount of peaks received from: speed 4.
+Percentage of speed: 16.0 %
+
+Amount right peaks: 29.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00039536 seconds for one datapoint
+Data throughput: 2529.333 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:04:07
+Data received in 9.63700 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 17.
+Percentage of tire: 34.0 %
+
+Amount of windows received from: brake 50.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount of windows received from: speed 25.
+Amount of peaks received from: speed 4.
+Percentage of speed: 16.0 %
+
+Amount right peaks: 29.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00039283 seconds for one datapoint
+Data throughput: 2545.605 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:04:38
+Data received in 9.68000 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 17.
+Percentage of tire: 34.0 %
+
+Amount of windows received from: brake 50.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount of windows received from: speed 25.
+Amount of peaks received from: speed 4.
+Percentage of speed: 16.0 %
+
+Amount right peaks: 29.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00039459 seconds for one datapoint
+Data throughput: 2534.298 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:05:20
+Data received in 9.65700 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: brake 50.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount of windows received from: speed 25.
+Amount of peaks received from: speed 4.
+Percentage of speed: 16.0 %
+
+Amount right peaks: 30.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00039365 seconds for one datapoint
+Data throughput: 2540.333 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:06:22
+Data received in 9.61600 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: brake 50.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount of windows received from: speed 25.
+Amount of peaks received from: speed 4.
+Percentage of speed: 16.0 %
+
+Amount right peaks: 30.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00039198 seconds for one datapoint
+Data throughput: 2551.165 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:06:47
+Data received in 9.65100 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 50.
+Amount of peaks received from: tire 18.
+Percentage of tire: 36.0 %
+
+Amount of windows received from: brake 50.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount of windows received from: speed 25.
+Amount of peaks received from: speed 4.
+Percentage of speed: 16.0 %
+
+Amount right peaks: 30.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00039340 seconds for one datapoint
+Data throughput: 2541.913 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:07:21
+Data received in 12.81800 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 18.
+Percentage of tire: 39.130434782608695 %
+
+Amount of windows received from: brake 46.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+Amount right peaks: 30.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00052250 seconds for one datapoint
+Data throughput: 1913.871 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:08:23
+Data received in 14.30100 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows received from: brake 46.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+Amount right peaks: 29.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00058295 seconds for one datapoint
+Data throughput: 1715.405 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:09:06
+Data received in 9.07500 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows received from: brake 46.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+Amount right peaks: 29.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00036992 seconds for one datapoint
+Data throughput: 2703.251 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:09:38
+Data received in 9.05300 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows received from: brake 46.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+Amount right peaks: 29.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00036903 seconds for one datapoint
+Data throughput: 2709.820 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:10:12
+Data received in 9.08900 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 17.
+Percentage of tire: 36.95652173913043 %
+
+Amount of windows received from: brake 46.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+Amount right peaks: 29.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00037050 seconds for one datapoint
+Data throughput: 2699.087 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:10:40
+Data received in 9.08500 seconds
+Amount Warnings in data: 11
+Amount Errors in data: 609
+Amount of data received: 24532
+Amount of Sensors used: 8
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 46.
+Amount of peaks sent from: tire 16.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: brake 46.
+Amount of peaks sent from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 46.
+Amount of peaks received from: tire 18.
+Percentage of tire: 39.130434782608695 %
+
+Amount of windows received from: brake 46.
+Amount of peaks received from: brake 4.
+Percentage of brake: 8.695652173913043 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+Amount right peaks: 30.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00037033 seconds for one datapoint
+Data throughput: 2700.275 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload7+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 18:14:13
+Data received in 54.24300 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 434.
+Amount of peaks received from: tire 108.
+Percentage of tire: 24.88479262672811 %
+
+Amount of windows received from: heat 217.
+Amount of peaks received from: heat 37.
+Percentage of heat: 17.05069124423963 %
+
+Amount of windows received from: brake 651.
+Amount of peaks received from: brake 199.
+Percentage of brake: 30.56835637480799 %
+
+Amount right peaks: 344.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022220 seconds for one datapoint
+Data throughput: 4500.396 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:21:06
+Data received in 54.16700 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 436.
+Amount of peaks received from: tire 108.
+Percentage of tire: 24.770642201834864 %
+
+Amount of windows received from: heat 218.
+Amount of peaks received from: heat 37.
+Percentage of heat: 16.972477064220186 %
+
+Amount of windows received from: brake 654.
+Amount of peaks received from: brake 196.
+Percentage of brake: 29.969418960244646 %
+
+Amount right peaks: 341.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022189 seconds for one datapoint
+Data throughput: 4506.711 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:28:31
+Data received in 53.90900 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 432.
+Amount of peaks received from: tire 107.
+Percentage of tire: 24.76851851851852 %
+
+Amount of windows received from: heat 216.
+Amount of peaks received from: heat 37.
+Percentage of heat: 17.12962962962963 %
+
+Amount of windows received from: brake 648.
+Amount of peaks received from: brake 197.
+Percentage of brake: 30.401234567901234 %
+
+Amount right peaks: 341.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022083 seconds for one datapoint
+Data throughput: 4528.279 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:31:19
+Data received in 54.06200 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 434.
+Amount of peaks received from: tire 107.
+Percentage of tire: 24.65437788018433 %
+
+Amount of windows received from: heat 217.
+Amount of peaks received from: heat 37.
+Percentage of heat: 17.05069124423963 %
+
+Amount of windows received from: brake 651.
+Amount of peaks received from: brake 198.
+Percentage of brake: 30.414746543778804 %
+
+Amount right peaks: 342.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022146 seconds for one datapoint
+Data throughput: 4515.464 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:34:13
+Data received in 54.02700 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 434.
+Amount of peaks received from: tire 107.
+Percentage of tire: 24.65437788018433 %
+
+Amount of windows received from: heat 217.
+Amount of peaks received from: heat 37.
+Percentage of heat: 17.05069124423963 %
+
+Amount of windows received from: brake 651.
+Amount of peaks received from: brake 197.
+Percentage of brake: 30.261136712749618 %
+
+Amount right peaks: 341.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022132 seconds for one datapoint
+Data throughput: 4518.389 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:41:21
+Data received in 54.09000 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 434.
+Amount of peaks received from: tire 109.
+Percentage of tire: 25.11520737327189 %
+
+Amount of windows received from: heat 217.
+Amount of peaks received from: heat 37.
+Percentage of heat: 17.05069124423963 %
+
+Amount of windows received from: brake 651.
+Amount of peaks received from: brake 197.
+Percentage of brake: 30.261136712749618 %
+
+Amount right peaks: 343.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022158 seconds for one datapoint
+Data throughput: 4513.126 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:49:10
+Data received in 54.15100 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 434.
+Amount of peaks received from: tire 107.
+Percentage of tire: 24.65437788018433 %
+
+Amount of windows received from: heat 217.
+Amount of peaks received from: heat 37.
+Percentage of heat: 17.05069124423963 %
+
+Amount of windows received from: brake 651.
+Amount of peaks received from: brake 200.
+Percentage of brake: 30.721966205837177 %
+
+Amount right peaks: 344.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022183 seconds for one datapoint
+Data throughput: 4508.042 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 18:55:25
+Data received in 142.73100 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 1144.
+Amount of peaks received from: tire 223.
+Percentage of tire: 19.493006993006993 %
+
+Amount of windows received from: heat 572.
+Amount of peaks received from: heat 38.
+Percentage of heat: 6.643356643356643 %
+
+Amount of windows received from: brake 1716.
+Amount of peaks received from: brake 268.
+Percentage of brake: 15.617715617715618 %
+
+Amount right peaks: 529.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00058469 seconds for one datapoint
+Data throughput: 1710.315 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 19:04:21
+Data received in 142.74400 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 1144.
+Amount of peaks received from: tire 221.
+Percentage of tire: 19.318181818181817 %
+
+Amount of windows received from: heat 572.
+Amount of peaks received from: heat 39.
+Percentage of heat: 6.8181818181818175 %
+
+Amount of windows received from: brake 1716.
+Amount of peaks received from: brake 270.
+Percentage of brake: 15.734265734265733 %
+
+Amount right peaks: 530.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00058474 seconds for one datapoint
+Data throughput: 1710.159 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 19:26:59
+Data received in 54.16900 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 434.
+Amount of peaks received from: tire 107.
+Percentage of tire: 24.65437788018433 %
+
+Amount of windows received from: heat 217.
+Amount of peaks received from: heat 37.
+Percentage of heat: 17.05069124423963 %
+
+Amount of windows received from: brake 651.
+Amount of peaks received from: brake 197.
+Percentage of brake: 30.261136712749618 %
+
+Amount right peaks: 341.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022190 seconds for one datapoint
+Data throughput: 4506.544 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 19:50:49
+Data received in 127.26800 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 1020.
+Amount of peaks received from: tire 200.
+Percentage of tire: 19.607843137254903 %
+
+Amount of windows received from: heat 510.
+Amount of peaks received from: heat 38.
+Percentage of heat: 7.450980392156863 %
+
+Amount of windows received from: brake 1530.
+Amount of peaks received from: brake 255.
+Percentage of brake: 16.666666666666668 %
+
+Amount right peaks: 493.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00052134 seconds for one datapoint
+Data throughput: 1918.118 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 19:55:29
+Data received in 132.16900 seconds
+Amount Warnings in data: 152
+Amount Errors in data: 4955
+Amount of data received: 244115
+Amount of Sensors used: 8
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 444.
+Amount of peaks sent from: tire 108.
+Percentage of tire: 24.324324324324326 %
+
+Amount of windows sent from: heat 222.
+Amount of peaks sent from: heat 39.
+Percentage of heat: 17.56756756756757 %
+
+Amount of windows sent from: brake 666.
+Amount of peaks sent from: brake 211.
+Percentage of brake: 31.68168168168168 %
+
+
+Amount of windows received from: tire 1058.
+Amount of peaks received from: tire 211.
+Percentage of tire: 19.943289224952743 %
+
+Amount of windows received from: heat 529.
+Amount of peaks received from: heat 38.
+Percentage of heat: 7.183364839319471 %
+
+Amount of windows received from: brake 1587.
+Amount of peaks received from: brake 257.
+Percentage of brake: 16.194076874606175 %
+
+Amount right peaks: 506.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00054142 seconds for one datapoint
+Data throughput: 1846.991 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload8+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-04 20:03:07
+Data received in 16.79300 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 100.
+Amount of peaks received from: tire 31.
+Percentage of tire: 31.0 %
+
+Amount of windows received from: heat 50.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.0 %
+
+Amount of windows received from: engine 25.
+Amount of peaks received from: engine 14.
+Percentage of engine: 56.0 %
+
+Amount of windows received from: brake 75.
+Amount of peaks received from: brake 24.
+Percentage of brake: 32.0 %
+
+Amount of windows received from: fuelPump 25.
+Amount of peaks received from: fuelPump 4.
+Percentage of fuelPump: 16.0 %
+
+Amount of windows received from: accelerometer 25.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.0 %
+
+Amount of windows received from: speed 25.
+Amount of peaks received from: speed 6.
+Percentage of speed: 24.0 %
+
+Amount right peaks: 87.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00031439 seconds for one datapoint
+Data throughput: 3180.790 per second
+Thread efficiency: 16.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:05:00
+Data received in 9.91600 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 13.
+Percentage of engine: 54.16666666666667 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 85.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018564 seconds for one datapoint
+Data throughput: 5386.749 per second
+Thread efficiency: 16.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:16:21
+Data received in 16.31100 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 30.
+Percentage of tire: 31.250000000000004 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 13.
+Percentage of engine: 54.16666666666667 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 84.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00030536 seconds for one datapoint
+Data throughput: 3274.784 per second
+Thread efficiency: 16.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:31:57
+Data received in 16.86300 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 30.
+Percentage of tire: 31.250000000000004 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 83.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00031570 seconds for one datapoint
+Data throughput: 3167.586 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:34:33
+Data received in 16.63500 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 84.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00031143 seconds for one datapoint
+Data throughput: 3211.001 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:41:01
+Data received in 16.60700 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 92.
+Amount of peaks received from: tire 31.
+Percentage of tire: 33.69565217391304 %
+
+Amount of windows received from: heat 46.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.695652173913043 %
+
+Amount of windows received from: engine 23.
+Amount of peaks received from: engine 11.
+Percentage of engine: 47.826086956521735 %
+
+Amount of windows received from: brake 69.
+Amount of peaks received from: brake 24.
+Percentage of brake: 34.78260869565217 %
+
+Amount of windows received from: fuelPump 23.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 13.043478260869565 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 6.
+Percentage of speed: 26.08695652173913 %
+
+Amount right peaks: 83.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00031091 seconds for one datapoint
+Data throughput: 3216.415 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:44:02
+Data received in 9.94100 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 92.
+Amount of peaks received from: tire 31.
+Percentage of tire: 33.69565217391304 %
+
+Amount of windows received from: heat 46.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.695652173913043 %
+
+Amount of windows received from: engine 23.
+Amount of peaks received from: engine 11.
+Percentage of engine: 47.826086956521735 %
+
+Amount of windows received from: brake 69.
+Amount of peaks received from: brake 24.
+Percentage of brake: 34.78260869565217 %
+
+Amount of windows received from: fuelPump 23.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 13.043478260869565 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 6.
+Percentage of speed: 26.08695652173913 %
+
+Amount right peaks: 83.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018611 seconds for one datapoint
+Data throughput: 5373.202 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:48:05
+Data received in 9.90900 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 84.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018551 seconds for one datapoint
+Data throughput: 5390.554 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:48:37
+Data received in 10.09700 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 15.
+Percentage of engine: 62.50000000000001 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 87.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018903 seconds for one datapoint
+Data throughput: 5290.185 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:55:03
+Data received in 9.91700 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 2.
+Percentage of fuelPump: 8.333333333333334 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 83.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018566 seconds for one datapoint
+Data throughput: 5386.206 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:56:30
+Data received in 10.53300 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 84.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00019719 seconds for one datapoint
+Data throughput: 5071.205 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:58:02
+Data received in 9.88900 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 4.
+Percentage of fuelPump: 16.666666666666668 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 85.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018514 seconds for one datapoint
+Data throughput: 5401.456 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:58:42
+Data received in 9.88700 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 16
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 92.
+Amount of peaks received from: tire 31.
+Percentage of tire: 33.69565217391304 %
+
+Amount of windows received from: heat 46.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.695652173913043 %
+
+Amount of windows received from: engine 23.
+Amount of peaks received from: engine 11.
+Percentage of engine: 47.826086956521735 %
+
+Amount of windows received from: brake 69.
+Amount of peaks received from: brake 24.
+Percentage of brake: 34.78260869565217 %
+
+Amount of windows received from: fuelPump 23.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 13.043478260869565 %
+
+Amount of windows received from: accelerometer 23.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 17.391304347826086 %
+
+Amount of windows received from: speed 23.
+Amount of peaks received from: speed 6.
+Percentage of speed: 26.08695652173913 %
+
+Amount right peaks: 83.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018510 seconds for one datapoint
+Data throughput: 5402.549 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 20:59:19
+Data received in 9.93400 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 16
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 32.
+Percentage of tire: 33.333333333333336 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 3.
+Percentage of fuelPump: 12.5 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 85.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018598 seconds for one datapoint
+Data throughput: 5376.988 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-04 21:00:06
+Data received in 9.92000 seconds
+Amount Warnings in data: 37
+Amount Errors in data: 1598
+Amount of data received: 53415
+Amount of Sensors used: 16
+Amount of Threads used: 16
+
+Amount of windows sent from: tire 92.
+Amount of peaks sent from: tire 32.
+Percentage of tire: 34.78260869565217 %
+
+Amount of windows sent from: heat 46.
+Amount of peaks sent from: heat 5.
+Percentage of heat: 10.869565217391305 %
+
+Amount of windows sent from: engine 23.
+Amount of peaks sent from: engine 13.
+Percentage of engine: 56.52173913043478 %
+
+Amount of windows sent from: brake 69.
+Amount of peaks sent from: brake 26.
+Percentage of brake: 37.68115942028985 %
+
+Amount of windows sent from: fuelPump 23.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 23.
+Amount of peaks sent from: accelerometer 5.
+Percentage of accelerometer: 21.73913043478261 %
+
+Amount of windows sent from: speed 23.
+Amount of peaks sent from: speed 4.
+Percentage of speed: 17.391304347826086 %
+
+
+Amount of windows received from: tire 96.
+Amount of peaks received from: tire 31.
+Percentage of tire: 32.29166666666667 %
+
+Amount of windows received from: heat 48.
+Amount of peaks received from: heat 4.
+Percentage of heat: 8.333333333333334 %
+
+Amount of windows received from: engine 24.
+Amount of peaks received from: engine 12.
+Percentage of engine: 50.0 %
+
+Amount of windows received from: brake 72.
+Amount of peaks received from: brake 24.
+Percentage of brake: 33.33333333333333 %
+
+Amount of windows received from: fuelPump 24.
+Amount of peaks received from: fuelPump 4.
+Percentage of fuelPump: 16.666666666666668 %
+
+Amount of windows received from: accelerometer 24.
+Amount of peaks received from: accelerometer 4.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 24.
+Amount of peaks received from: speed 6.
+Percentage of speed: 25.0 %
+
+Amount right peaks: 85.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018572 seconds for one datapoint
+Data throughput: 5384.577 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload9++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+_________________________________________________________________________________________________
+2025-01-05 11:26:49
+Data received in 221.17700 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1195.
+Amount of peaks received from: tire 221.
+Percentage of tire: 18.493723849372383 %
+
+Amount of windows received from: heat 798.
+Amount of peaks received from: heat 53.
+Percentage of heat: 6.641604010025063 %
+
+Amount of windows received from: engine 399.
+Amount of peaks received from: engine 127.
+Percentage of engine: 31.82957393483709 %
+
+Amount of windows received from: brake 1595.
+Amount of peaks received from: brake 291.
+Percentage of brake: 18.244514106583072 %
+
+Amount of windows received from: fuelPump 398.
+Amount of peaks received from: fuelPump 52.
+Percentage of fuelPump: 13.065326633165828 %
+
+Amount of windows received from: accelerometer 398.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 9.2964824120603 %
+
+Amount of windows received from: speed 398.
+Amount of peaks received from: speed 22.
+Percentage of speed: 5.527638190954773 %
+
+Amount right peaks: 803.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00041680 seconds for one datapoint
+Data throughput: 2399.255 per second
+Thread efficiency: 16.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 11:37:22
+Data received in 96.65800 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 660.
+Amount of peaks received from: tire 149.
+Percentage of tire: 22.575757575757578 %
+
+Amount of windows received from: heat 440.
+Amount of peaks received from: heat 53.
+Percentage of heat: 12.045454545454545 %
+
+Amount of windows received from: engine 220.
+Amount of peaks received from: engine 82.
+Percentage of engine: 37.27272727272727 %
+
+Amount of windows received from: brake 880.
+Amount of peaks received from: brake 243.
+Percentage of brake: 27.613636363636363 %
+
+Amount of windows received from: fuelPump 220.
+Amount of peaks received from: fuelPump 36.
+Percentage of fuelPump: 16.363636363636363 %
+
+Amount of windows received from: accelerometer 220.
+Amount of peaks received from: accelerometer 36.
+Percentage of accelerometer: 16.363636363636363 %
+
+Amount of windows received from: speed 220.
+Amount of peaks received from: speed 22.
+Percentage of speed: 10.0 %
+
+Amount right peaks: 621.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018215 seconds for one datapoint
+Data throughput: 5490.078 per second
+Thread efficiency: 16.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 11:46:04
+Data received in 96.56800 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 1
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 660.
+Amount of peaks received from: tire 155.
+Percentage of tire: 23.484848484848484 %
+
+Amount of windows received from: heat 440.
+Amount of peaks received from: heat 53.
+Percentage of heat: 12.045454545454545 %
+
+Amount of windows received from: engine 220.
+Amount of peaks received from: engine 88.
+Percentage of engine: 40.0 %
+
+Amount of windows received from: brake 880.
+Amount of peaks received from: brake 239.
+Percentage of brake: 27.159090909090907 %
+
+Amount of windows received from: fuelPump 220.
+Amount of peaks received from: fuelPump 36.
+Percentage of fuelPump: 16.363636363636363 %
+
+Amount of windows received from: accelerometer 220.
+Amount of peaks received from: accelerometer 36.
+Percentage of accelerometer: 16.363636363636363 %
+
+Amount of windows received from: speed 220.
+Amount of peaks received from: speed 22.
+Percentage of speed: 10.0 %
+
+Amount right peaks: 629.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00018198 seconds for one datapoint
+Data throughput: 5495.195 per second
+Thread efficiency: 16.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+
+_________________________________________________________________________________________________
+2025-01-05 12:28:19
+Data received in 253.89700 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1582.
+Amount of peaks received from: tire 274.
+Percentage of tire: 17.319848293299618 %
+
+Amount of windows received from: heat 1054.
+Amount of peaks received from: heat 55.
+Percentage of heat: 5.218216318785579 %
+
+Amount of windows received from: engine 527.
+Amount of peaks received from: engine 151.
+Percentage of engine: 28.652751423149905 %
+
+Amount of windows received from: brake 2109.
+Amount of peaks received from: brake 315.
+Percentage of brake: 14.935988620199145 %
+
+Amount of windows received from: fuelPump 528.
+Amount of peaks received from: fuelPump 56.
+Percentage of fuelPump: 10.606060606060606 %
+
+Amount of windows received from: accelerometer 527.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 7.020872865275143 %
+
+Amount of windows received from: speed 528.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.545454545454545 %
+
+Amount right peaks: 912.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00047846 seconds for one datapoint
+Data throughput: 2090.060 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 12:49:42
+Data received in 119.52200 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 936.
+Amount of peaks received from: tire 185.
+Percentage of tire: 19.764957264957264 %
+
+Amount of windows received from: heat 624.
+Amount of peaks received from: heat 53.
+Percentage of heat: 8.493589743589745 %
+
+Amount of windows received from: engine 312.
+Amount of peaks received from: engine 112.
+Percentage of engine: 35.8974358974359 %
+
+Amount of windows received from: brake 1248.
+Amount of peaks received from: brake 261.
+Percentage of brake: 20.91346153846154 %
+
+Amount of windows received from: fuelPump 312.
+Amount of peaks received from: fuelPump 36.
+Percentage of fuelPump: 11.53846153846154 %
+
+Amount of windows received from: accelerometer 312.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 11.85897435897436 %
+
+Amount of windows received from: speed 312.
+Amount of peaks received from: speed 22.
+Percentage of speed: 7.051282051282052 %
+
+Amount right peaks: 706.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00022523 seconds for one datapoint
+Data throughput: 4439.852 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 13:19:59
+Data received in 253.18700 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 2
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1573.
+Amount of peaks received from: tire 269.
+Percentage of tire: 17.101080737444374 %
+
+Amount of windows received from: heat 1048.
+Amount of peaks received from: heat 55.
+Percentage of heat: 5.248091603053435 %
+
+Amount of windows received from: engine 524.
+Amount of peaks received from: engine 151.
+Percentage of engine: 28.816793893129773 %
+
+Amount of windows received from: brake 2096.
+Amount of peaks received from: brake 309.
+Percentage of brake: 14.742366412213741 %
+
+Amount of windows received from: fuelPump 525.
+Amount of peaks received from: fuelPump 56.
+Percentage of fuelPump: 10.666666666666666 %
+
+Amount of windows received from: accelerometer 524.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 7.061068702290076 %
+
+Amount of windows received from: speed 525.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.571428571428571 %
+
+Amount right peaks: 901.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00047712 seconds for one datapoint
+Data throughput: 2095.921 per second
+Thread efficiency: 8.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 13:48:09
+Data received in 253.66600 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1579.
+Amount of peaks received from: tire 273.
+Percentage of tire: 17.28942368587714 %
+
+Amount of windows received from: heat 1052.
+Amount of peaks received from: heat 55.
+Percentage of heat: 5.228136882129277 %
+
+Amount of windows received from: engine 526.
+Amount of peaks received from: engine 151.
+Percentage of engine: 28.70722433460076 %
+
+Amount of windows received from: brake 2105.
+Amount of peaks received from: brake 314.
+Percentage of brake: 14.91686460807601 %
+
+Amount of windows received from: fuelPump 527.
+Amount of peaks received from: fuelPump 56.
+Percentage of fuelPump: 10.62618595825427 %
+
+Amount of windows received from: accelerometer 526.
+Amount of peaks received from: accelerometer 38.
+Percentage of accelerometer: 7.224334600760455 %
+
+Amount of windows received from: speed 527.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.5540796963946875 %
+
+Amount right peaks: 911.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00047802 seconds for one datapoint
+Data throughput: 2091.963 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 14:07:18
+Data received in 263.06200 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1692.
+Amount of peaks received from: tire 299.
+Percentage of tire: 17.671394799054376 %
+
+Amount of windows received from: heat 1128.
+Amount of peaks received from: heat 55.
+Percentage of heat: 4.875886524822695 %
+
+Amount of windows received from: engine 564.
+Amount of peaks received from: engine 158.
+Percentage of engine: 28.01418439716312 %
+
+Amount of windows received from: brake 2256.
+Amount of peaks received from: brake 331.
+Percentage of brake: 14.671985815602838 %
+
+Amount of windows received from: fuelPump 564.
+Amount of peaks received from: fuelPump 64.
+Percentage of fuelPump: 11.347517730496454 %
+
+Amount of windows received from: accelerometer 564.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 6.560283687943262 %
+
+Amount of windows received from: speed 564.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.25531914893617 %
+
+Amount right peaks: 968.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00049573 seconds for one datapoint
+Data throughput: 2017.243 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 14:22:37
+Data received in 237.74200 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 4
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1392.
+Amount of peaks received from: tire 247.
+Percentage of tire: 17.744252873563216 %
+
+Amount of windows received from: heat 928.
+Amount of peaks received from: heat 52.
+Percentage of heat: 5.6034482758620685 %
+
+Amount of windows received from: engine 464.
+Amount of peaks received from: engine 129.
+Percentage of engine: 27.801724137931032 %
+
+Amount of windows received from: brake 1856.
+Amount of peaks received from: brake 296.
+Percentage of brake: 15.948275862068964 %
+
+Amount of windows received from: fuelPump 464.
+Amount of peaks received from: fuelPump 52.
+Percentage of fuelPump: 11.206896551724137 %
+
+Amount of windows received from: accelerometer 464.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 7.974137931034482 %
+
+Amount of windows received from: speed 464.
+Amount of peaks received from: speed 22.
+Percentage of speed: 4.741379310344827 %
+
+Amount right peaks: 835.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00044801 seconds for one datapoint
+Data throughput: 2232.084 per second
+Thread efficiency: 4.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 14:37:56
+Data received in 259.35500 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1650.
+Amount of peaks received from: tire 293.
+Percentage of tire: 17.757575757575758 %
+
+Amount of windows received from: heat 1100.
+Amount of peaks received from: heat 55.
+Percentage of heat: 5.0 %
+
+Amount of windows received from: engine 550.
+Amount of peaks received from: engine 153.
+Percentage of engine: 27.81818181818182 %
+
+Amount of windows received from: brake 2200.
+Amount of peaks received from: brake 322.
+Percentage of brake: 14.636363636363637 %
+
+Amount of windows received from: fuelPump 550.
+Amount of peaks received from: fuelPump 59.
+Percentage of fuelPump: 10.727272727272728 %
+
+Amount of windows received from: accelerometer 550.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 6.7272727272727275 %
+
+Amount of windows received from: speed 550.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.363636363636363 %
+
+Amount right peaks: 943.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00048874 seconds for one datapoint
+Data throughput: 2046.076 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 14:53:18
+Data received in 201.73700 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1638.
+Amount of peaks received from: tire 289.
+Percentage of tire: 17.64346764346764 %
+
+Amount of windows received from: heat 1092.
+Amount of peaks received from: heat 55.
+Percentage of heat: 5.0366300366300365 %
+
+Amount of windows received from: engine 546.
+Amount of peaks received from: engine 152.
+Percentage of engine: 27.838827838827836 %
+
+Amount of windows received from: brake 2184.
+Amount of peaks received from: brake 319.
+Percentage of brake: 14.606227106227106 %
+
+Amount of windows received from: fuelPump 546.
+Amount of peaks received from: fuelPump 56.
+Percentage of fuelPump: 10.256410256410255 %
+
+Amount of windows received from: accelerometer 546.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 6.7765567765567765 %
+
+Amount of windows received from: speed 546.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.395604395604395 %
+
+Amount right peaks: 932.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00038016 seconds for one datapoint
+Data throughput: 2630.455 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 15:22:46
+Data received in 249.69700 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 8
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1533.
+Amount of peaks received from: tire 266.
+Percentage of tire: 17.35159817351598 %
+
+Amount of windows received from: heat 1022.
+Amount of peaks received from: heat 55.
+Percentage of heat: 5.38160469667319 %
+
+Amount of windows received from: engine 511.
+Amount of peaks received from: engine 148.
+Percentage of engine: 28.962818003913892 %
+
+Amount of windows received from: brake 2044.
+Amount of peaks received from: brake 306.
+Percentage of brake: 14.9706457925636 %
+
+Amount of windows received from: fuelPump 511.
+Amount of peaks received from: fuelPump 56.
+Percentage of fuelPump: 10.95890410958904 %
+
+Amount of windows received from: accelerometer 511.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 7.240704500978473 %
+
+Amount of windows received from: speed 511.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.6966731898238745 %
+
+Amount right peaks: 892.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00047054 seconds for one datapoint
+Data throughput: 2125.216 per second
+Thread efficiency: 2.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 15:42:51
+Data received in 150.97900 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 16
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 666.
+Amount of peaks received from: tire 153.
+Percentage of tire: 22.972972972972972 %
+
+Amount of windows received from: heat 444.
+Amount of peaks received from: heat 52.
+Percentage of heat: 11.711711711711711 %
+
+Amount of windows received from: engine 222.
+Amount of peaks received from: engine 89.
+Percentage of engine: 40.090090090090094 %
+
+Amount of windows received from: brake 888.
+Amount of peaks received from: brake 249.
+Percentage of brake: 28.04054054054054 %
+
+Amount of windows received from: fuelPump 222.
+Amount of peaks received from: fuelPump 35.
+Percentage of fuelPump: 15.765765765765765 %
+
+Amount of windows received from: accelerometer 222.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 16.666666666666668 %
+
+Amount of windows received from: speed 222.
+Amount of peaks received from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+Amount right peaks: 638.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00028451 seconds for one datapoint
+Data throughput: 3514.793 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 16:04:41
+Data received in 228.58100 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 16
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1281.
+Amount of peaks received from: tire 224.
+Percentage of tire: 17.48633879781421 %
+
+Amount of windows received from: heat 854.
+Amount of peaks received from: heat 53.
+Percentage of heat: 6.206088992974239 %
+
+Amount of windows received from: engine 427.
+Amount of peaks received from: engine 127.
+Percentage of engine: 29.7423887587822 %
+
+Amount of windows received from: brake 1708.
+Amount of peaks received from: brake 285.
+Percentage of brake: 16.68618266978923 %
+
+Amount of windows received from: fuelPump 427.
+Amount of peaks received from: fuelPump 48.
+Percentage of fuelPump: 11.241217798594848 %
+
+Amount of windows received from: accelerometer 427.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 8.665105386416862 %
+
+Amount of windows received from: speed 427.
+Amount of peaks received from: speed 23.
+Percentage of speed: 5.3864168618266985 %
+
+Amount right peaks: 797.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00043075 seconds for one datapoint
+Data throughput: 2321.540 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.00000000000001
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 16:29:56
+Data received in 260.39100 seconds
+Amount Warnings in data: 280
+Amount Errors in data: 11976
+Amount of data received: 530660
+Amount of Sensors used: 16
+Amount of Threads used: 16
+
+Amount of windows sent from: tire 666.
+Amount of peaks sent from: tire 146.
+Percentage of tire: 21.92192192192192 %
+
+Amount of windows sent from: heat 445.
+Amount of peaks sent from: heat 58.
+Percentage of heat: 13.03370786516854 %
+
+Amount of windows sent from: engine 222.
+Amount of peaks sent from: engine 60.
+Percentage of engine: 27.027027027027028 %
+
+Amount of windows sent from: brake 888.
+Amount of peaks sent from: brake 252.
+Percentage of brake: 28.37837837837838 %
+
+Amount of windows sent from: fuelPump 221.
+Amount of peaks sent from: fuelPump 0.
+Percentage of fuelPump: 0.0 %
+
+Amount of windows sent from: accelerometer 222.
+Amount of peaks sent from: accelerometer 39.
+Percentage of accelerometer: 17.56756756756757 %
+
+Amount of windows sent from: speed 222.
+Amount of peaks sent from: speed 23.
+Percentage of speed: 10.36036036036036 %
+
+
+Amount of windows received from: tire 1659.
+Amount of peaks received from: tire 293.
+Percentage of tire: 17.661241711874624 %
+
+Amount of windows received from: heat 1106.
+Amount of peaks received from: heat 55.
+Percentage of heat: 4.972875226039783 %
+
+Amount of windows received from: engine 553.
+Amount of peaks received from: engine 158.
+Percentage of engine: 28.571428571428573 %
+
+Amount of windows received from: brake 2212.
+Amount of peaks received from: brake 323.
+Percentage of brake: 14.602169981916818 %
+
+Amount of windows received from: fuelPump 553.
+Amount of peaks received from: fuelPump 60.
+Percentage of fuelPump: 10.849909584086799 %
+
+Amount of windows received from: accelerometer 553.
+Amount of peaks received from: accelerometer 37.
+Percentage of accelerometer: 6.6907775768535265 %
+
+Amount of windows received from: speed 553.
+Amount of peaks received from: speed 24.
+Percentage of speed: 4.3399638336347195 %
+
+Amount right peaks: 950.
+Amount false peaks: 0.
+
+All errors and Warnings received correctly.
+
+..................................................
+Performance metrics:
+Data latency: 0.00049069 seconds for one datapoint
+Data throughput: 2037.935 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 100.0
+Warning completeness: 100.0
+Error completeness: 100.0
+_________________________________________________________________________________________________
+Workload10
+_________________________________________________________________________________________________
+2025-01-05 17:58:32
+Data received in 278.28300 seconds
+Amount Warnings in data: 0
+Amount Errors in data: 0
+Amount of data received: 318521
+Amount of Sensors used: 32
+Amount of Threads used: 1
+
+null
+..................................................
+Performance metrics:
+Data latency: 0.00087367 seconds for one datapoint
+Data throughput: 1144.594 per second
+Thread efficiency: 32.000
+..................................................
+Data quality metrics:
+Peak completeness: 0.0
+Warning completeness: 0.0
+Error completeness: 0.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 18:07:58
+Data received in 270.08500 seconds
+Amount Warnings in data: 0
+Amount Errors in data: 0
+Amount of data received: 318521
+Amount of Sensors used: 32
+Amount of Threads used: 10
+
+null
+..................................................
+Performance metrics:
+Data latency: 0.00084793 seconds for one datapoint
+Data throughput: 1179.336 per second
+Thread efficiency: 3.200
+..................................................
+Data quality metrics:
+Peak completeness: 0.0
+Warning completeness: 0.0
+Error completeness: 0.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 19:13:20
+Data received in 220.15700 seconds
+Amount Warnings in data: 0
+Amount Errors in data: 0
+Amount of data received: 318521
+Amount of Sensors used: 32
+Amount of Threads used: 20
+
+null
+..................................................
+Performance metrics:
+Data latency: 0.00069119 seconds for one datapoint
+Data throughput: 1446.790 per second
+Thread efficiency: 1.600
+..................................................
+Data quality metrics:
+Peak completeness: 0.0
+Warning completeness: 0.0
+Error completeness: 0.0
+_________________________________________________________________________________________________
+_________________________________________________________________________________________________
+2025-01-05 19:19:50
+Data received in 267.35700 seconds
+Amount Warnings in data: 0
+Amount Errors in data: 0
+Amount of data received: 318521
+Amount of Sensors used: 32
+Amount of Threads used: 32
+
+null
+..................................................
+Performance metrics:
+Data latency: 0.00083937 seconds for one datapoint
+Data throughput: 1191.370 per second
+Thread efficiency: 1.000
+..................................................
+Data quality metrics:
+Peak completeness: 0.0
+Warning completeness: 0.0
+Error completeness: 0.0
+_________________________________________________________________________________________________

@@ -1,10 +1,10 @@
 Settings of the Workload
 ------------------------------------------------
 Benchmark:
-Create Data:true
-Aggregated Data:true
-Amount of Threads:1
-Amount of Sensors:10
+Create Data:false
+Aggregated Data:false
+Amount of Threads:32
+Amount of Sensors:32
 Entries per Sensor:10000
 Duration time step (milliseconds):5
 ------------------------------------------------
